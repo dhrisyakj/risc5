@@ -1,0 +1,6 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab -L unifast_ver -L unisims_ver -R /home/sidharth/RISC-V/tinyriscv/tb/tinyriscv_soc_tb.v glbl 
+Multi-threading is on. Using 30 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit /home/sidharth/RISC-V/tinyriscv/tb/tinyriscv_soc_tb.v in library work located at xsim.dir/work.
