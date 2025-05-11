@@ -823,3 +823,499 @@ selectCodeEditor("id.v", 340, 363); // ac (id.v)
 // Elapsed time: 12 seconds
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
 // HMemoryUtils.trashcanNow. Engine heap size: 3,314 MB. GUI used memory: 90 MB. Current time: 5/11/25, 2:58:16 PM EDT
+// Elapsed time: 2745 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 100 seconds
+selectCodeEditor("ex.v", 78, 223); // ac (ex.v)
+selectCodeEditor("ex.v", 169, 244); // ac (ex.v)
+selectCodeEditor("ex.v", 240, 234); // ac (ex.v)
+selectCodeEditor("ex.v", 240, 234, false, false, false, false, true); // ac (ex.v) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: current_project riscv_mac 
+// Elapsed Time for: 'L.f': 03h:25m:43s
+// Elapsed Time for: 'L.f': 03h:25m:45s
+// Elapsed time: 40 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_ctrl : ctrl (ctrl.v)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_ctrl : ctrl (ctrl.v)]", 6, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Elapsed time: 10 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // J (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "if_id.v", 5); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 21 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v)]", 3); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a (PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN)
+selectButton("NEXT", "Next >", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+// Elapsed time: 27 seconds
+setFileChooser("/home/sidharth/Vivado_Projects/MAC/mac.v");
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 32 seconds
+dismissDialog("Add Sources"); // c (dialog11)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -norecurse /home/sidharth/Vivado_Projects/MAC/mac.v 
+// Elapsed Time for: 'L.f': 03h:27m:11s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:27m:13s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mac_128 (mac.v)]", 8, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mac_128 (mac.v)]", 8, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Elapsed Time for: 'L.f': 03h:27m:15s
+// Elapsed Time for: 'L.f': 03h:27m:17s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,501 MB. GUI used memory: 91 MB. Current time: 5/11/25, 3:26:46 PM EDT
+selectCodeEditor("mac.v", 52, 427); // ac (mac.v)
+selectCodeEditor("mac.v", 30, 330); // ac (mac.v)
+selectCodeEditor("mac.v", 58, 438); // ac (mac.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:27m:29s
+// Elapsed Time for: 'L.f': 03h:27m:31s
+// Elapsed time: 68 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 38 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v)]", 3); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v)]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_id_ex : id_ex (id_ex.v)]", 11, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_id_ex : id_ex (id_ex.v), csr_we_ff : gen_pipe_dff (gen_dff.v)]", 18, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,531 MB. GUI used memory: 92 MB. Current time: 5/11/25, 3:28:46 PM EDT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 22 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("id.v", 302, 382); // ac (id.v)
+selectCodeEditor("id.v", 450, 388); // ac (id.v)
+// Elapsed time: 44 seconds
+selectCodeEditor("id.v", 297, 387); // ac (id.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:30m:49s
+// Elapsed Time for: 'L.f': 03h:30m:51s
+// [Engine Memory]: 3,591 MB (+35296kb) [10:48:49]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,571 MB. GUI used memory: 92 MB. Current time: 5/11/25, 3:30:21 PM EDT
+// Elapsed time: 39 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("id.v", 235, 433); // ac (id.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:31m:41s
+// Elapsed Time for: 'L.f': 03h:31m:43s
+// Elapsed time: 29 seconds
+selectCodeEditor("id.v", 296, 155); // ac (id.v)
+selectCodeEditor("id.v", 337, 160, false, false, false, true, false); // ac (id.v) - Popup Trigger
+selectCodeEditor("id.v", 264, 264); // ac (id.v)
+selectCodeEditor("id.v", 297, 199); // ac (id.v)
+selectCodeEditor("id.v", 338, 209, false, false, false, true, false); // ac (id.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("id.v", 205, 307); // ac (id.v)
+typeControlKey((HResource) null, "id.v", 'v'); // ac (id.v)
+selectCodeEditor("id.v", 543, 303); // ac (id.v)
+selectCodeEditor("id.v", 355, 197); // ac (id.v)
+selectCodeEditor("id.v", 343, 209); // ac (id.v)
+selectCodeEditor("id.v", 349, 295); // ac (id.v)
+typeControlKey((HResource) null, "id.v", 'c'); // ac (id.v)
+selectCodeEditor("id.v", 204, 331); // ac (id.v)
+typeControlKey((HResource) null, "id.v", 'v'); // ac (id.v)
+selectCodeEditor("id.v", 198, 348); // ac (id.v)
+selectCodeEditor("id.v", 355, 395); // ac (id.v)
+// Elapsed time: 14 seconds
+selectCodeEditor("id.v", 245, 216); // ac (id.v)
+typeControlKey((HResource) null, "id.v", 'c'); // ac (id.v)
+selectCodeEditor("id.v", 284, 410); // ac (id.v)
+typeControlKey((HResource) null, "id.v", 'v'); // ac (id.v)
+selectCodeEditor("id.v", 254, 413); // ac (id.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:33m:09s
+// Elapsed Time for: 'L.f': 03h:33m:11s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,741 MB. GUI used memory: 93 MB. Current time: 5/11/25, 3:32:41 PM EDT
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("id_ex.v", 294, 233); // ac (id_ex.v)
+// Elapsed time: 13 seconds
+selectCodeEditor("id_ex.v", 21, 234); // ac (id_ex.v)
+typeControlKey((HResource) null, "id_ex.v", 'c'); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 43, 263); // ac (id_ex.v)
+typeControlKey((HResource) null, "id_ex.v", 'v'); // ac (id_ex.v)
+// Elapsed time: 16 seconds
+selectCodeEditor("id_ex.v", 831, 261); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 24, 250); // ac (id_ex.v)
+typeControlKey((HResource) null, "id_ex.v", 'c'); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 155, 343); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 270, 319); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 463, 327); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 149, 125); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 97, 136); // ac (id_ex.v)
+typeControlKey((HResource) null, "id_ex.v", 'v'); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 73, 157); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 175, 160); // ac (id_ex.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 03h:34m:21s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 03h:34m:23s
+// Elapsed time: 54 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 13 seconds
+selectCodeEditor("ex.v", 113, 94); // ac (ex.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:35m:55s
+// Elapsed Time for: 'L.f': 03h:35m:57s
+// Elapsed time: 52 seconds
+selectCodeEditor("ex.v", 204, 442); // ac (ex.v)
+selectCodeEditor("ex.v", 427, 438); // ac (ex.v)
+// Elapsed time: 17 seconds
+selectCodeEditor("ex.v", 286, 205); // ac (ex.v)
+// Elapsed time: 14 seconds
+selectCodeEditor("ex.v", 99, 111); // ac (ex.v)
+typeControlKey((HResource) null, "ex.v", 'c'); // ac (ex.v)
+selectCodeEditor("ex.v", 106, 243); // ac (ex.v)
+typeControlKey((HResource) null, "ex.v", 'v'); // ac (ex.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:40m:21s
+// Elapsed Time for: 'L.f': 03h:40m:23s
+// Elapsed time: 214 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_if_id : if_id (if_id.v)]", 9, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tinyriscv_soc_top (tinyriscv_soc_top.v), u_tinyriscv : tinyriscv (tinyriscv.v), u_if_id : if_id (if_id.v)]", 9, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 28 seconds
+selectCodeEditor("ex.v", 295, 398); // ac (ex.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:41m:37s
+selectCodeEditor("ex.v", 191, 397); // ac (ex.v)
+// Elapsed Time for: 'L.f': 03h:41m:39s
+// Elapsed time: 24 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 25 seconds
+selectCodeEditor("mac.v", 319, 148); // ac (mac.v)
+selectCodeEditor("mac.v", 29, 158); // ac (mac.v)
+// Elapsed time: 10 seconds
+selectCodeEditor("mac.v", 226, 359); // ac (mac.v)
+selectCodeEditor("mac.v", 118, 336); // ac (mac.v)
+selectCodeEditor("mac.v", 196, 336); // ac (mac.v)
+selectCodeEditor("mac.v", 57, 156); // ac (mac.v)
+selectCodeEditor("mac.v", 47, 165); // ac (mac.v)
+selectCodeEditor("mac.v", 54, 152); // ac (mac.v)
+selectCodeEditor("mac.v", 50, 155); // ac (mac.v)
+selectCodeEditor("mac.v", 142, 352); // ac (mac.v)
+selectCodeEditor("mac.v", 540, 460); // ac (mac.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:43m:17s
+// Elapsed Time for: 'L.f': 03h:43m:19s
+// Elapsed time: 25 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 30 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 101, 239); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:44m:37s
+// Elapsed Time for: 'L.f': 03h:44m:39s
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 36, 265); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 67, 177, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 1, 367); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 141, 309); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 630, 386); // ac (tinyriscv.v)
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 14 seconds
+selectCodeEditor("tinyriscv.v", 278, 349); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 266, 345); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 265, 332); // ac (tinyriscv.v)
+// Elapsed time: 23 seconds
+selectCodeEditor("tinyriscv.v", 25, 205); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'c'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 44, 350); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 128, 355); // ac (tinyriscv.v)
+// Elapsed time: 27 seconds
+selectCodeEditor("tinyriscv.v", 283, 454); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 27, 367); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'c'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 56, 474); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 83, 469); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 188, 472); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 447, 352); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:47m:35s
+// Elapsed Time for: 'L.f': 03h:47m:37s
+// Elapsed time: 39 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 35 seconds
+selectCodeEditor("tinyriscv.v", 261, 271); // ac (tinyriscv.v)
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 273, 453); // ac (tinyriscv.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 21 seconds
+selectCodeEditor("tinyriscv.v", 66, 354); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 128, 359, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 128, 432); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 307, 427); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 463, 335); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:50m:35s
+// Elapsed Time for: 'L.f': 03h:50m:37s
+// Elapsed time: 57 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 10 seconds
+selectCodeEditor("tinyriscv.v", 78, 233); // ac (tinyriscv.v)
+// Elapsed time: 11 seconds
+selectCodeEditor("tinyriscv.v", 531, 297); // ac (tinyriscv.v)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 59, 115); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 198, 115, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 224, 248); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 121, 261); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 263, 269); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [Common 17-14] Message 'filemgmt 56-199' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Elapsed Time for: 'L.f': 03h:53m:07s
+// Elapsed Time for: 'L.f': 03h:53m:09s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,768 MB. GUI used memory: 94 MB. Current time: 5/11/25, 3:52:36 PM EDT
+// Elapsed time: 15 seconds
+selectCodeEditor("tinyriscv.v", 54, 370); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 238, 371); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 140, 384); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:53m:35s
+// Elapsed time: 12 seconds
+selectCodeEditor("tinyriscv.v", 237, 375); // ac (tinyriscv.v)
+// Elapsed Time for: 'L.f': 03h:53m:37s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:53m:45s
+// Elapsed Time for: 'L.f': 03h:53m:47s
+// Elapsed time: 12 seconds
+selectCodeEditor("tinyriscv.v", 127, 382); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 200, 380, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 78, 275); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+// Elapsed time: 17 seconds
+selectCodeEditor("tinyriscv.v", 157, 235); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 255, 232, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ap (RDIResourceCommand.RDICommands_PASTE)
+selectCodeEditor("tinyriscv.v", 311, 386); // ac (tinyriscv.v)
+typeControlKey(null, null, 'z');
+selectCodeEditor("tinyriscv.v", 155, 233); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 254, 233, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+// Elapsed time: 10 seconds
+selectCodeEditor("tinyriscv.v", 98, 203); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 443, 400); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 128, 372); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 208, 369, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 49, 251); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 400, 347); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 129, 353); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 211, 355, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 49, 177); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 504, 240); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:55m:21s
+// Elapsed Time for: 'L.f': 03h:55m:23s
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ex.v", 104, 115); // ac (ex.v)
+selectCodeEditor("ex.v", 152, 114, false, false, false, true, false); // ac (ex.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 221, 134); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 170, 84); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 307, 220); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 126, 113); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 200, 115, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 128, 281); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:56m:19s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 03h:56m:21s
+selectCodeEditor("ex.v", 169, 238); // ac (ex.v)
+selectCodeEditor("ex.v", 211, 234, false, false, false, true, false); // ac (ex.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "defines.v", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 234, 55); // ac (tinyriscv.v)
+// Elapsed time: 10 seconds
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+// Elapsed time: 10 seconds
+selectCodeEditor("tinyriscv.v", 132, 67); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 604, 183); // ac (tinyriscv.v)
+// Elapsed time: 14 seconds
+selectCodeEditor("tinyriscv.v", 71, 276); // ac (tinyriscv.v)
+// Elapsed time: 12 seconds
+selectCodeEditor("tinyriscv.v", 30, 414); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 106, 416, false, false, false, true, false); // ac (tinyriscv.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("tinyriscv.v", 58, 172); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 59, 171); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 176, 187); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:57m:49s
+// [Engine Memory]: 3,773 MB (+2793kb) [11:15:47]
+// Elapsed Time for: 'L.f': 03h:57m:52s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,866 MB. GUI used memory: 94 MB. Current time: 5/11/25, 3:57:21 PM EDT
+// Elapsed time: 24 seconds
+selectCodeEditor("tinyriscv.v", 119, 309); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'c'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 127, 308); // ac (tinyriscv.v)
+typeControlKey((HResource) null, "tinyriscv.v", 'v'); // ac (tinyriscv.v)
+selectCodeEditor("tinyriscv.v", 312, 314); // ac (tinyriscv.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03h:58m:27s
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex.v", 9); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 03h:58m:29s
+selectCodeEditor("id_ex.v", 177, 323); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 105, 311, false, false, false, true, false); // ac (id_ex.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+selectCodeEditor("id_ex.v", 176, 325); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 766, 294); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 209, 267); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 74, 255, false, false, false, true, false); // ac (id_ex.v) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY)
+// Elapsed time: 14 seconds
+selectCodeEditor("id_ex.v", 234, 253); // ac (id_ex.v)
+typeControlKey((HResource) null, "id_ex.v", 'v'); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 91, 279); // ac (id_ex.v)
+// Elapsed time: 18 seconds
+selectCodeEditor("id_ex.v", 483, 294); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 501, 292); // ac (id_ex.v)
+// Elapsed time: 13 seconds
+selectCodeEditor("id_ex.v", 577, 423); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 140, 452); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 118, 443); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 194, 443); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 530, 396); // ac (id_ex.v)
+selectCodeEditor("id_ex.v", 199, 425); // ac (id_ex.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04h:00m:25s
+// Elapsed time: 17 seconds
+selectCodeEditor("id_ex.v", 107, 173); // ac (id_ex.v)
+// Elapsed Time for: 'L.f': 04h:00m:27s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04h:00m:35s
+// Elapsed Time for: 'L.f': 04h:00m:37s
+// Elapsed time: 31 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 41 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 248 seconds
+selectCodeEditor("id.v", 864, 153); // ac (id.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ap (RDIResourceCommand.RDICommands_COPY, edit_copy_menu)
+// TclEventType: FILE_SET_CHANGE
+// PAPropertyPanels.initPanels (rib.v) elapsed time: 0.4s
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 410ms to process. Increasing delay to 3000 ms.
+// Tcl Message: current_project tinyriscv_updated 
+// WARNING: HEventQueue.dispatchEvent() is taking  1117 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,901 MB. GUI used memory: 94 MB. Current time: 5/11/25, 4:06:16 PM EDT
+// Elapsed time: 118 seconds
+selectCodeEditor("tinyriscv.v", 535, 276); // ac (tinyriscv.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "defines.v", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 146 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("tinyriscv.v", 50, 156); // ac (tinyriscv.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mac.v", 8); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: current_project riscv_mac 
+// Elapsed Time for: 'L.f': 04h:12m:03s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04h:12m:05s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'L.f': 04h:12m:08s
+// Elapsed Time for: 'L.f': 04h:12m:09s
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ex.v", 4); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 138 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tinyriscv.v", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 12 seconds
+selectCodeEditor("tinyriscv.v", 879, 369); // ac (tinyriscv.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id.v", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("id.v", 161, 379); // ac (id.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04h:15m:28s
+selectCodeEditor("id.v", 605, 409); // ac (id.v)
+// Elapsed Time for: 'L.f': 04h:15m:29s

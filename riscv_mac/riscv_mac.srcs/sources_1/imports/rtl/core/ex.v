@@ -21,6 +21,9 @@
 module ex(
 
     input wire rst,
+     
+     // from id for custom mac
+    input wire is_mac_i,
 
     // from id
     input wire[`InstBus] inst_i,            // 指令内容
@@ -38,6 +41,9 @@ module ex(
     input wire[`MemAddrBus] op2_i,
     input wire[`MemAddrBus] op1_jump_i,
     input wire[`MemAddrBus] op2_jump_i,
+    
+    // from mac unit
+    input wire[`RegBus] acc_out,
 
     // from mem
     input wire[`MemBus] mem_rdata_i,        // 内存输入数据
@@ -117,8 +123,10 @@ module ex(
     reg mem_req;
     reg div_start;
 
-    // Custom operation register
-   reg[`RegBus] addtt;
+    // Custom operation 
+    wire valid_mac;
+    
+   
     assign opcode = inst_i[6:0];
     assign funct3 = inst_i[14:12];
     assign funct7 = inst_i[31:25];
@@ -384,7 +392,7 @@ module ex(
                  mem_raddr_o = `ZeroWord;
                  mem_waddr_o = `ZeroWord;
                  mem_we = `WriteDisable;
-                 reg_wdata = op1_i + op2_i; 
+                 reg_wdata = acc_out; 
                 end
                     default: begin
                             jump_flag = `JumpDisable;

@@ -56,8 +56,10 @@ module id(
     output reg[`RegAddrBus] reg_waddr_o,     // 写通用寄存器地址
     output reg csr_we_o,                     // 写CSR寄存器标志
     output reg[`RegBus] csr_rdata_o,         // CSR寄存器数据
-    output reg[`MemAddrBus] csr_waddr_o      // 写CSR寄存器地址
-
+    output reg[`MemAddrBus] csr_waddr_o,   // 写CSR寄存器地址
+    
+    // to ex for custom mac
+    output reg is_mac_o
     );
 
     wire[6:0] opcode = inst_i[6:0];
@@ -105,13 +107,21 @@ module id(
             `INST_CUSTOM: begin
               if(funct7==7'b0000001) 
               case (funct3)
-                    `INST_MOD,`INST_ADDTT,`INST_MAC: begin
+                    `INST_MOD,`INST_ADDTT: begin
                         reg_we_o = `WriteEnable;
                             reg_waddr_o = rd;
                             reg1_raddr_o = rs1;
                             reg2_raddr_o = rs2;
                             op1_o = reg1_rdata_i;
                             op2_o = reg2_rdata_i;
+                        end
+                        `INST_MAC: begin
+                        reg_waddr_o = rd;
+                        reg1_raddr_o = rs1;
+                            reg2_raddr_o = rs2;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            is_mac_o=`WriteEnable;
                         end
                         default: begin
                             reg_we_o = `WriteDisable;

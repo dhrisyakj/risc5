@@ -44,6 +44,10 @@ module tinyriscv(
 
     );
 
+
+    // mac 
+    wire[`RegBus] acc_out;
+    
     // pc_reg模块输出信号
 	wire[`InstAddrBus] pc_pc_o;
 
@@ -69,6 +73,8 @@ module tinyriscv(
     wire[`MemAddrBus] id_op2_o;
     wire[`MemAddrBus] id_op1_jump_o;
     wire[`MemAddrBus] id_op2_jump_o;
+    wire id_is_mac_o;  // for mac operation
+    
 
     // id_ex模块输出信号
     wire[`InstBus] ie_inst_o;
@@ -84,6 +90,7 @@ module tinyriscv(
     wire[`MemAddrBus] ie_op2_o;
     wire[`MemAddrBus] ie_op1_jump_o;
     wire[`MemAddrBus] ie_op2_jump_o;
+    wire ie_is_mac_o;  // for mac operation
 
     // ex模块输出信号
     wire[`MemBus] ex_mem_wdata_o;
@@ -146,6 +153,16 @@ module tinyriscv(
 
     assign rib_pc_addr_o = pc_pc_o;
 
+
+    // custom hardware for mac
+    mac_128#(.IN_WIDTH(32), .ACC_WIDTH(32)) u_mac (
+    .clk(clk),
+    .acc_rst(rst),
+    .valid(ie_is_mac_o),
+    .a(regs_rdata1_o),
+    .b(regs_rdata2_o),
+    .acc(acc_out)
+ );
 
     // pc_reg模块例化
     pc_reg u_pc_reg(
@@ -246,7 +263,8 @@ module tinyriscv(
         .csr_raddr_o(id_csr_raddr_o),
         .csr_we_o(id_csr_we_o),
         .csr_rdata_o(id_csr_rdata_o),
-        .csr_waddr_o(id_csr_waddr_o)
+        .csr_waddr_o(id_csr_waddr_o),
+        .is_mac_o(id_is_mac_o) //for mac operation.
     );
 
     // id_ex模块例化
@@ -256,6 +274,7 @@ module tinyriscv(
         .inst_i(id_inst_o),
         .inst_addr_i(id_inst_addr_o),
         .reg_we_i(id_reg_we_o),
+        .is_mac_i(id_is_mac_o), // for custom mac
         .reg_waddr_i(id_reg_waddr_o),
         .reg1_rdata_i(id_reg1_rdata_o),
         .reg2_rdata_i(id_reg2_rdata_o),
@@ -263,6 +282,7 @@ module tinyriscv(
         .inst_o(ie_inst_o),
         .inst_addr_o(ie_inst_addr_o),
         .reg_we_o(ie_reg_we_o),
+        .is_mac_o(ie_is_mac_o), // for custom mac
         .reg_waddr_o(ie_reg_waddr_o),
         .reg1_rdata_o(ie_reg1_rdata_o),
         .reg2_rdata_o(ie_reg2_rdata_o),
@@ -285,6 +305,8 @@ module tinyriscv(
     // ex模块例化
     ex u_ex(
         .rst(rst),
+        .is_mac_i(ie_is_mac_o), // for mac operation
+         .acc_out(acc_out), // for mac operation 
         .inst_i(ie_inst_o),
         .inst_addr_i(ie_inst_addr_o),
         .reg_we_i(ie_reg_we_o),

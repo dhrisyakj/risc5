@@ -37,3 +37,9 @@ update_compile_order -fileset sim_1
 current_project tinyriscv_updated
 current_project riscv_mac
 current_project tinyriscv_updated
+current_project riscv_mac
+import_files -norecurse /home/sidharth/Vivado_Projects/MAC/mac.v
+update_compile_order -fileset sources_1
+current_project tinyriscv_updated
+current_project riscv_mac
+update_compile_order -fileset sources_1
