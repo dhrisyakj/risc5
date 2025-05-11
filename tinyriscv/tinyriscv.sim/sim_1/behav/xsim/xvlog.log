@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sources_1/new/mac_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mac_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sim_1/new/mac_unit_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mac_unit_tb

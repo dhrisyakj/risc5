@@ -1,0 +1,7 @@
+Running: xsim.dir/tinyriscv_soc_tb_behav/xsimk -simmode gui -wdb tinyriscv_soc_tb_behav.wdb -simrunnum 0 -socket 52289
+Design successfully loaded
+Design Loading Memory Usage: 21192 KB (Peak: 21276 KB)
+Design Loading CPU Usage: 50 ms
+Simulation completed
+Simulation Memory Usage: 107464 KB (Peak: 160460 KB)
+Simulation CPU Usage: 50 ms

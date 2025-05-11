@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/Single_Cycle_RV32I.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/Top.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/adder.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/alu32.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/control_logic.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/datapath.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/dmem.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/extend.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/flopr.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/imem.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/mux2.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/mux4.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/source/regfile.v" \
+"../../../../../../RISC-V/PebPeb/Single-Cycle-RV32I/sims/top/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

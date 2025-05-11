@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+**PASS**: acc = 110, expected = 110
+**PASS**: acc = 2480, expected = 2480
+$finish called at time : 530 ns : File "/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_128_tb.v" Line 106

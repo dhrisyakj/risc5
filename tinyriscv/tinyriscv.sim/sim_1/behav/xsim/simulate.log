@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+MAC Result:        121
+$finish called at time : 40 ns : File "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sim_1/new/mac_unit_tb.v" Line 60

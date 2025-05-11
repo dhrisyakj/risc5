@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun May 11 04:41:26 2025
+# Process ID: 2515696
+# Current directory: /home/sidharth/Vivado_Projects/MAC/MAC.runs/impl_1
+# Command line: vivado
+# Log file: /home/sidharth/Vivado_Projects/MAC/MAC.runs/impl_1/vivado.log
+# Journal file: /home/sidharth/Vivado_Projects/MAC/MAC.runs/impl_1/vivado.jou
+# Running On        :sidharth-Alienware-Aurora-Ryzen-Edition
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.1 LTS
+# Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor
+# CPU Frequency     :4427.751 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :33570 MB
+# Swap memory       :8589 MB
+# Total Virtual     :42160 MB
+# Available Virtual :24839 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/sidharth/Vivado_Projects/tinyriscv_updated/tinyriscv_updated.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_project riscv_mac /home/sidharth/Vivado_Projects/riscv_mac -part xc7a35tftg256-1
+import_files -norecurse {/home/sidharth/RISC-V/tinyriscv/rtl/perips/rom.v /home/sidharth/RISC-V/tinyriscv/rtl/soc/tinyriscv_soc_top.v /home/sidharth/RISC-V/tinyriscv/rtl/debug/uart_debug.v /home/sidharth/RISC-V/tinyriscv/rtl/core/rib.v /home/sidharth/RISC-V/tinyriscv/rtl/perips/ram.v /home/sidharth/RISC-V/tinyriscv/rtl/utils/full_handshake_tx.v /home/sidharth/RISC-V/tinyriscv/rtl/core/regs.v /home/sidharth/RISC-V/tinyriscv/rtl/utils/full_handshake_rx.v /home/sidharth/RISC-V/tinyriscv/rtl/core/div.v /home/sidharth/RISC-V/tinyriscv/rtl/perips/gpio.v /home/sidharth/RISC-V/tinyriscv/rtl/core/ex.v /home/sidharth/RISC-V/tinyriscv/rtl/core/id_ex.v /home/sidharth/RISC-V/tinyriscv/rtl/perips/timer.v /home/sidharth/RISC-V/tinyriscv/rtl/core/ctrl.v /home/sidharth/RISC-V/tinyriscv/rtl/debug/jtag_driver.v /home/sidharth/RISC-V/tinyriscv/rtl/debug/jtag_top.v /home/sidharth/RISC-V/tinyriscv/rtl/core/pc_reg.v /home/sidharth/RISC-V/tinyriscv/rtl/debug/jtag_dm.v /home/sidharth/RISC-V/tinyriscv/rtl/perips/uart.v /home/sidharth/RISC-V/tinyriscv/rtl/core/if_id.v /home/sidharth/RISC-V/tinyriscv/rtl/core/defines.v /home/sidharth/RISC-V/tinyriscv/rtl/core/id.v /home/sidharth/RISC-V/tinyriscv/rtl/core/tinyriscv.v /home/sidharth/RISC-V/tinyriscv/rtl/core/csr_reg.v /home/sidharth/RISC-V/tinyriscv/rtl/utils/gen_dff.v /home/sidharth/RISC-V/tinyriscv/rtl/perips/spi.v /home/sidharth/RISC-V/tinyriscv/rtl/utils/gen_buf.v /home/sidharth/RISC-V/tinyriscv/rtl/core/clint.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse /home/sidharth/RISC-V/tinyriscv/tb/tinyriscv_soc_tb.v
+update_compile_order -fileset sim_1
+current_project tinyriscv_updated
+current_project riscv_mac
+current_project tinyriscv_updated

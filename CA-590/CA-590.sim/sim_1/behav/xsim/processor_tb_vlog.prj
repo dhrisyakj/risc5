@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CA-590.srcs/sources_1/imports/src/ALU.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/adder_branch.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/adder_pc.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/control_unit.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/data_memory.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/instruction_mem.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/is_zero.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/mux.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/pc.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/processor.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/register_file.v" \
+"../../../../CA-590.srcs/sources_1/imports/src/sign_extension.v" \
+"../../../../CA-590.srcs/sim_1/imports/sim/processor_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

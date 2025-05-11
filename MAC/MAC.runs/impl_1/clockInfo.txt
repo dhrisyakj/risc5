@@ -1,0 +1,10 @@
+-------------------------------------
+| Tool Version : Vivado v.2024.1
+| Date         : Fri May  9 07:24:55 2025
+| Host         : sidharth-Alienware-Aurora-Ryzen-Edition
+| Design       : design_1
+| Device       : xc7a35t-ftg256-1--
+-------------------------------------
+
+For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+

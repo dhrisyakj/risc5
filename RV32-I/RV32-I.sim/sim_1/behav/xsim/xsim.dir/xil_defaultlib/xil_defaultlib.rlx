@@ -1,0 +1,21 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/ALU.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/ALU_Mux.v,,ALU,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/ALU_Mux.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/ALU_decoder.v,,ALU_Mux,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/ALU_decoder.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Control_Unit.v,,ALU_Decoder,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Control_Unit.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Core_Datapath.v,,Control_Unit,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Core_Datapath.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Extend.v,,Core_Datapath,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Extend.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Main_Decoder.v,,Extend,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Main_Decoder.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC.v,,Main_Decoder,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/tb/PC_tb.v,,PC,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC_Mux.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC_Plus_4.v,,PC_Mux,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC_Plus_4.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC_Target.v,,PC_Plus_4,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/PC_Target.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Register_File.v,,PC_Target,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Register_File.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Result_Mux.v,,Register_File,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Result_Mux.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Single_Cycle_Core.v,,Result_Mux,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/rtl/Single_Cycle_Core.v,1741296401,verilog,,/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/tb/Single_Cycle_Core_tb.v,,Single_Cycle_Core,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/tb/PC_tb.v,1741296401,verilog,,,,PC_tb,,,,,,,,
+/home/sidharth/RISC-V/RISC_V_Single_Cycle_Processor/tb/Single_Cycle_Core_tb.v,1741296401,verilog,,,,Single_Cycle_Core_tb,,,,,,,,
+/home/sidharth/Vivado_Projects/RV32-I/RV32-I.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,

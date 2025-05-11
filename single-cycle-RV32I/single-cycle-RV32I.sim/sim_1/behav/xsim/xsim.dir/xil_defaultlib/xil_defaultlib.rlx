@@ -1,0 +1,19 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/sims/top/top_tb.v,1741886316,verilog,,,,top_tb,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/Single_Cycle_RV32I.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/Top.v,,Single_Cycle_RV32I,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/Top.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/adder.v,,Top,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/adder.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/alu32.v,,adder,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/alu32.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/control_logic.v,,alu32,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/control_logic.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/datapath.v,,control_logic,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/datapath.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/dmem.v,,datapath,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/dmem.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/extend.v,,dmem,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/extend.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/flopr.v,,extend,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/flopr.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/imem.v,,flopr,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/imem.v,1741886913,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/mux2.v,,imem,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/mux2.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/mux4.v,,mux2,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/mux4.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/regfile.v,,mux4,,,,,,,,
+/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/source/regfile.v,1741886316,verilog,,/home/sidharth/RISC-V/PebPeb/Single-Cycle-RV32I/sims/top/top_tb.v,,regfile,,,,,,,,
+/home/sidharth/Vivado_Projects/single-cycle-RV32I/single-cycle-RV32I.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
