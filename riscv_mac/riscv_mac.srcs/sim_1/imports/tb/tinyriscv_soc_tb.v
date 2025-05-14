@@ -16,10 +16,36 @@ module tinyriscv_soc_tb;
 
     always #10 clk = ~clk;     // 50MHz
 
-    wire[`RegBus] x3 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[3];
+     wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
+     wire [`RegBus] if_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
+     wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;   // Test Custom MAC
+     wire holdEnable = tinyriscv_soc_top_0.u_tinyriscv.ex_hold_flag_o;  // Test Custom MAC
+      wire [`RegBus] ie_reg_add = tinyriscv_soc_top_0.u_tinyriscv.ie_reg_waddr_o; // Test Custom MAC
+       wire [`RegBus] ex_reg_add = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o; // Test Custom MAC
+    //wire [`RegBus]  mac_done = tinyriscv_soc_top_0.u_tinyriscv.mac_done;
+      wire  mac_valid = tinyriscv_soc_top_0.u_tinyriscv.u_mac.valid; // Test Custom MAC
+      wire [`RegBus]mac_acc_out_o= tinyriscv_soc_top_0.u_tinyriscv.mac_acc_out_o; // Test Custom MAC
+      wire [`RegBus]ie_acc= tinyriscv_soc_top_0.u_tinyriscv.ie_acc_out_o; // Test Custom MAC
+       wire [`RegBus]ex_wdata = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_wdata_o; // Test Custom MAC
+      wire [`RegBus]id_r1 = tinyriscv_soc_top_0.u_tinyriscv.id_reg1_rdata_o; // Test Custom MAC
+      wire [`RegBus]id_r2= tinyriscv_soc_top_0.u_tinyriscv.id_reg2_rdata_o; // Test Custom MAC
+      wire [`RegBus]ie_r1= tinyriscv_soc_top_0.u_tinyriscv.ie_reg1_rdata_o; // Test Custom MAC
+      wire [`RegBus]ie_r2= tinyriscv_soc_top_0.u_tinyriscv.ie_reg2_rdata_o; // Test Custom MAC
+      wire [`RegBus]ex_reg_data_o = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_wdata_o; // Test Custom MAC
+      //wire [`RegBus]mac_product= tinyriscv_soc_top_0.u_tinyriscv.u_mac.product;
+     //wire [`RegBus] pc_o = tinyriscv_soc_top_0.u_tinyriscv.pc_pc_o;
+       wire holdEnable = tinyriscv_soc_top_0.u_tinyriscv.ex_hold_flag_o; // Test Custom MAC
+      
+      
+       wire[`RegBus] x3 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[3];
     wire[`RegBus] x26 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[26];
     wire[`RegBus] x25 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[25];
     wire[`RegBus] x27 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[27];
+    
+    wire[`RegBus] x4 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4]; // Test Custom MAC
+    wire[`RegBus] x5 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5]; // Test Custom MAC
+     wire[`RegBus] x6 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6]; // Test Custom MAC
+    
 
     integer r;
 
@@ -499,8 +525,17 @@ module tinyriscv_soc_tb;
 
     // read mem data
     initial begin
-        $readmemh ("inst.data", tinyriscv_soc_top_0.u_rom._rom);
+        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mac.data", tinyriscv_soc_top_0.u_rom._rom); // Test Custom MAC
     end
+    
+    
+    // Test Custom MAC 
+    initial begin
+    tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4] =32'd2; // Test Custom MAC
+    tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'd3; // Test Custom MAC
+    end
+    
+
 
     // generate wave file, used by gtkwave
     initial begin

@@ -68,7 +68,7 @@ module mac_128_tb();
     #40;            // two clock cycles
 
     rst = 0;
-    #30;
+    #25;
     
     // 6 MAC Operations
     for (i = 0; i < 6; i = i + 1) begin

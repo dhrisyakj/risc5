@@ -23,7 +23,7 @@ module ex(
     input wire rst,
      
      // from id for custom mac
-    input wire is_mac_i,
+   input wire is_mac_i,  // Custom Instruction -MAC
 
     // from id
     input wire[`InstBus] inst_i,            // 指令内容
@@ -42,8 +42,8 @@ module ex(
     input wire[`MemAddrBus] op1_jump_i,
     input wire[`MemAddrBus] op2_jump_i,
     
-    // from mac unit
-    input wire[`RegBus] acc_out,
+    // from id_ex unit
+    input wire[`RegBus] acc_out,  // Custom Instruction -MAC
 
     // from mem
     input wire[`MemBus] mem_rdata_i,        // 内存输入数据
@@ -361,6 +361,7 @@ module ex(
                 endcase
             end
             //CUSTOM INSTRUCTION
+            // Custom Instruction -MAC
             `INST_CUSTOM:begin
               if(funct7==7'b0000001) begin
                case(funct3)
@@ -374,7 +375,7 @@ module ex(
                     mem_we = `WriteDisable;
                     reg_wdata = op1_i % op2_i;
                  end
-                `INST_ADDTT:begin
+                `INST_MAC:begin    // Custom Instruction -MAC
                  jump_flag = `JumpDisable;
                  hold_flag = `HoldDisable;
                  jump_addr = `ZeroWord;
@@ -382,19 +383,23 @@ module ex(
                  mem_raddr_o = `ZeroWord;
                  mem_waddr_o = `ZeroWord;
                  mem_we = `WriteDisable;
-                 reg_wdata = op1_add_op2_res + 10; 
-                end
-                 `INST_MAC:begin
-                 jump_flag = `JumpDisable;
-                 hold_flag = `HoldDisable;
-                 jump_addr = `ZeroWord;
-                 mem_wdata_o = `ZeroWord;
-                 mem_raddr_o = `ZeroWord;
-                 mem_waddr_o = `ZeroWord;
-                 mem_we = `WriteDisable;
+                 if (is_mac_i)
                  reg_wdata = acc_out; 
+                 else
+                 reg_wdata = `ZeroWord;
+                 end
+                 
+                 `INST_ADDTT:begin
+                 jump_flag = `JumpDisable;
+                 hold_flag = `HoldDisable;
+                 jump_addr = `ZeroWord;
+                 mem_wdata_o = `ZeroWord;
+                 mem_raddr_o = `ZeroWord;
+                 mem_waddr_o = `ZeroWord;
+                 mem_we = `WriteDisable;
+                 reg_wdata = op1_add_op2_res;
                 end
-                    default: begin
+                default: begin
                             jump_flag = `JumpDisable;
                             hold_flag = `HoldDisable;
                             jump_addr = `ZeroWord;

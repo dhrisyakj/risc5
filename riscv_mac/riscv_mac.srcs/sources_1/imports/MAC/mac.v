@@ -21,29 +21,31 @@
 
 
 module mac_128 #(
-    parameter IN_WIDTH   = 16,
-    parameter ACC_WIDTH  = 39 // No of bits for the accumulator = 39 
+    parameter IN_WIDTH   = 32,
+    parameter ACC_WIDTH  = 32 
 )(
     input clk,
     input  wire                      acc_rst,    //reset the accumulator
     input wire valid,
     input  wire [IN_WIDTH-1:0]       a,
     input  wire [IN_WIDTH-1:0]       b,
-    output reg  [ACC_WIDTH-1:0]      acc,
-    output reg  [ACC_WIDTH-1:0]      result
+    output reg  [ACC_WIDTH-1:0]      acc
+    //output reg  [ACC_WIDTH-1:0]    count
 );
 
-    wire [IN_WIDTH*2-1:0] product = a * b;
-   
+    wire [IN_WIDTH:0] product = a * b;
+    //reg [ACC_WIDTH-1:0]     count;
+    
     always @(posedge clk) begin
-        if (acc_rst) begin
+        if (!acc_rst) begin
             acc <= {ACC_WIDTH{1'b0}};
         end else begin
         if(valid)
-                acc <= acc + product; // Accumulation                
+                acc <= acc + product; // Accumulation               
             end
         end
-    /*    
+        
+   /*
     always @(posedge clk) begin   
       if(acc_rst)
        result <= {ACC_WIDTH{1'b0}};

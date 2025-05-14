@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1746789836" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mac_128.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="mac_128_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="mac_128.dcp"/>
   <File Type="RDS-UTIL-PB" Name="mac_128_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="mac_128_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="mac_128_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="mac_128.vds"/>
-  <File Type="REPORTS-TCL" Name="mac_128_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="mac_128_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="mac_128.tcl"/>
+  <File Type="RDS-UTIL" Name="mac_128_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="mac_128_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mac_128.vds"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/mac_128.v">

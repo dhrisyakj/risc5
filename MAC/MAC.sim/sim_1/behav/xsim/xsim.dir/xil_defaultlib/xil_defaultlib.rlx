@@ -3,7 +3,7 @@
 May 22 2024
 18:54:44
 /home/sidharth/Vivado_Projects/MAC/MAC.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
-/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_128_tb.v,1746313162,verilog,,,,mac_128_tb,,,,,,,,
+/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_128_tb.v,1747057216,verilog,,,,mac_128_tb,,,,,,,,
 /home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_v2_tb.v,1746298518,verilog,,,,mac_v2_tb,,,,,,,,
 /home/sidharth/Vivado_Projects/MAC/MAC.srcs/sources_1/new/mac_128.v,1746313250,verilog,,/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_128_tb.v,,mac_128,,,,,,,,
 /home/sidharth/Vivado_Projects/MAC/MAC.srcs/sources_1/new/mac_v2.v,1746298252,verilog,,/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_v2_tb.v,,mac_v2,,,,,,,,

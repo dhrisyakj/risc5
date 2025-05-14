@@ -59,7 +59,7 @@ module id(
     output reg[`MemAddrBus] csr_waddr_o,   // 写CSR寄存器地址
     
     // to ex for custom mac
-    output reg is_mac_o
+    output reg is_mac_o  // Custom Instruction -MAC
     );
 
     wire[6:0] opcode = inst_i[6:0];
@@ -79,6 +79,7 @@ module id(
         csr_raddr_o = `ZeroWord;
         csr_waddr_o = `ZeroWord;
         csr_we_o = `WriteDisable;
+        is_mac_o=`WriteDisable; // Custom Instruction -MAC
         op1_o = `ZeroWord;
         op2_o = `ZeroWord;
         op1_jump_o = `ZeroWord;
@@ -103,7 +104,7 @@ module id(
                     end
                 endcase
             end
-            // Custom Instruction
+            // Custom Instruction -MAC
             `INST_CUSTOM: begin
               if(funct7==7'b0000001) 
               case (funct3)
@@ -115,7 +116,8 @@ module id(
                             op1_o = reg1_rdata_i;
                             op2_o = reg2_rdata_i;
                         end
-                        `INST_MAC: begin
+                        `INST_MAC: begin     // Custom Instruction -MAC
+                         reg_we_o = `WriteEnable;
                         reg_waddr_o = rd;
                         reg1_raddr_o = rs1;
                             reg2_raddr_o = rs2;

@@ -69,10 +69,10 @@
 `define INST_SRI    3'b101
 
 // CUSTOM INSTRUCTION
-`define INST_CUSTOM 7'b0101011
-`define INST_MOD 3'b010
-`define INST_ADDTT 3'b111
-`define INST_MAC 3'b101
+`define INST_CUSTOM 7'b0101011  // Custom Instruction - MAC
+`define INST_MOD 3'b010  //Custom 
+`define INST_ADDTT 3'b111 //Custom 
+`define INST_MAC 3'b101        // Custom Instruction -MAC
 
 // L type inst
 `define INST_TYPE_L 7'b0000011

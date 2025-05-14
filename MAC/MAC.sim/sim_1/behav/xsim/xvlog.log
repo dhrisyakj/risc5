@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sources_1/new/mac_128.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mac_128
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/MAC/MAC.srcs/sim_1/new/mac_128_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mac_128_tb

@@ -36,13 +36,15 @@ module id_ex(
     input wire[`MemAddrBus] op1_jump_i,
     input wire[`MemAddrBus] op2_jump_i,
     // Custom mac instruction signal
-     input wire is_mac_i,
-
+     input wire is_mac_i,              // Custom Instruction -MAC
+     input wire[`RegBus] acc_out_i,    // Custom Instruction -MAC
+     
     input wire[`Hold_Flag_Bus] hold_flag_i, // 流水线暂停标志
 
  // Custom mac instruction signal
-     output wire is_mac_o,
-
+     output wire is_mac_o,           // Custom Instruction -MAC
+     output wire[`RegBus] acc_out_o,  // Custom Instruction -MAC
+     
     output wire[`MemAddrBus] op1_o,
     output wire[`MemAddrBus] op2_o,
     output wire[`MemAddrBus] op1_jump_o,
@@ -73,10 +75,15 @@ module id_ex(
     gen_pipe_dff #(1) reg_we_ff(clk, rst, hold_en, `WriteDisable, reg_we_i, reg_we);
     assign reg_we_o = reg_we;
     
-    // For mac operation signal
+    //  Custom Instruction -MAC
      wire is_mac;
     gen_pipe_dff #(1) is_mac_ff(clk, rst, hold_en, `WriteDisable, is_mac_i, is_mac);
     assign is_mac_o = is_mac;
+    
+    // Custom Instruction -MAC
+    wire[`RegBus] acc_out;
+    gen_pipe_dff #(32) acc_out_ff(clk, rst, hold_en, `ZeroWord, acc_out_i, acc_out);
+    assign acc_out_o = acc_out;
 
     wire[`RegAddrBus] reg_waddr;
     gen_pipe_dff #(5) reg_waddr_ff(clk, rst, hold_en, `ZeroReg, reg_waddr_i, reg_waddr);

@@ -517,7 +517,11 @@ module tinyriscv_soc_tb;
         
     end
     
-    
+    // read reg data
+    initial begin
+    tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4] =32'd2;
+    tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'd3;
+    end
     
 
     // generate wave file, used by gtkwave

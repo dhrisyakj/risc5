@@ -2,7 +2,7 @@
 2020.2
 May 22 2024
 18:54:44
-/home/sidharth/RISC-V/tinyriscv/rtl/core/defines.v,1743332980,verilog,,,,,,,,,,,,
+/home/sidharth/RISC-V/tinyriscv/rtl/core/defines.v,1747060302,verilog,,,,,,,,,,,,
 /home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
 /home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v,1745749186,verilog,,,/home/sidharth/RISC-V/tinyriscv/rtl/core/defines.v,tinyriscv_soc_tb,,,../../../../../../RISC-V/tinyriscv/rtl/core,,,,,
 /home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sim_1/new/ex_tb.v,1745605056,verilog,,,/home/sidharth/RISC-V/tinyriscv/rtl/core/defines.v,ex_tb,,,../../../../../../RISC-V/tinyriscv/rtl/core,,,,,

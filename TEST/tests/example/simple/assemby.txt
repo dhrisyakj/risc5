@@ -1,0 +1,27 @@
+00500793          	li	a5,5
+fef42623          	sw	a5,-20(s0)
+00600793          	li	a5,6
+fef42423          	sw	a5,-24(s0)
+fec42703          	lw	a4,-20(s0)
+fe842783          	lw	a5,-24(s0)
+00f707b3          	add	a5,a4,a5
+02e7d7ab          	.insn	4, 0x02e7d7ab
+fef42223          	sw	a5,-28(s0)
+
+
+
+int B[8] = {2,3,4,5,6,7,8,9};
+int i,acc;
+int cycle_start, cycle_end ,cycles;
+cycle_start = get_cycle_value();
+for (i = 0; i < 1; i++) {       
+    acc = acc + A[i]*B[i];
+}
+cycle_end = get_cycle_value();
+cycles = cycle_end - cycle_start - 58;
+if(i==8) {
+        set_test_pass();
+        set_test_value(cycles);
+    }
+    else
+        set_test_fail();
