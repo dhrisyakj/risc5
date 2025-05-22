@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed May 14 07:03:49 2025
-# Process ID: 3768077
+# Start of session at: Mon May 12 18:31:00 2025
+# Process ID: 3250609
 # Current directory: /home/sidharth/Vivado_Projects/MAC/MAC.runs/impl_1
 # Command line: vivado
 # Log file: /home/sidharth/Vivado_Projects/MAC/MAC.runs/impl_1/vivado.log
@@ -13,18 +13,45 @@
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 24.04.1 LTS
 # Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor
-# CPU Frequency     :3389.990 MHz
+# CPU Frequency     :3644.304 MHz
 # CPU Physical cores:12
 # CPU Logical cores :24
 # Host memory       :33570 MB
 # Swap memory       :8589 MB
 # Total Virtual     :42160 MB
-# Available Virtual :18649 MB
+# Available Virtual :22839 MB
 #-----------------------------------------------------------
 start_gui
-open_project /home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.xpr
+open_project /home/sidharth/Vivado_Projects/riscv_mac/riscv_mac.xpr
 update_compile_order -fileset sources_1
 launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
 close_sim
@@ -37,14 +64,13 @@ close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
 update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
 update_compile_order -fileset sources_1
 close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
-open_project /home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.xpr
-update_compile_order -fileset sources_1
-open_run impl_1
-current_project riscv_mac
 close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
@@ -53,12 +79,11 @@ launch_simulation
 source tinyriscv_soc_tb.tcl
 close_sim
 launch_simulation
-launch_simulation
 source tinyriscv_soc_tb.tcl
-current_project tinyriscv
-current_project riscv_mac
-current_project tinyriscv
-current_project riscv_mac
 close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
+close_sim
+launch_simulation
+source tinyriscv_soc_tb.tcl
+close_sim

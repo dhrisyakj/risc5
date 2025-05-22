@@ -30,18 +30,22 @@ module mac_128 #(
     input  wire [IN_WIDTH-1:0]       a,
     input  wire [IN_WIDTH-1:0]       b,
     output reg  [ACC_WIDTH-1:0]      acc
+   // output reg done
     //output reg  [ACC_WIDTH-1:0]    count
 );
 
     wire [IN_WIDTH:0] product = a * b;
-    //reg [ACC_WIDTH-1:0]     count;
+    reg [ACC_WIDTH-1:0]     result;
     
     always @(posedge clk) begin
+        //done<=1'b0;
         if (!acc_rst) begin
             acc <= {ACC_WIDTH{1'b0}};
         end else begin
-        if(valid)
-                acc <= acc + product; // Accumulation               
+        if(valid) begin
+                acc <= acc + product; // Accumulation
+               // done <= 1'b1;
+             end                  
             end
         end
         
@@ -52,6 +56,6 @@ module mac_128 #(
      else
        result <= acc; // Writing the result of accumulation into a result
   end 
-  */
+ */
 endmodule
 

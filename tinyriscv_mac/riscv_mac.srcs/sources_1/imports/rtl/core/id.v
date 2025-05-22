@@ -125,6 +125,15 @@ module id(
                             op2_o = reg2_rdata_i;
                             is_mac_o=`WriteEnable;
                         end
+                        `INST_MACR: begin     // Custom Instruction -MAC
+                         reg_we_o = `WriteEnable;
+                         reg_waddr_o = rd;
+                         reg1_raddr_o = `ZeroReg;
+                            reg2_raddr_o = `ZeroReg;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            //is_mac_o=`WriteEnable;
+                        end
                         default: begin
                             reg_we_o = `WriteDisable;
                             reg_waddr_o = `ZeroReg;

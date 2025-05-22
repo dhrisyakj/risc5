@@ -75,7 +75,7 @@ module tinyriscv(
     wire[`MemAddrBus] id_op1_jump_o;
     wire[`MemAddrBus] id_op2_jump_o;
     wire id_is_mac_o;  // Custom Instruction -MAC
-    //wire [`RegBus] mac_done; 
+    wire mac_done; 
 
     // id_ex模块输出信号
     wire[`InstBus] ie_inst_o;
@@ -164,7 +164,7 @@ module tinyriscv(
     .a(ie_reg1_rdata_o),
     .b(ie_reg2_rdata_o),
     .acc(mac_acc_out_o)
-    //.count(mac_done)
+    //.done(mac_done)
  );
 
     // pc_reg模块例化
@@ -311,6 +311,7 @@ module tinyriscv(
     ex u_ex(
         .rst(rst),
         .is_mac_i(ie_is_mac_o),  // Custom Instruction -MAC
+        //.is_mac_done_i(mac_done),
          .acc_out(mac_acc_out_o),  // Custom Instruction -MAC
         .inst_i(ie_inst_o),
         .inst_addr_i(ie_inst_addr_o),

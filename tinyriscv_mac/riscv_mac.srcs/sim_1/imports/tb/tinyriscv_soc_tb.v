@@ -20,9 +20,9 @@ module tinyriscv_soc_tb;
      wire [`RegBus] if_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
      wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;   // Test Custom MAC
      wire holdEnable = tinyriscv_soc_top_0.u_tinyriscv.ex_hold_flag_o;  // Test Custom MAC
-      wire [`RegBus] ie_reg_add = tinyriscv_soc_top_0.u_tinyriscv.ie_reg_waddr_o; // Test Custom MAC
-       wire [`RegBus] ex_reg_add = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o; // Test Custom MAC
-    //wire [`RegBus]  mac_done = tinyriscv_soc_top_0.u_tinyriscv.mac_done;
+      wire [`RegBus] ie_reg_addr = tinyriscv_soc_top_0.u_tinyriscv.ie_reg_waddr_o; // Test Custom MAC
+       wire [`RegBus] ex_reg_addr = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o; // Test Custom MAC
+    wire   mac_done = tinyriscv_soc_top_0.u_tinyriscv.mac_done;
       wire  mac_valid = tinyriscv_soc_top_0.u_tinyriscv.u_mac.valid; // Test Custom MAC
       wire [`RegBus]mac_acc_out_o= tinyriscv_soc_top_0.u_tinyriscv.mac_acc_out_o; // Test Custom MAC
       wire [`RegBus]ie_acc= tinyriscv_soc_top_0.u_tinyriscv.ie_acc_out_o; // Test Custom MAC

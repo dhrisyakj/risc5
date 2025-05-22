@@ -73,6 +73,7 @@
 `define INST_MOD 3'b010  //Custom 
 `define INST_ADDTT 3'b111 //Custom 
 `define INST_MAC 3'b101        // Custom Instruction -MAC
+`define INST_MACR 3'b110
 
 // L type inst
 `define INST_TYPE_L 7'b0000011

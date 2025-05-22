@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib "/home/sidharth/Vivado_Projects/riscv_mac/riscv_mac.srcs/sources_1/imports/rtl/core/defines.v" --include "../../../../riscv_mac.srcs/sources_1/imports/rtl/core" \
+verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/rtl/core/defines.v" --include "../../../../riscv_mac.srcs/sources_1/imports/rtl/core" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/clint.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/csr_reg.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/ctrl.v" \

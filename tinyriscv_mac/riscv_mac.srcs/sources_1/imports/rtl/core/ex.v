@@ -24,7 +24,7 @@ module ex(
      
      // from id for custom mac
    input wire is_mac_i,  // Custom Instruction -MAC
-
+   //input wire is_mac_done_i,
     // from id
     input wire[`InstBus] inst_i,            // 指令内容
     input wire[`InstAddrBus] inst_addr_i,   // 指令地址
@@ -126,6 +126,8 @@ module ex(
     // Custom operation 
     wire valid_mac;
     
+    //wire [`RegAddrBus] mac_reg_addr; 
+   
    
     assign opcode = inst_i[6:0];
     assign funct3 = inst_i[14:12];
@@ -260,7 +262,11 @@ module ex(
         reg_waddr = reg_waddr_i;
         mem_req = `RIB_NREQ;
         csr_wdata_o = `ZeroWord;
-
+       // hold_flag = `HoldDisable;
+        //if (is_mac_done_i) begin
+                 //reg_wdata = acc_out;
+                 //reg_waddr = reg_waddr_i;
+          //end
         case (opcode)
             `INST_TYPE_I: begin
                 case (funct3)
@@ -383,12 +389,26 @@ module ex(
                  mem_raddr_o = `ZeroWord;
                  mem_waddr_o = `ZeroWord;
                  mem_we = `WriteDisable;
-                 if (is_mac_i)
-                 reg_wdata = acc_out; 
-                 else
-                 reg_wdata = `ZeroWord;
+                 reg_we = `WriteDisable;
+                 //if (is_mac_done_i) begin
+                 //reg_wdata = acc_out;
+                 //reg_waddr = mac_waddr_i;
+                 //hold_flag = `HoldDisable;
+                 //reg_we = `WriteEnable; 
+                // end
+                 //else
+                 //reg_wdata = `ZeroWord;
                  end
-                 
+                 `INST_MACR:begin // Custom Instruction -MAC
+                 jump_flag = `JumpDisable;
+                 hold_flag = `HoldDisable;
+                 jump_addr = `ZeroWord;
+                 mem_wdata_o = `ZeroWord;
+                 mem_raddr_o = `ZeroWord;
+                 mem_waddr_o = `ZeroWord;
+                 mem_we = `WriteDisable;
+                 reg_wdata = acc_out;
+                end
                  `INST_ADDTT:begin
                  jump_flag = `JumpDisable;
                  hold_flag = `HoldDisable;
