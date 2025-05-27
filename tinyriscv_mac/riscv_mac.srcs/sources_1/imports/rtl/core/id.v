@@ -108,7 +108,7 @@ module id(
             `INST_CUSTOM: begin
               if(funct7==7'b0000001) 
               case (funct3)
-                    `INST_MOD,`INST_ADDTT: begin
+                    `INST_ADDTT: begin
                         reg_we_o = `WriteEnable;
                             reg_waddr_o = rd;
                             reg1_raddr_o = rs1;
@@ -134,6 +134,15 @@ module id(
                             op2_o = reg2_rdata_i;
                             //is_mac_o=`WriteEnable;
                         end
+                       `INST_MACL: begin     // Custom Instruction -MACL
+                         reg_we_o = `WriteEnable;
+                           reg_waddr_o = rd;
+                            reg1_raddr_o = rs1;
+                            reg2_raddr_o = rs2;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            //is_mac_o=`WriteEnable;
+                        end
                         default: begin
                             reg_we_o = `WriteDisable;
                             reg_waddr_o = `ZeroReg;
@@ -141,7 +150,24 @@ module id(
                             reg2_raddr_o = `ZeroReg;
                         end
                     endcase  
-             end  
+             else 
+             case (funct3)
+                 `INST_MLOAD: begin     // Custom Instruction -MAC LOAD
+                        reg1_raddr_o = rs1;
+                        reg2_raddr_o = `ZeroReg;
+                        reg_we_o = `WriteEnable;
+                        reg_waddr_o = rd;
+                        op1_o = reg1_rdata_i;
+                        op2_o = {{20{inst_i[31]}}, inst_i[31:20]};
+                        end
+                   default: begin
+                            reg_we_o = `WriteDisable;
+                            reg_waddr_o = `ZeroReg;
+                            reg1_raddr_o = `ZeroReg;
+                            reg2_raddr_o = `ZeroReg;
+                        end
+               endcase
+               end
                       
             `INST_TYPE_R_M: begin
                 if ((funct7 == 7'b0000000) || (funct7 == 7'b0100000)) begin

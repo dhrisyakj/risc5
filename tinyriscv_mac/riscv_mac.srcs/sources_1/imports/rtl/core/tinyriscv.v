@@ -44,7 +44,8 @@ module tinyriscv(
 
     );
 
-
+    
+    
     // custom  mac 
    wire[`RegBus] mac_acc_out_o;  // Custom Instruction -MAC
    wire[`RegBus] ie_acc_out_o;    // Custom Instruction -MAC
@@ -153,7 +154,15 @@ module tinyriscv(
     assign rib_ex_we_o = ex_mem_we_o;
 
     assign rib_pc_addr_o = pc_pc_o;
-
+   // Custom instruction MLOAD
+   mac_regs mreg(
+   .clk(clk),
+   .rst(rst),
+   .we1_i(ex_reg_we_o),
+   .w1addr_i(ex_reg_waddr_o),
+   .w1data_i(ex_reg_wdata_o)
+   );
+   
  
   
      //Custom Instruction -MAC

@@ -16,6 +16,7 @@ verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.s
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/debug/jtag_driver.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/debug/jtag_top.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/MAC/mac.v" \
+"../../../../riscv_mac.srcs/sources_1/new/mac_regs.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/pc_reg.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/perips/ram.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/regs.v" \
@@ -27,7 +28,7 @@ verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.s
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/soc/tinyriscv_soc_top.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/perips/uart.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/debug/uart_debug.v" \
-"../../../../riscv_mac.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v" \
+"../../../../riscv_mac.srcs/sim_1/new/tinyrisc_mac_tb.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

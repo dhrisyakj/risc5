@@ -371,16 +371,7 @@ module ex(
             `INST_CUSTOM:begin
               if(funct7==7'b0000001) begin
                case(funct3)
-                `INST_MOD:begin
-                   jump_flag = `JumpDisable;
-                    hold_flag = `HoldDisable;
-                    jump_addr = `ZeroWord;
-                    mem_wdata_o = `ZeroWord;
-                    mem_raddr_o = `ZeroWord;
-                    mem_waddr_o = `ZeroWord;
-                    mem_we = `WriteDisable;
-                    reg_wdata = op1_i % op2_i;
-                 end
+                
                 `INST_MAC:begin    // Custom Instruction -MAC
                  jump_flag = `JumpDisable;
                  hold_flag = `HoldDisable;
@@ -419,6 +410,19 @@ module ex(
                  mem_we = `WriteDisable;
                  reg_wdata = op1_add_op2_res;
                 end
+                 `INST_MACL:begin // Custom Instruction -MACL
+                 jump_flag = `JumpDisable;
+                 hold_flag = `HoldDisable;
+                 jump_addr = `ZeroWord;
+                 mem_wdata_o = `ZeroWord;
+                 //mem_raddr_o = `ZeroWord;
+                 mem_waddr_o = `ZeroWord;
+                 mem_we = `WriteDisable;
+                 mem_req = `RIB_REQ;
+                 mem_raddr_o = op1_i;
+                 reg_wdata = mem_rdata_i;
+                 //reg_wdata = op1_i;
+                end
                 default: begin
                             jump_flag = `JumpDisable;
                             hold_flag = `HoldDisable;
@@ -431,6 +435,31 @@ module ex(
                             end
                 endcase
                 end
+             else
+             case(funct3)
+             `INST_MLOAD:begin // Custom Instruction -MAC LOAD
+                  jump_flag = `JumpDisable;
+                        hold_flag = `HoldDisable;
+                        jump_addr = `ZeroWord;
+                        mem_wdata_o = `ZeroWord;
+                        mem_waddr_o = `ZeroWord;
+                        mem_we = `WriteDisable;
+                        mem_req = `RIB_REQ;
+                        //mem_raddr_o = op1_add_op2_res;
+                        mem_raddr_o = 32'h1000_0000;
+                        reg_wdata = mem_rdata_i;
+                 end
+                 default: begin
+                            jump_flag = `JumpDisable;
+                            hold_flag = `HoldDisable;
+                            jump_addr = `ZeroWord;
+                            mem_wdata_o = `ZeroWord;
+                            mem_raddr_o = `ZeroWord;
+                            mem_waddr_o = `ZeroWord;
+                            mem_we = `WriteDisable;
+                            reg_wdata = `ZeroWord;
+                            end
+                endcase
                 end
             
             

@@ -62,3 +62,5 @@ current_project riscv_mac
 close_sim
 launch_simulation
 source tinyriscv_soc_tb.tcl
+close_sim
+close_project

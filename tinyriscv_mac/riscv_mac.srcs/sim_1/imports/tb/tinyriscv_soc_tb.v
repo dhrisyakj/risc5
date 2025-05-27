@@ -15,7 +15,7 @@ module tinyriscv_soc_tb;
 
 
     always #10 clk = ~clk;     // 50MHz
-
+     wire[`RegBus] mac_reg = tinyriscv_soc_top_0.u_tinyriscv.mreg.regs_a[0];
      wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
      wire [`RegBus] if_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
      wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;   // Test Custom MAC
@@ -525,7 +525,7 @@ module tinyriscv_soc_tb;
 
     // read mem data
     initial begin
-        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mac.data", tinyriscv_soc_top_0.u_rom._rom); // Test Custom MAC
+        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mload.data", tinyriscv_soc_top_0.u_rom._rom); // Test Custom MAC
     end
     
     
@@ -533,6 +533,7 @@ module tinyriscv_soc_tb;
     initial begin
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4] =32'd2; // Test Custom MAC
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'd3; // Test Custom MAC
+    tinyriscv_soc_top_0.u_ram._ram[17] =32'd7; 
     end
     
 

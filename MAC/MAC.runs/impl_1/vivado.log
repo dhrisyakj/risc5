@@ -4189,3 +4189,8 @@ WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-f
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/MAC/mac.v:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/MAC/mac.v:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/MAC/mac.v:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu May 22 07:13:34 2025...
