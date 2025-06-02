@@ -39,8 +39,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tiny
 INFO: [VRFC 10-311] analyzing module jtag_top
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/MAC/mac.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mac_128
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/new/mac_regs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac_regs
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/new/mac_load_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mac_load_reg
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/rtl/core/pc_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pc_reg
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.srcs/sources_1/imports/rtl/perips/ram.v" into library xil_defaultlib

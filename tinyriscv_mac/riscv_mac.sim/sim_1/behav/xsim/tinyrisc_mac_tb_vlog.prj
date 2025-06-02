@@ -16,7 +16,7 @@ verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_mac/riscv_mac.s
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/debug/jtag_driver.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/debug/jtag_top.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/MAC/mac.v" \
-"../../../../riscv_mac.srcs/sources_1/new/mac_regs.v" \
+"../../../../riscv_mac.srcs/sources_1/new/mac_load_reg.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/pc_reg.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/perips/ram.v" \
 "../../../../riscv_mac.srcs/sources_1/imports/rtl/core/regs.v" \

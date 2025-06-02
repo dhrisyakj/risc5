@@ -1,7 +1,7 @@
-Running: xsim.dir/tinyrisc_mac_tb_behav/xsimk -simmode gui -wdb tinyrisc_mac_tb_behav.wdb -simrunnum 0 -socket 38431
+Running: xsim.dir/tinyrisc_mac_tb_behav/xsimk -simmode gui -wdb tinyrisc_mac_tb_behav.wdb -simrunnum 0 -socket 35741
 Design successfully loaded
-Design Loading Memory Usage: 21152 KB (Peak: 21260 KB)
-Design Loading CPU Usage: 50 ms
+Design Loading Memory Usage: 21168 KB (Peak: 21264 KB)
+Design Loading CPU Usage: 20 ms
 Simulation completed
-Simulation Memory Usage: 107416 KB (Peak: 160420 KB)
+Simulation Memory Usage: 107440 KB (Peak: 160436 KB)
 Simulation CPU Usage: 60 ms

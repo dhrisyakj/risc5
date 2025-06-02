@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Jun  2 11:02:14 2025
+# Process ID: 418161
+# Current directory: /home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1
+# Command line: vivado -log tinyriscv_soc_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tinyriscv_soc_top.tcl
+# Log file: /home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.vds
+# Journal file: /home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1/vivado.jou
+# Running On        :sidharth-Alienware-Aurora-Ryzen-Edition
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.1 LTS
+# Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor
+# CPU Frequency     :4691.418 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :33570 MB
+# Swap memory       :8589 MB
+# Total Virtual     :42160 MB
+# Available Virtual :34544 MB
+#-----------------------------------------------------------
+source tinyriscv_soc_top.tcl -notrace

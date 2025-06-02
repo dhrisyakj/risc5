@@ -38,13 +38,13 @@ module id_ex(
     // Custom mac instruction signal
      input wire is_mac_i,              // Custom Instruction -MAC
      input wire[`RegBus] acc_out_i,    // Custom Instruction -MAC
-     
+     input wire is_macl_i, // Custom Instruction -MACL
     input wire[`Hold_Flag_Bus] hold_flag_i, // 流水线暂停标志
 
  // Custom mac instruction signal
      output wire is_mac_o,           // Custom Instruction -MAC
      output wire[`RegBus] acc_out_o,  // Custom Instruction -MAC
-     
+     output wire is_macl_o,           // Custom Instruction -MACL
     output wire[`MemAddrBus] op1_o,
     output wire[`MemAddrBus] op2_o,
     output wire[`MemAddrBus] op1_jump_o,
@@ -84,6 +84,11 @@ module id_ex(
     wire[`RegBus] acc_out;
     gen_pipe_dff #(32) acc_out_ff(clk, rst, hold_en, `ZeroWord, acc_out_i, acc_out);
     assign acc_out_o = acc_out;
+    
+    //  Custom Instruction -MACL
+     wire is_macl;
+    gen_pipe_dff #(1) is_macl_ff(clk, rst, hold_en, `WriteDisable, is_macl_i, is_macl);
+    assign is_macl_o = is_macl;
 
     wire[`RegAddrBus] reg_waddr;
     gen_pipe_dff #(5) reg_waddr_ff(clk, rst, hold_en, `ZeroReg, reg_waddr_i, reg_waddr);

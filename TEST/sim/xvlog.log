@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/RISC-V/tinyriscv/sim/tinyriscv_soc_tb.v" into library work
-INFO: [VRFC 10-311] analyzing module tinyriscv_soc_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/RISC-V/tinyriscv/sim/tinyriscv_soc_top.v" into library work
-ERROR: [VRFC 10-3195] cannot open include file '../core/defines.v' [/home/sidharth/RISC-V/tinyriscv/sim/tinyriscv_soc_top.v:17]
-INFO: [VRFC 10-311] analyzing module tinyriscv_soc_top
-ERROR: [VRFC 10-8530] module 'tinyriscv_soc_top' is ignored due to previous errors [/home/sidharth/RISC-V/tinyriscv/sim/tinyriscv_soc_top.v:20]

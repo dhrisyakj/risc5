@@ -43,7 +43,14 @@ module tinyriscv(
     input wire[`INT_BUS] int_i                 // 中断信号
 
     );
-
+   
+   // Custom mac load - Custom Instruction -MACL
+   wire mac_load_done;
+   wire mac_load_busy;
+   wire [`RegBus] mac_mem_addr;
+   wire mac_mem_req_o;
+   wire[`RegBus] macl_acc_out;
+   wire[`RegAddrBus] macl_reg_waddr_o; //Custom Instruction -MACL
     
     
     // custom  mac 
@@ -76,6 +83,7 @@ module tinyriscv(
     wire[`MemAddrBus] id_op1_jump_o;
     wire[`MemAddrBus] id_op2_jump_o;
     wire id_is_mac_o;  // Custom Instruction -MAC
+    wire id_is_macl_o;  // Custom Instruction -MACL
     wire mac_done; 
 
     // id_ex模块输出信号
@@ -93,7 +101,7 @@ module tinyriscv(
     wire[`MemAddrBus] ie_op1_jump_o;
     wire[`MemAddrBus] ie_op2_jump_o;
    wire ie_is_mac_o;   // Custom Instruction -MAC
-
+   wire ie_is_macl_o;  // Custom Instruction -MACL
     // ex模块输出信号
     wire[`MemBus] ex_mem_wdata_o;
     wire[`MemAddrBus] ex_mem_raddr_o;
@@ -103,6 +111,11 @@ module tinyriscv(
     wire[`RegBus] ex_reg_wdata_o;
     wire ex_reg_we_o;
     wire[`RegAddrBus] ex_reg_waddr_o;
+    
+    wire[`RegBus] mac_reg1_wdata_o; // Custom Instruction -MACL
+    wire mac_reg1_we_o; // Custom Instruction -MACL
+    wire[`RegAddrBus] mac_reg1_waddr_o; // Custom Instruction -MACL
+    
     wire ex_hold_flag_o;
     wire ex_jump_flag_o;
     wire[`InstAddrBus] ex_jump_addr_o;
@@ -111,6 +124,8 @@ module tinyriscv(
     wire[`RegBus] ex_div_divisor_o;
     wire[2:0] ex_div_op_o;
     wire[`RegAddrBus] ex_div_reg_waddr_o;
+    wire[`RegAddrBus] ex_mac_reg_waddr_o; // Custom Instruction -MACL
+    
     wire[`RegBus] ex_csr_wdata_o;
     wire ex_csr_we_o;
     wire[`MemAddrBus] ex_csr_waddr_o;
@@ -146,23 +161,47 @@ module tinyriscv(
     wire[`InstAddrBus] clint_int_addr_o;
     wire clint_int_assert_o;
     wire clint_hold_flag_o;
-
-
-    assign rib_ex_addr_o = (ex_mem_we_o == `WriteEnable)? ex_mem_waddr_o: ex_mem_raddr_o;
+    
+    wire rib_mem_addr_exec;  // Custom instruction MACL
+   assign rib_mem_addr_exec = (ex_mem_we_o == `WriteEnable)? ex_mem_waddr_o: ex_mem_raddr_o;
+    //Custom instruction MACL
+    assign rib_ex_addr_o = (mac_load_busy == `WriteEnable)? mac_mem_addr: rib_mem_addr_exec; //Custom instruction MACL
     assign rib_ex_data_o = ex_mem_wdata_o;
-    assign rib_ex_req_o = ex_mem_req_o;
+    //assign rib_ex_req_o = ex_mem_req_o; // Custom instruction MACL
+     assign rib_ex_req_o = (mac_load_busy == `WriteEnable)? mac_mem_req_o: ex_mem_req_o; // Custom instruction MACL
     assign rib_ex_we_o = ex_mem_we_o;
 
     assign rib_pc_addr_o = pc_pc_o;
-   // Custom instruction MLOAD
+    
+    /*
+   // Custom instruction MACL
    mac_regs mreg(
    .clk(clk),
    .rst(rst),
-   .we1_i(ex_reg_we_o),
-   .w1addr_i(ex_reg_waddr_o),
-   .w1data_i(ex_reg_wdata_o)
+   .we1_i(mac_reg1_we_o),
+   .w1addr_i(mac_reg1_waddr_o),
+   .w1data_i(mac_reg1_wdata_o)
    );
+   */
    
+ // Custom instruction MACL
+ mac_load_reg#(.ADDR_WIDTH(32),.DATA_WIDTH(32),.COUNT_WIDTH(32)) load_reg (
+  .clk(clk),
+   .rst(rst),
+   .start(ie_is_macl_o),
+   .busy(mac_load_busy),
+   .done(mac_load_done),
+   .base_addr1(ie_reg1_rdata_o),
+   .base_addr2(ie_reg2_rdata_o),
+   .count(2),
+   .mem_addr(mac_mem_addr),
+   .mem_req(mac_mem_req_o),
+   .mem_data(rib_ex_data_i),
+   .acc_out(macl_acc_out),
+   .mac_dst_reg_addr_i(ex_mac_reg_waddr_o),
+   .mac_dst_reg_addr_o(macl_reg_waddr_o)
+ 
+ );
  
   
      //Custom Instruction -MAC
@@ -276,7 +315,8 @@ module tinyriscv(
         .csr_we_o(id_csr_we_o),
         .csr_rdata_o(id_csr_rdata_o),
         .csr_waddr_o(id_csr_waddr_o),
-        .is_mac_o(id_is_mac_o)  // Custom Instruction -MAC
+        .is_mac_o(id_is_mac_o),  // Custom Instruction -MAC
+        .is_macl_o(id_is_macl_o)  // Custom Instruction -MAC
     );
 
     // id_ex模块例化
@@ -287,6 +327,7 @@ module tinyriscv(
         .inst_addr_i(id_inst_addr_o),
         .reg_we_i(id_reg_we_o),
         .is_mac_i(id_is_mac_o),  // Custom Instruction -MAC
+        .is_macl_i(id_is_macl_o),  // Custom Instruction -MAC
         .acc_out_i(mac_acc_out_o),  // Custom Instruction -MAC
         .reg_waddr_i(id_reg_waddr_o),
         .reg1_rdata_i(id_reg1_rdata_o),
@@ -296,6 +337,7 @@ module tinyriscv(
         .inst_addr_o(ie_inst_addr_o),
         .reg_we_o(ie_reg_we_o),
         .is_mac_o(ie_is_mac_o),  // Custom Instruction -MAC
+         .is_macl_o(ie_is_macl_o),  // Custom Instruction -MAC
         .acc_out_o(ie_acc_out_o),   // Custom Instruction -MAC
         .reg_waddr_o(ie_reg_waddr_o),
         .reg1_rdata_o(ie_reg1_rdata_o),
@@ -320,8 +362,13 @@ module tinyriscv(
     ex u_ex(
         .rst(rst),
         .is_mac_i(ie_is_mac_o),  // Custom Instruction -MAC
+        .mac_load_done(mac_load_done),
+        .mac_load_busy(mac_load_busy),
         //.is_mac_done_i(mac_done),
          .acc_out(mac_acc_out_o),  // Custom Instruction -MAC
+         .mac_reg_waddr_i(macl_reg_waddr_o), // Custom Instruction -MACL
+         .mac_reg_waddr_o(ex_mac_reg_waddr_o), // Custom Instruction -MACL
+         .mac_acc_out(macl_acc_out),// Custom Instruction -MACL
         .inst_i(ie_inst_o),
         .inst_addr_i(ie_inst_addr_o),
         .reg_we_i(ie_reg_we_o),

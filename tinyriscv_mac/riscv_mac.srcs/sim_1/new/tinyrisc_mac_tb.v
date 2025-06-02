@@ -32,8 +32,48 @@ module tinyrisc_mac_tb;
     always #10 clk = ~clk;     // 50MHz
       wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
      wire [`RegBus] if_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
-     wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;  
+     wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;
+    wire   macl_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_macl_o;
+    wire   macl_busy = tinyriscv_soc_top_0.u_tinyriscv.mac_load_busy;  
+     wire   macl_done = tinyriscv_soc_top_0.u_tinyriscv.mac_load_done;
+     wire holdEnable = tinyriscv_soc_top_0.u_tinyriscv.ex_hold_flag_o;
+     wire [`RegBus] mac_addr1 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.addr1; 
+     wire [`RegBus] mac_addr2 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.addr2;
+     wire [`RegBus] mdata1 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf1_wdata;
+     wire [`RegBus] mdata2 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf2_wdata;
+     wire [`RegBus] memd= tinyriscv_soc_top_0.u_tinyriscv.load_reg.mem_data;
+     wire [7:0] idx= tinyriscv_soc_top_0.u_tinyriscv.load_reg.idx;
+     wire [`RegBus] acc = tinyriscv_soc_top_0.u_tinyriscv.load_reg.acc;
+      wire [2:0] state = tinyriscv_soc_top_0.u_tinyriscv.load_reg.state;
+     wire [`RegBus] acc_out = tinyriscv_soc_top_0.u_tinyriscv.macl_acc_out;
+     wire [`RegBus]ex_addr_i = tinyriscv_soc_top_0.u_tinyriscv.macl_reg_waddr_o;
+          wire [`RegBus]ex_addr_o = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o;
+           wire [`RegBus]mac_waddr = tinyriscv_soc_top_0.u_tinyriscv.u_ex.mac_waddr;
+           //wire [`RegBus]reg_waddr = tinyriscv_soc_top_0.u_tinyriscv.u_ex.reg_waddr;
+      //wire [`RegBus]ex_addr = tinyriscv_soc_top_0.u_tinyriscv.macl_reg_waddr_o;
+      wire [`RegBus]ex_reg_data_o = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_wdata_o;
+      wire[`RegBus] x6 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6];
+      
      
+     //wire   mac_reg_w= tinyriscv_soc_top_0.u_tinyriscv.mac_reg1_we_o;
+     //wire [`RegBus] mreg_ad = tinyriscv_soc_top_0.u_tinyriscv.mac_reg1_waddr_o;
+     // wire [`RegBus] mreg_data = tinyriscv_soc_top_0.u_tinyriscv.mac_reg1_wdata_o;
+    
+     //wire[`RegBus] mac_reg0 = tinyriscv_soc_top_0.u_tinyriscv.mreg.regs_a[0];
+     //wire   macle_busy = tinyriscv_soc_top_0.u_tinyriscv.u_ex.mac_hold;
+   // wire start = tinyriscv_soc_top_0.u_tinyriscv.load_reg.start;
+    
+       //wire [`RegBus] mreg1 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf1_waddr;
+       //wire [`RegBus] mdata1 = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf1_wdata;
+       //wire [`RegBus] tmdata1 = tinyriscv_soc_top_0.u_tinyriscv.mac_reg1_wdata_o;
+     //wire rib_hold = tinyriscv_soc_top_0.u_tinyriscv.rib_hold_flag_i;
+     
+     // wire holdE = tinyriscv_soc_top_0.u_tinyriscv.u_ex.hold_flag;
+     //wire[2:0] funct3= tinyriscv_soc_top_0.u_tinyriscv.u_ex.funct3 ;
+      wire [`RegBus] rib_mem_addr = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_addr_o;
+      wire rib_mem_req = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_req_o;
+       wire [`RegBus] rib_mem_data = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_data_i;
+     /*
      wire[`RegBus] mac_reg = tinyriscv_soc_top_0.u_tinyriscv.mreg.regs_a[0];
       wire [`RegBus]ex_wdata = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_wdata_o;
       wire [`RegBus]ex_waddr = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o;
@@ -52,9 +92,9 @@ module tinyrisc_mac_tb;
       wire [`RegBus]mem_addr = tinyriscv_soc_top_0.u_tinyriscv.ex_mem_raddr_o;
       wire[`RegBus] x5 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5];
       wire[`RegBus] x4 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4];
-      wire[`RegBus] x6 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6];
+      
       wire rib_hold = tinyriscv_soc_top_0.u_tinyriscv.rib_hold_flag_i;
-     /*
+     
      wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
      wire [`RegBus] if_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
      wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;   // Test Custom MAC
@@ -579,6 +619,9 @@ module tinyrisc_mac_tb;
     initial begin
     //for (i = 0; i < 4096; i = i + 1) begin
       tinyriscv_soc_top_0.u_ram._ram[1024] = 32'd7 ;
+      tinyriscv_soc_top_0.u_ram._ram[1025] = 32'd6 ;
+      tinyriscv_soc_top_0.u_ram._ram[1032] = 32'd8 ;
+      tinyriscv_soc_top_0.u_ram._ram[1033] = 32'd9 ;
     //end
     end
 

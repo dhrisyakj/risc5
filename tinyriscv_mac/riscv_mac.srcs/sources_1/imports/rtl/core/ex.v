@@ -42,8 +42,21 @@ module ex(
     input wire[`MemAddrBus] op1_jump_i,
     input wire[`MemAddrBus] op2_jump_i,
     
+    //from mac_load_reg
+    input wire[`RegBus] mac_acc_out,  // Custom Instruction -MAC
+    
     // from id_ex unit
     input wire[`RegBus] acc_out,  // Custom Instruction -MAC
+    
+    //from mac_load
+    input wire mac_load_done, // Custom Instruction -MACL
+    input wire mac_load_busy, // Custom Instruction -MACL
+    input wire[`RegAddrBus] mac_reg_waddr_i, // Custom Instruction -MACL
+    
+    //to mac_load
+    output reg[`RegAddrBus] mac_reg_waddr_o, // Custom Instruction -MACL
+    //input wire[`MemBus] mac_mem_addr_i, // Custom Instruction -MACL
+    
 
     // from mem
     input wire[`MemBus] mem_rdata_i,        // 内存输入数据
@@ -126,6 +139,11 @@ module ex(
     // Custom operation 
     wire valid_mac;
     
+     reg mac_hold; // Custom Instruction -MACL
+     reg mac_jump_flag;  // Custom Instruction -MACL
+    reg[`InstAddrBus] mac_jump_addr; // Custom Instruction -MACL
+    reg mac_we; // Custom Instruction -MACL
+    reg[`RegAddrBus] mac_waddr; // Custom Instruction -MACL
     //wire [`RegAddrBus] mac_reg_addr; 
    
    
@@ -160,10 +178,10 @@ module ex(
 
     assign div_start_o = (int_assert_i == `INT_ASSERT)? `DivStop: div_start;
 
-    assign reg_wdata_o = reg_wdata | div_wdata;
+    assign reg_wdata_o = reg_wdata | div_wdata ;
     // 响应中断时不写通用寄存器
-    assign reg_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: (reg_we || div_we);
-    assign reg_waddr_o = reg_waddr | div_waddr;
+    assign reg_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: (reg_we || div_we||mac_we); // Custom Instruction -MACL
+    assign reg_waddr_o = reg_waddr | div_waddr| mac_waddr;
 
     // 响应中断时不写内存
     assign mem_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: mem_we;
@@ -171,13 +189,71 @@ module ex(
     // 响应中断时不向总线请求访问内存
     assign mem_req_o = (int_assert_i == `INT_ASSERT)? `RIB_NREQ: mem_req;
 
-    assign hold_flag_o = hold_flag || div_hold_flag;
-    assign jump_flag_o = jump_flag || div_jump_flag || ((int_assert_i == `INT_ASSERT)? `JumpEnable: `JumpDisable);
-    assign jump_addr_o = (int_assert_i == `INT_ASSERT)? int_addr_i: (jump_addr | div_jump_addr);
+    assign hold_flag_o = hold_flag || div_hold_flag || mac_hold;
+    assign jump_flag_o = jump_flag || div_jump_flag || mac_jump_flag|| ((int_assert_i == `INT_ASSERT)? `JumpEnable: `JumpDisable);
+    assign jump_addr_o = (int_assert_i == `INT_ASSERT)? int_addr_i: (jump_addr | div_jump_addr|mac_jump_addr);
 
     // 响应中断时不写CSR寄存器
     assign csr_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: csr_we_i;
     assign csr_waddr_o = csr_waddr_i;
+
+
+  // MAC LOAD Operation
+   always @ (*) begin
+   mac_reg_waddr_o = reg_waddr_i;
+    if ((opcode == `INST_CUSTOM) && (funct7 == 7'b0000001)) begin
+     mac_we = `WriteDisable;
+     reg_wdata = `ZeroWord;
+       case (funct3)
+                `INST_MACL: begin
+                 //jump_flag = `JumpDisable;
+                 hold_flag = `HoldEnable;
+                 mac_jump_flag = `JumpEnable;
+                 mac_jump_addr = op1_jump_add_op2_jump_res;
+                 //jump_addr = `ZeroWord;
+                 //mem_wdata_o = `ZeroWord;
+                 //mem_raddr_o = `ZeroWord;
+                 //mem_waddr_o = `ZeroWord;
+                 //mem_we = `WriteDisable;
+                 //reg_we = `WriteDisable;
+                end
+            default: begin
+                            //jump_flag = `JumpDisable;
+                            hold_flag = `HoldDisable;
+                             mac_jump_addr = `ZeroWord;
+                             mac_jump_flag = `JumpDisable;
+                            //jump_addr = `ZeroWord;
+                            //mem_wdata_o = `ZeroWord;
+                            //mem_raddr_o = `ZeroWord;
+                            //mem_waddr_o = `ZeroWord;
+                            //mem_we = `WriteDisable;
+                            //reg_wdata = `ZeroWord;
+                            end
+       endcase
+     end
+     else begin
+      mac_jump_flag = `JumpDisable;
+      mac_jump_addr = `ZeroWord;
+      mac_hold = `HoldDisable;
+     if(mac_load_busy==`True) begin
+     mac_hold = `HoldEnable;
+     mac_we = `WriteDisable;
+     end
+     else begin
+     if(mac_load_done==`True) begin
+     mac_hold= `HoldDisable;
+     mac_waddr = mac_reg_waddr_i;
+     reg_wdata = mac_acc_out;
+     mac_we = `WriteEnable;
+     end
+     //else begin
+     //mac_hold = `HoldDisable;
+     //end
+     end
+     end
+    
+   end
+
 
 
     // 处理乘法指令
@@ -410,19 +486,22 @@ module ex(
                  mem_we = `WriteDisable;
                  reg_wdata = op1_add_op2_res;
                 end
+                
                  `INST_MACL:begin // Custom Instruction -MACL
                  jump_flag = `JumpDisable;
-                 hold_flag = `HoldDisable;
+                 //hold_flag = `HoldEnable;
                  jump_addr = `ZeroWord;
                  mem_wdata_o = `ZeroWord;
-                 //mem_raddr_o = `ZeroWord;
+                 mem_raddr_o = `ZeroWord;
                  mem_waddr_o = `ZeroWord;
                  mem_we = `WriteDisable;
-                 mem_req = `RIB_REQ;
-                 mem_raddr_o = op1_i;
-                 reg_wdata = mem_rdata_i;
+                 reg_we = `WriteDisable;
+                 //mem_req = `RIB_REQ;
+                 //mem_raddr_o = op1_i;
+                 //reg_wdata = mem_rdata_i;
                  //reg_wdata = op1_i;
                 end
+                
                 default: begin
                             jump_flag = `JumpDisable;
                             hold_flag = `HoldDisable;

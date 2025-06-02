@@ -34,6 +34,8 @@ module tinyriscv_soc_tb;
     wire [2047:0] log_data_in = tinyriscv_soc_top_0.u_tinyriscv.ex_log_data_in;
     
      wire[`RegBus] ex_log_result_i = tinyriscv_soc_top_0.u_tinyriscv.ex_log_result_i;
+     wire [`RegBus] rib_mem_data = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_data_i;
+     wire [`RegBus] rib_mem_addr = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_addr_o;
     integer r;
 
 `ifdef TEST_JTAG

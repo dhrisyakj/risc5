@@ -1,4 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sources_1/imports/rtl/core/defines.v" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sources_1/imports/rtl/core/clint.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'RstEnable' is redefined [../../../../../../RISC-V/tinyriscv/rtl/core/defines.v:19]
+WARNING: [VRFC 10-9157] macro 'RstDisable' is redefined [../../../../../../RISC-V/tinyriscv/rtl/core/defines.v:20]
+WARNING: [VRFC 10-9157] macro 'INST_CUSTOM' is redefined [../../../../../../RISC-V/tinyriscv/rtl/core/defines.v:72]
+WARNING: [VRFC 10-9157] macro 'INST_ADDTT' is redefined [../../../../../../RISC-V/tinyriscv/rtl/core/defines.v:74]
+WARNING: [VRFC 10-9157] macro 'INST_MAC' is redefined [../../../../../../RISC-V/tinyriscv/rtl/core/defines.v:75]
 INFO: [VRFC 10-311] analyzing module clint
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv/tinyriscv.srcs/sources_1/imports/rtl/core/csr_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module csr_reg
