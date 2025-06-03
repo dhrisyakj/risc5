@@ -50,6 +50,8 @@ module id_ex(
       input wire is_macl_i, // Custom Instruction -LOAD MAC
      output wire is_macl_o,           // Custom Instruction -LOAD_MAC
      
+     input wire is_mac_config_i, // Custom Instruction -MAC_CONFIG
+     output wire is_mac_config_o, // Custom Instruction -MAC_CONFIG
     output wire[`MemAddrBus] op1_o,
     output wire[`MemAddrBus] op2_o,
     output wire[`MemAddrBus] op1_jump_o,
@@ -96,6 +98,10 @@ module id_ex(
     gen_pipe_dff #(1) is_macl_ff(clk, rst, hold_en, `WriteDisable, is_macl_i, is_macl);
     assign is_macl_o = is_macl;
 
+   // Custom Instruction -MAC_CONFIG
+     wire is_mac_config;
+    gen_pipe_dff #(1) is_mac_conf_ff(clk, rst, hold_en, `WriteDisable, is_mac_config_i, is_mac_config);
+    assign is_mac_config_o = is_mac_config;
 
     wire[`RegAddrBus] reg_waddr;
     gen_pipe_dff #(5) reg_waddr_ff(clk, rst, hold_en, `ZeroReg, reg_waddr_i, reg_waddr);

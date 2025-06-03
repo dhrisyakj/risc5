@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1'
+HD_PWD='/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

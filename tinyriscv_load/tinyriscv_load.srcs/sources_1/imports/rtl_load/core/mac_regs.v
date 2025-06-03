@@ -27,50 +27,36 @@ input wire clk,
 input wire rst,
  // Write into first register from ex
   input wire we1_i,                      
-  input wire[`RegAddrBus] w1addr_i,      
+  //input wire[`RegAddrBus] w1addr_i,      
   input wire[`RegBus] w1data_i,
-  // Write into second register
-   input wire we2_i,                      
-  input wire[`RegAddrBus] w2addr_i,      
-  input wire[`RegBus] w2data_i,
-   // from mac
-    input wire[`RegAddrBus] raddr1_i,     
 
-    // to mac
-    output reg[`RegBus] rdata1_o,        
+  output reg[`RegBus] mac_count_o        
 
-    // from mac
-    input wire[`RegAddrBus] raddr2_i,     
-    // to mac
-    output reg[`RegBus] rdata2_o    
+   
     
     );
     
     
     
-     reg[`RegBus] regs_a[0:`RegNum - 1];
-     reg[`RegBus] regs_b[0:`RegNum - 1];
+     reg[`RegBus] mac_count;
+
      
      
       always @ (posedge clk) begin
         if (rst == `RstDisable) begin
             // 优先ex模块写操作
             if ((we1_i == `WriteEnable)) begin
-                regs_a[w1addr_i] <= w1data_i;
+                mac_count <= w1data_i;
                 end
+            
     end
     end
      
-     
+ 
 always @ (*) begin
-        if (raddr1_i == `ZeroReg) begin
-            rdata1_o = `ZeroWord;
-        // 如果读地址等于写地址，并且正在写操作，则直接返回写数据
-        end else if (raddr1_i == w1addr_i && we1_i == `WriteEnable) begin
-            rdata1_o = w1data_i;
-        end else begin
-            rdata1_o = regs_a[raddr1_i];
+             mac_count_o = mac_count;
+           
         end
-    end     
-     
+   
+    
 endmodule

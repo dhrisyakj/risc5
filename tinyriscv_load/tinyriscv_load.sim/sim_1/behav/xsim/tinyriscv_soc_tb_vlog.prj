@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib "/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v" --include "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core" \
+verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v" --include "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v" \
@@ -31,6 +31,7 @@ verilog xil_defaultlib "/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/source
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_buf.v" \
+"../../../../tinyriscv_load.srcs/sources_1/new/mac_load_config.v" \
 "../../../../tinyriscv_load.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v" \
 
 # compile glbl module

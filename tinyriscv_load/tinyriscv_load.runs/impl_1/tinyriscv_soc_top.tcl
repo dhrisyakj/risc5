@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/sidharth/tinyriscv_load/tinyriscv_load.runs/impl_1/tinyriscv_soc_top.tcl"
+  variable script "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/impl_1/tinyriscv_soc_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -112,15 +112,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/sidharth/tinyriscv_load/tinyriscv_load.cache/wt [current_project]
-  set_property parent.project_path /home/sidharth/tinyriscv_load/tinyriscv_load.xpr [current_project]
-  set_property ip_output_repo /home/sidharth/tinyriscv_load/tinyriscv_load.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.cache/wt [current_project]
+  set_property parent.project_path /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.xpr [current_project]
+  set_property ip_output_repo /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.dcp
+  add_files -quiet /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc
+  read_xdc /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

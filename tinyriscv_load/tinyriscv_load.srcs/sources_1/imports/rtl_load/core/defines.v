@@ -76,6 +76,8 @@
 `define INST_MACR 3'b110
 `define INST_MACL 3'b010 // Custom Instruction -MACL
 `define INST_LOADM 3'b001 // Custom Instruction -LOAD_MAC
+`define INST_MAC_CONFIG 3'b000 // Custom Instruction -MAC_CONFIG
+
 
 // L type inst
 `define INST_TYPE_L 7'b0000011

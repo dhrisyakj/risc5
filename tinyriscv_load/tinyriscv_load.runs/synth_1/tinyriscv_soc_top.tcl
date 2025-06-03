@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.tcl"
+  variable script "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,53 +56,53 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 6
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/sidharth/tinyriscv_load/tinyriscv_load.cache/wt [current_project]
-set_property parent.project_path /home/sidharth/tinyriscv_load/tinyriscv_load.xpr [current_project]
+set_property webtalk.parent_dir /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.cache/wt [current_project]
+set_property parent.project_path /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/sidharth/tinyriscv_load/tinyriscv_load.cache/ip [current_project]
+set_property ip_output_repo /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v
-  /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_buf.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_buf.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_config.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -113,12 +113,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc
-set_property used_in_implementation false [get_files /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
+read_xdc /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc
+set_property used_in_implementation false [get_files /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp
+read_checkpoint -auto_incremental -incremental /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

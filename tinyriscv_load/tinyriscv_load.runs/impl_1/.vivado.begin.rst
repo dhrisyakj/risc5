@@ -1,25 +1,5 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="257173" HostCore="24" HostMemory="32783328">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="273448" HostCore="24" HostMemory="32783328">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="330933" HostCore="24" HostMemory="32783328">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="377771" HostCore="24" HostMemory="32783328">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="418766" HostCore="24" HostMemory="32783328">
+    <Process Command="vivado" Owner="sidharth" Host="sidharth-Alienware-Aurora-Ryzen-Edition" Pid="857931" HostCore="24" HostMemory="32783328">
     </Process>
 </ProcessHandle>

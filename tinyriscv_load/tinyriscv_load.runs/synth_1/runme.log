@@ -7,13 +7,14 @@
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Mon Jun  2 11:02:14 2025
+  **** Start of session at: Tue Jun  3 12:54:01 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source tinyriscv_soc_top.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/sidharth/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1401.129 ; gain = 57.840 ; free physical = 10049 ; free virtual = 27653
+Command: read_checkpoint -auto_incremental -incremental /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top tinyriscv_soc_top -part xc7a35tcpg236-1
 Starting synth_design
@@ -25,164 +26,167 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 418234
+INFO: [Synth 8-7075] Helper process launched with PID 823981
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2157.715 ; gain = 415.715 ; free physical = 17343 ; free virtual = 31662
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2157.758 ; gain = 415.715 ; free physical = 8899 ; free virtual = 26540
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:60]
-WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:68]
-WARNING: [Synth 8-6901] identifier 'ack' is used before its declaration [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:71]
-WARNING: [Synth 8-6901] identifier 'ack' is used before its declaration [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:79]
-INFO: [Synth 8-11241] undeclared symbol 'tx_idle', assumed default net type 'wire' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:325]
-WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:60]
-WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:61]
-WARNING: [Synth 8-11065] parameter 'SHIFT_REG_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:62]
-WARNING: [Synth 8-11065] parameter 'IDCODE_VERSION' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:47]
-WARNING: [Synth 8-11065] parameter 'IDCODE_PART_NUMBER' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:48]
-WARNING: [Synth 8-11065] parameter 'IDCODE_MANUFLD' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:49]
-WARNING: [Synth 8-11065] parameter 'DTM_VERSION' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:51]
-WARNING: [Synth 8-11065] parameter 'IR_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:52]
-WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:54]
-WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:55]
-WARNING: [Synth 8-11065] parameter 'SHIFT_REG_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:56]
-WARNING: [Synth 8-11065] parameter 'TEST_LOGIC_RESET' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:72]
-WARNING: [Synth 8-11065] parameter 'RUN_TEST_IDLE' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:73]
-WARNING: [Synth 8-11065] parameter 'SELECT_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:74]
-WARNING: [Synth 8-11065] parameter 'CAPTURE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:75]
-WARNING: [Synth 8-11065] parameter 'SHIFT_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:76]
-WARNING: [Synth 8-11065] parameter 'EXIT1_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:77]
-WARNING: [Synth 8-11065] parameter 'PAUSE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:78]
-WARNING: [Synth 8-11065] parameter 'EXIT2_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:79]
-WARNING: [Synth 8-11065] parameter 'UPDATE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:80]
-WARNING: [Synth 8-11065] parameter 'SELECT_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:81]
-WARNING: [Synth 8-11065] parameter 'CAPTURE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:82]
-WARNING: [Synth 8-11065] parameter 'SHIFT_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:83]
-WARNING: [Synth 8-11065] parameter 'EXIT1_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:84]
-WARNING: [Synth 8-11065] parameter 'PAUSE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:85]
-WARNING: [Synth 8-11065] parameter 'EXIT2_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:86]
-WARNING: [Synth 8-11065] parameter 'UPDATE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:87]
-WARNING: [Synth 8-11065] parameter 'REG_BYPASS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:90]
-WARNING: [Synth 8-11065] parameter 'REG_IDCODE' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:91]
-WARNING: [Synth 8-11065] parameter 'REG_DMI' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:92]
-WARNING: [Synth 8-11065] parameter 'REG_DTMCS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:93]
-WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:48]
-WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:49]
-INFO: [Synth 8-6157] synthesizing module 'tinyriscv_soc_top' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
-INFO: [Synth 8-6085] Hierarchical reference on 'regs' stops possible memory inference [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:56]
-INFO: [Synth 8-6157] synthesizing module 'tinyriscv' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:20]
-INFO: [Synth 8-6157] synthesizing module 'mac_load_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
+WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:60]
+WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:68]
+WARNING: [Synth 8-6901] identifier 'ack' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:71]
+WARNING: [Synth 8-6901] identifier 'ack' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:79]
+INFO: [Synth 8-11241] undeclared symbol 'tx_idle', assumed default net type 'wire' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:325]
+WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:60]
+WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:61]
+WARNING: [Synth 8-11065] parameter 'SHIFT_REG_BITS' becomes localparam in 'jtag_dm' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:62]
+WARNING: [Synth 8-11065] parameter 'IDCODE_VERSION' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:47]
+WARNING: [Synth 8-11065] parameter 'IDCODE_PART_NUMBER' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:48]
+WARNING: [Synth 8-11065] parameter 'IDCODE_MANUFLD' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:49]
+WARNING: [Synth 8-11065] parameter 'DTM_VERSION' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:51]
+WARNING: [Synth 8-11065] parameter 'IR_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:52]
+WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:54]
+WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:55]
+WARNING: [Synth 8-11065] parameter 'SHIFT_REG_BITS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:56]
+WARNING: [Synth 8-11065] parameter 'TEST_LOGIC_RESET' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:72]
+WARNING: [Synth 8-11065] parameter 'RUN_TEST_IDLE' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:73]
+WARNING: [Synth 8-11065] parameter 'SELECT_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:74]
+WARNING: [Synth 8-11065] parameter 'CAPTURE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:75]
+WARNING: [Synth 8-11065] parameter 'SHIFT_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:76]
+WARNING: [Synth 8-11065] parameter 'EXIT1_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:77]
+WARNING: [Synth 8-11065] parameter 'PAUSE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:78]
+WARNING: [Synth 8-11065] parameter 'EXIT2_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:79]
+WARNING: [Synth 8-11065] parameter 'UPDATE_DR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:80]
+WARNING: [Synth 8-11065] parameter 'SELECT_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:81]
+WARNING: [Synth 8-11065] parameter 'CAPTURE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:82]
+WARNING: [Synth 8-11065] parameter 'SHIFT_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:83]
+WARNING: [Synth 8-11065] parameter 'EXIT1_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:84]
+WARNING: [Synth 8-11065] parameter 'PAUSE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:85]
+WARNING: [Synth 8-11065] parameter 'EXIT2_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:86]
+WARNING: [Synth 8-11065] parameter 'UPDATE_IR' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:87]
+WARNING: [Synth 8-11065] parameter 'REG_BYPASS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:90]
+WARNING: [Synth 8-11065] parameter 'REG_IDCODE' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:91]
+WARNING: [Synth 8-11065] parameter 'REG_DMI' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:92]
+WARNING: [Synth 8-11065] parameter 'REG_DTMCS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:93]
+WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:48]
+WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:49]
+INFO: [Synth 8-6157] synthesizing module 'tinyriscv_soc_top' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
+INFO: [Synth 8-6085] Hierarchical reference on 'regs' stops possible memory inference [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'tinyriscv' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:20]
+INFO: [Synth 8-6157] synthesizing module 'mac_regs' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'mac_regs' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:24]
+INFO: [Synth 8-6157] synthesizing module 'mac_load_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
 	Parameter ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter COUNT_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:91]
-INFO: [Synth 8-6155] done synthesizing module 'mac_load_reg' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
-INFO: [Synth 8-6157] synthesizing module 'pc_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
-INFO: [Synth 8-6157] synthesizing module 'ctrl' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'ctrl' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v:21]
-INFO: [Synth 8-6157] synthesizing module 'regs' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:20]
-INFO: [Synth 8-6085] Hierarchical reference on 'regs' stops possible memory inference [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'regs' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:20]
-INFO: [Synth 8-6157] synthesizing module 'csr_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'csr_reg' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v:20]
-INFO: [Synth 8-6157] synthesizing module 'if_id' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v:20]
-INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+WARNING: [Synth 8-6090] variable 'final' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:90]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'mac_load_reg' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ctrl' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v:21]
+INFO: [Synth 8-6157] synthesizing module 'regs' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:20]
+INFO: [Synth 8-6085] Hierarchical reference on 'regs' stops possible memory inference [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'regs' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:20]
+INFO: [Synth 8-6157] synthesizing module 'csr_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'csr_reg' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v:20]
+INFO: [Synth 8-6157] synthesizing module 'if_id' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v:20]
+INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 	Parameter DW bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
-INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized0' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized0' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 	Parameter DW bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized0' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'if_id' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v:20]
-INFO: [Synth 8-6157] synthesizing module 'id' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:103]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:201]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:218]
-INFO: [Synth 8-6155] done synthesizing module 'id' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
-INFO: [Synth 8-6157] synthesizing module 'id_ex' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
-INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized1' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized0' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'if_id' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v:20]
+INFO: [Synth 8-6157] synthesizing module 'id' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:108]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:216]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:233]
+INFO: [Synth 8-6155] done synthesizing module 'id' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
+INFO: [Synth 8-6157] synthesizing module 'id_ex' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
+INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized1' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 	Parameter DW bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized1' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
-INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized2' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized1' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized2' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 	Parameter DW bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized2' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'id_ex' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
-INFO: [Synth 8-6157] synthesizing module 'ex' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:357]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:554]
-INFO: [Synth 8-6155] done synthesizing module 'ex' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
-INFO: [Synth 8-6157] synthesizing module 'div' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:22]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:87]
-INFO: [Synth 8-6155] done synthesizing module 'div' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:22]
-INFO: [Synth 8-6157] synthesizing module 'clint' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'clint' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'tinyriscv' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:20]
-INFO: [Synth 8-6157] synthesizing module 'rom' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v:20]
-INFO: [Synth 8-6157] synthesizing module 'ram' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'ram' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v:20]
-INFO: [Synth 8-6157] synthesizing module 'timer' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:21]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:79]
-INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:21]
-INFO: [Synth 8-6157] synthesizing module 'uart' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:19]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:102]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:183]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:307]
-INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:19]
-INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:19]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:19]
-INFO: [Synth 8-6157] synthesizing module 'spi' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:19]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:140]
-INFO: [Synth 8-6155] done synthesizing module 'spi' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:19]
-INFO: [Synth 8-6157] synthesizing module 'rib' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:21]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:161]
-INFO: [Synth 8-6155] done synthesizing module 'rib' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:21]
-INFO: [Synth 8-6157] synthesizing module 'uart_debug' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:44]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:108]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:220]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:236]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:256]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:269]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:288]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:306]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:324]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:342]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:360]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:379]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:404]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:423]
-INFO: [Synth 8-6155] done synthesizing module 'uart_debug' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:44]
-INFO: [Synth 8-6157] synthesizing module 'jtag_top' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized2' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'id_ex' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ex' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:367]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:577]
+INFO: [Synth 8-6155] done synthesizing module 'ex' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
+INFO: [Synth 8-6157] synthesizing module 'div' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:22]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'div' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:22]
+INFO: [Synth 8-6157] synthesizing module 'clint' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'clint' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'tinyriscv' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:20]
+INFO: [Synth 8-6157] synthesizing module 'rom' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ram' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v:20]
+INFO: [Synth 8-6157] synthesizing module 'timer' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v:21]
+INFO: [Synth 8-6157] synthesizing module 'uart' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:183]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:307]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/uart.v:19]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/gpio.v:19]
+INFO: [Synth 8-6157] synthesizing module 'spi' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'spi' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/spi.v:19]
+INFO: [Synth 8-6157] synthesizing module 'rib' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:21]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'rib' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v:21]
+INFO: [Synth 8-6157] synthesizing module 'uart_debug' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:44]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:108]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:220]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:236]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:256]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:269]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:288]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:306]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:324]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:342]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:360]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:379]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:404]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:423]
+INFO: [Synth 8-6155] done synthesizing module 'uart_debug' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/uart_debug.v:44]
+INFO: [Synth 8-6157] synthesizing module 'jtag_top' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:20]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'jtag_driver' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:23]
+INFO: [Synth 8-6157] synthesizing module 'jtag_driver' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:23]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:162]
-INFO: [Synth 8-6157] synthesizing module 'full_handshake_tx' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:162]
+INFO: [Synth 8-6157] synthesizing module 'full_handshake_tx' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:23]
 	Parameter DW bound to: 40 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:115]
-INFO: [Synth 8-6155] done synthesizing module 'full_handshake_tx' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:23]
-INFO: [Synth 8-6157] synthesizing module 'full_handshake_rx' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'full_handshake_tx' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'full_handshake_rx' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:23]
 	Parameter DW bound to: 40 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:104]
-INFO: [Synth 8-6155] done synthesizing module 'full_handshake_rx' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_driver' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:23]
-INFO: [Synth 8-6157] synthesizing module 'jtag_dm' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:27]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:104]
+INFO: [Synth 8-6155] done synthesizing module 'full_handshake_rx' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_driver' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:23]
+INFO: [Synth 8-6157] synthesizing module 'jtag_dm' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:27]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:204]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:161]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_dm' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_top' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'tinyriscv_soc_top' (0#1) [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
-WARNING: [Synth 8-3848] Net raddr_o in module/entity clint does not have driver. [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:56]
-WARNING: [Synth 8-3848] Net mac_acc_out_o in module/entity tinyriscv does not have driver. [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:150]
-WARNING: [Synth 8-6014] Unused sequential element command_reg was removed.  [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:151]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:204]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_dm' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_top' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'tinyriscv_soc_top' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
+WARNING: [Synth 8-3848] Net raddr_o in module/entity clint does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:56]
+WARNING: [Synth 8-3848] Net mac_acc_out_o in module/entity tinyriscv does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:150]
+WARNING: [Synth 8-6014] Unused sequential element command_reg was removed.  [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:151]
 WARNING: [Synth 8-7129] Port clk in module rib is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rst in module rib is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m1_req_i in module rib is either unconnected or has no load
@@ -285,50 +289,50 @@ WARNING: [Synth 8-7129] Port addr_i[16] in module timer is either unconnected or
 WARNING: [Synth 8-7129] Port addr_i[15] in module timer is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2314.684 ; gain = 572.684 ; free physical = 17155 ; free virtual = 31476
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2317.727 ; gain = 575.684 ; free physical = 8635 ; free virtual = 26284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2329.527 ; gain = 587.527 ; free physical = 17155 ; free virtual = 31475
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2326.633 ; gain = 584.590 ; free physical = 8602 ; free virtual = 26251
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2329.527 ; gain = 587.527 ; free physical = 17155 ; free virtual = 31475
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2326.633 ; gain = 584.590 ; free physical = 8602 ; free virtual = 26251
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2329.527 ; gain = 0.000 ; free physical = 17155 ; free virtual = 31475
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2326.633 ; gain = 0.000 ; free physical = 8568 ; free virtual = 26220
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
-Finished Parsing XDC File [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tinyriscv_soc_top_propImpl.xdc].
+Parsing XDC File [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
+Finished Parsing XDC File [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/constrs_1/imports/constrs/tinyriscv.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tinyriscv_soc_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/tinyriscv_soc_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.277 ; gain = 0.000 ; free physical = 17147 ; free virtual = 31468
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2454.383 ; gain = 0.000 ; free physical = 8024 ; free virtual = 25684
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2465.277 ; gain = 0.000 ; free physical = 17147 ; free virtual = 31468
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2454.383 ; gain = 0.000 ; free physical = 8024 ; free virtual = 25684
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2465.277 ; gain = 723.277 ; free physical = 17130 ; free virtual = 31450
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2454.383 ; gain = 712.340 ; free physical = 6971 ; free virtual = 24629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2473.281 ; gain = 731.281 ; free physical = 17130 ; free virtual = 31450
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6971 ; free virtual = 24629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2473.281 ; gain = 731.281 ; free physical = 17130 ; free virtual = 31450
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6971 ; free virtual = 24629
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'mac_load_reg'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
@@ -337,10 +341,12 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'jtag_state_reg' in module 'jtag_driver'
-WARNING: [Synth 8-327] inferring latch for variable 'reg3_raddr_o_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:164]
-WARNING: [Synth 8-327] inferring latch for variable 'reg_wdata_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:182]
-WARNING: [Synth 8-327] inferring latch for variable 'mac_hold_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:193]
-WARNING: [Synth 8-327] inferring latch for variable 'hold_flag_reg' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:193]
+WARNING: [Synth 8-327] inferring latch for variable 'reg3_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:179]
+WARNING: [Synth 8-327] inferring latch for variable 'mac_config_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:159]
+WARNING: [Synth 8-327] inferring latch for variable 'mreg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:160]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:192]
+WARNING: [Synth 8-327] inferring latch for variable 'mac_hold_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_flag_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -421,7 +427,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2473.281 ; gain = 731.281 ; free physical = 17127 ; free virtual = 31449
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 7831 ; free virtual = 25490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -443,25 +449,25 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               40 Bit    Registers := 7     
-	               32 Bit    Registers := 101   
+	               32 Bit    Registers := 70    
 	               16 Bit    Registers := 3     
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 142   
 	                5 Bit    Registers := 6     
 	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 54    
+	                1 Bit    Registers := 55    
 +---Multipliers : 
 	              32x32  Multipliers := 1     
 +---Muxes : 
 	   4 Input   40 Bit        Muxes := 3     
 	   3 Input   40 Bit        Muxes := 2     
 	   2 Input   40 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 201   
-	   7 Input   32 Bit        Muxes := 31    
-	   6 Input   32 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 300   
+	   7 Input   32 Bit        Muxes := 34    
 	   4 Input   32 Bit        Muxes := 25    
-	   5 Input   32 Bit        Muxes := 12    
+	   6 Input   32 Bit        Muxes := 3     
+	   5 Input   32 Bit        Muxes := 10    
 	   3 Input   32 Bit        Muxes := 2     
 	  15 Input   32 Bit        Muxes := 2     
 	   2 Input   31 Bit        Muxes := 1     
@@ -481,27 +487,27 @@ Detailed RTL Component Info :
 	   2 Input    8 Bit        Muxes := 3     
 	   4 Input    8 Bit        Muxes := 6     
 	   3 Input    8 Bit        Muxes := 1     
-	   6 Input    5 Bit        Muxes := 4     
+	   7 Input    5 Bit        Muxes := 3     
 	   2 Input    5 Bit        Muxes := 22    
 	   3 Input    5 Bit        Muxes := 2     
+	   6 Input    5 Bit        Muxes := 1     
 	   5 Input    4 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 9     
 	   3 Input    4 Bit        Muxes := 2     
 	   4 Input    4 Bit        Muxes := 1     
-	   7 Input    3 Bit        Muxes := 1     
-	   6 Input    3 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 2     
 	   2 Input    3 Bit        Muxes := 9     
 	   3 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 11    
 	   4 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
-	   7 Input    1 Bit        Muxes := 37    
-	   2 Input    1 Bit        Muxes := 125   
-	   6 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 128   
+	   7 Input    1 Bit        Muxes := 42    
 	   3 Input    1 Bit        Muxes := 24    
 	   4 Input    1 Bit        Muxes := 176   
-	   5 Input    1 Bit        Muxes := 21    
+	   6 Input    1 Bit        Muxes := 7     
+	   5 Input    1 Bit        Muxes := 18    
 	  15 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -548,25 +554,25 @@ DSP Report: Generating DSP mul_temp, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 WARNING: [Synth 8-3332] Sequential element (hold_flag_reg) is unused and will be removed from module ex.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u_tinyriscvi_1/u_ex/hold_flag_reg/Q' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:193]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:193]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sidharth/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:193]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u_tinyriscvi_1/u_ex/hold_flag_reg/Q' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
 WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[4]) is unused and will be removed from module id.
 WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[3]) is unused and will be removed from module id.
 WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[2]) is unused and will be removed from module id.
 WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[1]) is unused and will be removed from module id.
 WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[0]) is unused and will be removed from module id.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2473.281 ; gain = 731.281 ; free physical = 17079 ; free virtual = 31420
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6837 ; free virtual = 24521
 ---------------------------------------------------------------------------------
- Sort Area is tinyriscv__GB0 acc1_0 : 0 0 : 3137 5933 : Used 1 time 0
- Sort Area is tinyriscv__GB0 acc1_0 : 0 1 : 2796 5933 : Used 1 time 0
- Sort Area is tinyriscv__GB0 acc1_3 : 0 0 : 2777 5436 : Used 1 time 0
- Sort Area is tinyriscv__GB0 acc1_3 : 0 1 : 2659 5436 : Used 1 time 0
- Sort Area is tinyriscv__GB0 mul_temp_6 : 0 0 : 2701 5044 : Used 1 time 0
- Sort Area is tinyriscv__GB0 mul_temp_6 : 0 1 : 2343 5044 : Used 1 time 0
- Sort Area is tinyriscv__GB0 mul_temp_9 : 0 0 : 2339 4365 : Used 1 time 0
- Sort Area is tinyriscv__GB0 mul_temp_9 : 0 1 : 2026 4365 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 acc1_0 : 0 0 : 3137 5933 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 acc1_0 : 0 1 : 2796 5933 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 acc1_3 : 0 0 : 2777 5436 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 acc1_3 : 0 1 : 2659 5436 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 mul_temp_6 : 0 0 : 2701 5044 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 mul_temp_6 : 0 1 : 2343 5044 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 mul_temp_9 : 0 0 : 2339 4365 : Used 1 time 0
+ Sort Area is tinyriscv__GB1 mul_temp_9 : 0 1 : 2026 4365 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -603,13 +609,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2473.281 ; gain = 731.281 ; free physical = 17082 ; free virtual = 31423
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6879 ; free virtual = 24567
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 2612.273 ; gain = 870.273 ; free physical = 16925 ; free virtual = 31266
+Finished Timing Optimization : Time (s): cpu = 00:02:27 ; elapsed = 00:02:29 . Memory (MB): peak = 2632.207 ; gain = 890.164 ; free physical = 8299 ; free virtual = 26008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -629,8 +635,109 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][31]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][31] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][30]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][30] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][29]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][29] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][28]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][28] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][27]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][27] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][26]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][26] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][25]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][25] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][24]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][24] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][23]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][23] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][22]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][22] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][21]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][21] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][20]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][20] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][19]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][19] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][18]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][18] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][17]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][17] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][16]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][16] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][15]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][15] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][14]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][14] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][13]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][13] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][12]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][12] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][11]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][11] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][10]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][10] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][9]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][9] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][8]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][8] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][7]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][7] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][6]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][6] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][5]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][5] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][4]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][4] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][3]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][3] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][2]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][2] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][1]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][1] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[0][0]__0 ) from module (regs) as it is equivalent to (\regs_reg[0][0] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][31]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][31] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][30]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][30] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][29]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][29] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][28]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][28] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][27]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][27] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][26]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][26] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][25]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][25] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][24]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][24] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][23]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][23] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][22]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][22] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][21]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][21] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][20]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][20] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][19]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][19] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][18]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][18] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][17]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][17] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][16]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][16] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][15]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][15] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][14]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][14] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][13]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][13] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][12]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][12] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][11]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][11] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][10]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][10] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][9]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][9] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][8]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][8] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][7]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][7] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][6]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][6] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][5]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][5] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][4]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][4] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][3]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][3] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][2]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][2] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][1]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][1] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[1][0]__0 ) from module (regs) as it is equivalent to (\regs_reg[1][0] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][31]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][31] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][30]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][30] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][29]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][29] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][28]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][28] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][27]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][27] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][26]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][26] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][25]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][25] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][24]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][24] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][23]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][23] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][22]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][22] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][21]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][21] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][20]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][20] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][19]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][19] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][18]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][18] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][17]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][17] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][16]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][16] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][15]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][15] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][14]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][14] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][13]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][13] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][12]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][12] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][11]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][11] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][10]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][10] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][9]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][9] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][8]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][8] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][7]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][7] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][6]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][6] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][5]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][5] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][4]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][4] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][3]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][3] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][2]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][2] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][1]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][1] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[2][0]__0 ) from module (regs) as it is equivalent to (\regs_reg[2][0] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][31]__0 ) from module (regs) as it is equivalent to (\regs_reg[3][31] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][30]__0 ) from module (regs) as it is equivalent to (\regs_reg[3][30] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][29]__0 ) from module (regs) as it is equivalent to (\regs_reg[3][29] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][28]__0 ) from module (regs) as it is equivalent to (\regs_reg[3][28] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
+INFO: [Common 17-14] Message 'Synth 8-4765' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Technology Mapping : Time (s): cpu = 00:02:35 ; elapsed = 00:02:37 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8359 ; free virtual = 26067
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -648,37 +755,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished IO Insertion : Time (s): cpu = 00:02:39 ; elapsed = 00:02:41 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8390 ; free virtual = 26099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:39 ; elapsed = 00:02:41 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8390 ; free virtual = 26099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:41 ; elapsed = 00:02:42 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8388 ; free virtual = 26097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8388 ; free virtual = 26097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -708,55 +815,55 @@ Report Cell Usage:
 +------+----------+------+
 |      |Cell      |Count |
 +------+----------+------+
-|1     |BUFG      |     3|
+|1     |BUFG      |     4|
 |2     |CARRY4    |   251|
 |3     |DSP48E1   |     7|
 |5     |LUT1      |   305|
-|6     |LUT2      |   973|
-|7     |LUT3      |   583|
-|8     |LUT4      |   968|
-|9     |LUT5      |  1319|
-|10    |LUT6      |  5311|
-|11    |MUXF7     |   743|
-|12    |MUXF8     |   230|
+|6     |LUT2      |   984|
+|7     |LUT3      |   539|
+|8     |LUT4      |  1065|
+|9     |LUT5      |  1685|
+|10    |LUT6      |  6100|
+|11    |MUXF7     |   904|
+|12    |MUXF8     |   299|
 |13    |RAM256X1S |  1024|
-|14    |FDCE      |   543|
+|14    |FDCE      |   545|
 |15    |FDPE      |    11|
-|16    |FDRE      |  3912|
+|16    |FDRE      |  3948|
 |17    |FDSE      |    13|
-|18    |LD        |    33|
+|18    |LD        |    66|
 |19    |IBUF      |     8|
 |20    |IOBUF     |     2|
 |21    |OBUF      |     8|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 2637.273 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:18 ; elapsed = 00:01:20 . Memory (MB): peak = 2637.273 ; gain = 759.523 ; free physical = 16893 ; free virtual = 31234
-Synthesis Optimization Complete : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2637.281 ; gain = 895.273 ; free physical = 16893 ; free virtual = 31234
+Synthesis finished with 0 errors, 3 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:38 ; elapsed = 00:02:40 . Memory (MB): peak = 2660.207 ; gain = 790.414 ; free physical = 8389 ; free virtual = 26097
+Synthesis Optimization Complete : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.215 ; gain = 918.164 ; free physical = 8389 ; free virtual = 26097
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2637.281 ; gain = 0.000 ; free physical = 17193 ; free virtual = 31533
-INFO: [Netlist 29-17] Analyzing 2290 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2660.215 ; gain = 0.000 ; free physical = 8677 ; free virtual = 26388
+INFO: [Netlist 29-17] Analyzing 2553 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2693.301 ; gain = 0.000 ; free physical = 17194 ; free virtual = 31535
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2716.234 ; gain = 0.000 ; free physical = 8683 ; free virtual = 26394
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1059 instances were transformed.
+  A total of 1092 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  LD => LDCE: 33 instances
+  LD => LDCE: 66 instances
   RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 1024 instances
 
-Synth Design complete | Checksum: 8376c6a
+Synth Design complete | Checksum: 4489b5e2
 INFO: [Common 17-83] Releasing license: Synthesis
-131 Infos, 152 Warnings, 3 Critical Warnings and 0 Errors encountered.
+234 Infos, 155 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:26 . Memory (MB): peak = 2693.301 ; gain = 1276.371 ; free physical = 17195 ; free virtual = 31535
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2221.013; main = 1876.469; forked = 394.893
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3673.863; main = 2693.305; forked = 1036.586
+synth_design: Time (s): cpu = 00:02:51 ; elapsed = 00:02:51 . Memory (MB): peak = 2716.234 ; gain = 1310.137 ; free physical = 8682 ; free virtual = 26393
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2381.726; main = 2075.571; forked = 433.952
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3693.730; main = 2716.238; forked = 1033.520
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2717.312 ; gain = 0.000 ; free physical = 17193 ; free virtual = 31536
-INFO: [Common 17-1381] The checkpoint '/home/sidharth/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2740.246 ; gain = 0.000 ; free physical = 8680 ; free virtual = 26396
+INFO: [Common 17-1381] The checkpoint '/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file tinyriscv_soc_top_utilization_synth.rpt -pb tinyriscv_soc_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun  2 11:03:47 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  3 12:57:04 2025...

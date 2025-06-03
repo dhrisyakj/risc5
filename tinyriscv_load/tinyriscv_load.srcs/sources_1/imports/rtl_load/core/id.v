@@ -69,7 +69,8 @@ module id(
     output reg is_mac_o,  // Custom Instruction -MAC
     
     // to ex from load_mac // Custom Instruction -LOAD_MAC
-     output reg is_macl_o
+     output reg is_macl_o,
+     output reg is_mac_config_o // Custom Instruction - MAC_CONFIG
     );
 
     wire[6:0] opcode = inst_i[6:0];
@@ -78,7 +79,10 @@ module id(
     wire[4:0] rd = inst_i[11:7];
     wire[4:0] rs1 = inst_i[19:15];
     wire[4:0] rs2 = inst_i[24:20];
-    wire[4:0] r3 = inst_i[11:7]; // Custom Instruction -LOAD_MAC
+    
+    
+    
+    wire[4:0] rs3 = inst_i[11:7]; // Custom Instruction -LOAD_MAC
 
 
     always @ (*) begin
@@ -86,13 +90,14 @@ module id(
         inst_addr_o = inst_addr_i;
         reg1_rdata_o = reg1_rdata_i;
         reg2_rdata_o = reg2_rdata_i;
-        reg3_rdata_o = reg2_rdata_i; // Custom Instruction -LOAD_MAC
+        reg3_rdata_o = reg3_rdata_i; // Custom Instruction -LOAD_MAC
         csr_rdata_o = csr_rdata_i;
         csr_raddr_o = `ZeroWord;
         csr_waddr_o = `ZeroWord;
         csr_we_o = `WriteDisable;
         is_mac_o=`WriteDisable; // Custom Instruction -MAC
          is_macl_o=`WriteDisable;  // Custom Instruction -LOAD_MAC
+          is_mac_config_o=`WriteDisable;  // Custom Instruction - MAC_CONFIG
         op1_o = `ZeroWord;
         op2_o = `ZeroWord;
         op1_jump_o = `ZeroWord;
@@ -129,6 +134,16 @@ module id(
                             op1_o = reg1_rdata_i;
                             op2_o = reg2_rdata_i;
                         end
+                        `INST_MAC_CONFIG: begin   // Custom Instruction -- MAC_COUNT
+                            reg_we_o = `WriteDisable;
+                            reg_waddr_o = rd;
+                            reg1_raddr_o = rs1;
+                            reg2_raddr_o = rs2;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            is_mac_config_o=`WriteEnable; // Custom Instruction - MAC_CONFIG
+                        end
+                        
                         `INST_MAC: begin     // Custom Instruction -MAC
                          reg_we_o = `WriteEnable;
                         reg_waddr_o = rd;
@@ -148,7 +163,7 @@ module id(
                             //is_mac_o=`WriteEnable;
                         end
                        `INST_MACL: begin     // Custom Instruction -MACL
-                         reg_we_o = `WriteEnable;
+                         reg_we_o = `WriteDisable;
                            reg_waddr_o = rd;
                             reg1_raddr_o = rs1;
                             reg2_raddr_o = rs2;
@@ -161,7 +176,7 @@ module id(
                            reg_waddr_o = rd;
                             reg1_raddr_o = rs1;
                             reg2_raddr_o = rs2;
-                            reg3_raddr_o = rs2;
+                            reg3_raddr_o = rs3;
                             op1_o = reg1_rdata_i;
                             op2_o = reg2_rdata_i;
                             //op3_o = reg3_rdata_i;

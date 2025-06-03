@@ -32,12 +32,12 @@ module mac_load_reg#(
           MAC =3'd4,
           DONE = 3'd5
 )(
-  input  wire                   clk,
-  input  wire                   rst,
+  input  wire   clk,
+  input  wire   rst,
 
-  input  wire                   start,
-  output reg                    busy,
-  output reg                    done,
+  input  wire   start,
+  output reg    busy,
+  output reg    done,
 
   input  wire [ADDR_WIDTH-1:0]  base_addr1,
   input  wire [ADDR_WIDTH-1:0]  base_addr2,
@@ -45,7 +45,7 @@ module mac_load_reg#(
   
    //input  wire [`RegAddrBus]  mac_dst_reg_addr_i,
   //output  reg [`RegAddrBus]  mac_dst_reg_addr_o,
-     input  wire [4:0]  mac_dst_reg_addr_i,
+  input  wire [4:0]  mac_dst_reg_addr_i,
   output  reg [4:0]  mac_dst_reg_addr_o,
 
   // single async read port
@@ -79,13 +79,20 @@ module mac_load_reg#(
     end else begin
       // default de-asserts
       done   <= 1'b0;
- 
+   
 
       case (state)
         IDLE: begin
           if (start) begin
             busy  <= 1'b1;
-           final   <= count;
+           final = 32'd8192;
+         if ((count != {COUNT_WIDTH{1'b0}}) && (count <= final)) begin
+            final <= count;
+        //curr_count <= new_count;
+         end
+          //else begin
+             //final<=32'd2;
+          //end
             acc <= {DATA_WIDTH{1'b0}};
             mac_dst_reg_addr_o <= mac_dst_reg_addr_i;
             addr1 <= base_addr1;

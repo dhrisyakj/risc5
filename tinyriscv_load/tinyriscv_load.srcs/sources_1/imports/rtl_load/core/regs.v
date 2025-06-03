@@ -42,7 +42,8 @@ module regs(
     input wire[`RegAddrBus] raddr2_i,     // 读寄存器2地址
     
     input wire[`RegAddrBus] raddr3_i, // Custom Instruction -LOAD_MAC
-
+    
+    
     // to id
     output reg[`RegBus] rdata2_o,         // 读寄存器2数据
     
@@ -50,10 +51,30 @@ module regs(
 
     // to jtag
     output reg[`RegBus] jtag_data_o       // 读寄存器数据
-
+    
+    // to mac_count
+    
+    //reg[`RegBus] mac_count   // Custom Instruction -LOAD_MAC
     );
 
     reg[`RegBus] regs[0:`RegNum - 1];
+    
+   //reg[`RegBus] mac_count_regs; 
+
+
+always @ (posedge clk) begin
+        if (rst == `RstDisable) begin
+            // 优先ex模块写操作
+            if ((we_i == `WriteEnable) && (waddr_i != `ZeroReg)) begin
+                regs[waddr_i] <= wdata_i;
+            end else if ((jtag_we_i == `WriteEnable) && (jtag_addr_i != `ZeroReg)) begin
+                regs[jtag_addr_i] <= jtag_data_i;
+            end
+        end
+    end
+
+
+
 
     // 写寄存器
     always @ (posedge clk) begin

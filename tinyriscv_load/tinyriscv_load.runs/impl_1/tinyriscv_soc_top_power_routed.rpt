@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date             : Mon Jun  2 11:05:32 2025
+| Date             : Tue Jun  3 12:59:36 2025
 | Host             : sidharth-Alienware-Aurora-Ryzen-Edition running 64-bit Ubuntu 24.04.1 LTS
 | Command          : report_power -file tinyriscv_soc_top_power_routed.rpt -pb tinyriscv_soc_top_power_summary_routed.pb -rpx tinyriscv_soc_top_power_routed.rpx
 | Design           : tinyriscv_soc_top
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        3 |       --- |             --- |
-| Slice Logic              |     0.003 |    22423 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     8414 |     20800 |           40.45 |
+| Clocks                   |     0.015 |        3 |       --- |             --- |
+| Slice Logic              |     0.002 |    23946 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     9685 |     20800 |           46.56 |
 |   CARRY4                 |    <0.001 |      251 |      8150 |            3.08 |
-|   Register               |    <0.001 |     4512 |     41600 |           10.85 |
-|   F7/F8 Muxes            |    <0.001 |     4045 |     32600 |           12.41 |
-|   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
+|   Register               |    <0.001 |     4583 |     41600 |           11.02 |
+|   F7/F8 Muxes            |    <0.001 |     4275 |     32600 |           13.11 |
+|   BUFG                   |    <0.001 |        3 |        32 |            9.38 |
 |   LUT as Distributed RAM |    <0.001 |     4096 |      9600 |           42.67 |
-|   Others                 |     0.000 |       58 |       --- |             --- |
-| Signals                  |     0.008 |    12348 |       --- |             --- |
+|   Others                 |     0.000 |       60 |       --- |             --- |
+| Signals                  |     0.007 |    13381 |       --- |             --- |
 | DSPs                     |    <0.001 |        7 |        90 |            7.78 |
 | I/O                      |    <0.001 |       18 |       106 |           16.98 |
 | Static Power             |     0.072 |          |           |                 |
@@ -145,12 +145,12 @@ Table of Contents
 | Name              | Power (W) |
 +-------------------+-----------+
 | tinyriscv_soc_top |     0.024 |
-|   u_ram           |     0.003 |
-|   u_rom           |     0.003 |
-|   u_tinyriscv     |     0.008 |
+|   u_ram           |     0.004 |
+|   u_rom           |     0.004 |
+|   u_tinyriscv     |     0.007 |
 |     u_div         |     0.001 |
 |     u_regs        |     0.002 |
-|   u_uart_debug    |     0.008 |
+|   u_uart_debug    |     0.007 |
 +-------------------+-----------+
 
 

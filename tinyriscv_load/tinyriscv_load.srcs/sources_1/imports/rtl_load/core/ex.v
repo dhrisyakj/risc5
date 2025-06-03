@@ -25,6 +25,10 @@ module ex(
      // from id for custom mac
    input wire is_mac_i,  // Custom Instruction -MAC
    //input wire is_mac_done_i,
+   input wire is_mac_config_i, // Custom Instruction -MAC_CONFIG
+   output wire is_mac_config_o, // Custom Instruction -MAC_CONFIG
+   input wire[`RegBus] count_wdata_i, // Custom Instruction -MAC_CONFIG
+     output wire[`RegBus] count_wdata_o, // Custom Instruction -MAC_CONFIG
     // from id
     input wire[`InstBus] inst_i,            // 指令内容
     input wire[`InstAddrBus] inst_addr_i,   // 指令地址
@@ -148,6 +152,12 @@ module ex(
    reg[`RegAddrBus] mac_waddr;
    reg[`RegBus] mac_wdata;
    
+   reg mac_config;  // Custom Instruction -MAC_CONFIG
+   reg[`RegBus] mreg_wdata; // Custom Instruction -MAC_CONFIG
+   
+   
+    assign is_mac_config_o = mac_config; // Custom Instruction -MAC_CONFIG
+    assign count_wdata_o = mreg_wdata;   // Custom Instruction -MAC_CONFIG
     assign opcode = inst_i[6:0];
     assign funct3 = inst_i[14:12];
     assign funct7 = inst_i[31:25];
@@ -485,6 +495,19 @@ module ex(
                  mem_we = `WriteDisable;
                  reg_wdata = acc_out;
                 end
+                 `INST_MAC_CONFIG:begin   // Custom Instruction -MAC CONFIG
+                 jump_flag = `JumpDisable;
+                 hold_flag = `HoldDisable;
+                 jump_addr = `ZeroWord;
+                 mem_wdata_o = `ZeroWord;
+                 mem_raddr_o = `ZeroWord;
+                 mem_waddr_o = `ZeroWord;
+                 mem_we = `WriteDisable;
+                 reg_wdata = `ZeroWord;
+                 mac_config = is_mac_config_i;
+                 mreg_wdata = count_wdata_i;
+                end
+                
                  `INST_ADDTT:begin
                  jump_flag = `JumpDisable;
                  hold_flag = `HoldDisable;

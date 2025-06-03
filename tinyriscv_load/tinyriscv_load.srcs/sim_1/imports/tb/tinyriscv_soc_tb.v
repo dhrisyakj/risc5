@@ -28,6 +28,8 @@ module tinyriscv_soc_tb;
         wire [`RegBus] mem_addr = tinyriscv_soc_top_0.u_tinyriscv.load_reg.mem_addr;
          wire [`RegBus] acc= tinyriscv_soc_top_0.u_tinyriscv.load_reg.acc;
        wire [2:0] state = tinyriscv_soc_top_0.u_tinyriscv.load_reg.state;
+   wire [`RegBus] r3_wdata = tinyriscv_soc_top_0.u_tinyriscv.ie_reg3_rdata_o;
+   wire [`RegBus] count = tinyriscv_soc_top_0.u_tinyriscv.load_reg.count;
      
     wire m_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_macl_o;
     wire m_ready = tinyriscv_soc_top_0.u_tinyriscv.mac_load_done;
@@ -37,7 +39,7 @@ module tinyriscv_soc_tb;
     wire[`RegBus] x1 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[1];
     wire[`RegBus] x2 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[2];
    wire[`RegBus] x6 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6];
-    wire[`RegBus] x0 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[0];
+    wire[`RegBus] mac_c = tinyriscv_soc_top_0.u_tinyriscv.mreg.mac_count;
     
     wire[`RegBus] x3 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[3];
     wire[`RegBus] x26 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[26];
@@ -524,7 +526,7 @@ module tinyriscv_soc_tb;
     // read mem data
     initial begin
           $display("test running...");
-        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mload_t.data", tinyriscv_soc_top_0.u_rom._rom);
+        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mac_c.data", tinyriscv_soc_top_0.u_rom._rom);
     end
     
     /*
@@ -537,7 +539,7 @@ module tinyriscv_soc_tb;
 initial begin
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4] =32'h10001000; // Test Custom MAC
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'h10001020; // Test Custom MAC
-     //tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6] =32'd2;
+     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[2] =32'd2;
      //tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[0] =32'd1;
    
     end
