@@ -20,43 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 `include "defines.v"
 
-
-module mac_regs(
+module dsp_config(
 
 input wire clk,
 input wire rst,
- // Write into first register from ex
-  input wire we1_i,                      
-  //input wire[`RegAddrBus] w1addr_i,      
-  input wire[`RegBus] w1data_i,
+input wire we1_i,                           
+input wire[`RegBus] w1data_i,
+output reg[`RegBus] mac_count_o        
+);
+    
+reg[`RegBus] mac_count;
 
-  output reg[`RegBus] mac_count_o        
-
-   
-    
-    );
-    
-    
-    
-     reg[`RegBus] mac_count;
-
+//Write the count to mac_count register
+always @ (posedge clk) begin
+   if (rst == `RstDisable) begin
+      if ((we1_i == `WriteEnable)) begin
+          mac_count <= w1data_i;
+       end
+   end
+   end
      
-     
-      always @ (posedge clk) begin
-        if (rst == `RstDisable) begin
-            // 优先ex模块写操作
-            if ((we1_i == `WriteEnable)) begin
-                mac_count <= w1data_i;
-                end
-            
-    end
-    end
-     
- 
+//Read the count value
 always @ (*) begin
-             mac_count_o = mac_count;
-           
-        end
+     mac_count_o = mac_count;
+end
    
-    
 endmodule

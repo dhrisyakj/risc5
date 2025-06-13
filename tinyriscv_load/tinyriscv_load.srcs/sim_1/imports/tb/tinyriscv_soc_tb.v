@@ -16,30 +16,73 @@ module tinyriscv_soc_tb;
 
 
     always #10 clk = ~clk;     // 50MHz
-     wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
+    wire [`RegBus] if_inst_i = tinyriscv_soc_top_0.u_tinyriscv.rib_pc_data_i;  // Test Custom MAC
      wire [`RegBus] id_inst_d = tinyriscv_soc_top_0.u_tinyriscv.if_inst_o;   // Test Custom MAC
      wire [`RegBus] ex_inst_o = tinyriscv_soc_top_0.u_tinyriscv.ie_inst_o;
+     wire hold = tinyriscv_soc_top_0.u_tinyriscv.ex_hold_flag_o;
+     
+     wire [`RegBus] product = tinyriscv_soc_top_0.u_tinyriscv.u_power.product;
+       wire [`RegBus] acc = tinyriscv_soc_top_0.u_tinyriscv.u_avg.acc;
+       wire [`RegBus] S = tinyriscv_soc_top_0.u_tinyriscv.u_avg.S;
+       wire [2:0] state = tinyriscv_soc_top_0.u_tinyriscv.u_avg.state;
+       wire[`RegBus] dest_reg = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[10];
   
-    wire [`RegBus] rib_mem_data = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_data_i;
-     wire [`RegBus] rib_mem_addr = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_addr_o;
-      wire [`RegBus] acc_out = tinyriscv_soc_top_0.u_tinyriscv.load_reg.acc_out;
-       wire [`RegBus] rf1_wdata = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf1_wdata;
-       wire [`RegBus] rf2_wdata = tinyriscv_soc_top_0.u_tinyriscv.load_reg.rf2_wdata;
-        wire [`RegBus] mem_addr = tinyriscv_soc_top_0.u_tinyriscv.load_reg.mem_addr;
+  
+    //wire [`RegBus] rib_mem_data = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_data_i;
+     //wire [`RegBus] rib_mem_addr = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_addr_o;
+      //wire [`RegBus] final_avg = tinyriscv_soc_top_0.u_tinyriscv.u_avg.avg_out;
+       wire [`RegBus] exec_wdata = tinyriscv_soc_top_0.u_tinyriscv.u_ex.custom_wdata;
+       wire [`RegBus] reg_wdata = tinyriscv_soc_top_0.u_tinyriscv.ex_reg_wdata_o;
+        wire reg_we= tinyriscv_soc_top_0.u_tinyriscv.ex_reg_we_o;
+        wire [`RegAddrBus] reg_waddr= tinyriscv_soc_top_0.u_tinyriscv.ex_reg_waddr_o;
+      // wire [`RegBus] exec_addr = tinyriscv_soc_top_0.u_tinyriscv.u_ex.reg_waddr_o;
+       // wire [`RegBus] ex_addr = tinyriscv_soc_top_0.u_tinyriscv.u_avg.mac_dst_reg_addr_o;
+       //wire exec_write= tinyriscv_soc_top_0.u_tinyriscv.u_ex.reg_we_o;
+       //wire [`RegBus] exec_avg = tinyriscv_soc_top_0.u_tinyriscv.exec_avg_out_o;
+       //wire mem_req= tinyriscv_soc_top_0.u_tinyriscv.power_mem_req_o;
+       /*
+       wire [`RegBus] product = tinyriscv_soc_top_0.u_tinyriscv.u_power.product;
+       wire [`RegBus] acc = tinyriscv_soc_top_0.u_tinyriscv.u_power.acc;
+       wire [`RegBus] power = tinyriscv_soc_top_0.u_tinyriscv.u_power.power;
+       wire [2:0] state = tinyriscv_soc_top_0.u_tinyriscv.u_power.state;
+       wire[`RegBus] dest_reg = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[10];
+      */
+       wire [`RegBus]mem_data_in = tinyriscv_soc_top_0.u_tinyriscv.rib_ex_data_i;
+        wire [`RegBus]mem_data = tinyriscv_soc_top_0.u_tinyriscv.u_power.mem_data;
+       wire [`RegBus] avg_out = tinyriscv_soc_top_0.u_tinyriscv.exec_power_out_o;
+        wire [`RegBus] mem_addr = tinyriscv_soc_top_0.u_tinyriscv.u_power.mem_addr;
+        wire [`RegBus] r2_wdata = tinyriscv_soc_top_0.u_tinyriscv.ie_reg2_rdata_o;
+        wire [`RegBus] fixed_inv = tinyriscv_soc_top_0.u_tinyriscv.u_power.fixed_inv;
+        /*
          wire [`RegBus] acc= tinyriscv_soc_top_0.u_tinyriscv.load_reg.acc;
+           
        wire [2:0] state = tinyriscv_soc_top_0.u_tinyriscv.load_reg.state;
-   wire [`RegBus] r3_wdata = tinyriscv_soc_top_0.u_tinyriscv.ie_reg3_rdata_o;
+   wire [`RegBus] r3_wdata = tinyriscv_soc_top_0.u_tinyriscv.ie_reg2_rdata_o
    wire [`RegBus] count = tinyriscv_soc_top_0.u_tinyriscv.load_reg.count;
      
-    wire m_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_macl_o;
-    wire m_ready = tinyriscv_soc_top_0.u_tinyriscv.mac_load_done;
-       wire m_busy= tinyriscv_soc_top_0.u_tinyriscv.mac_load_busy;
-        wire m_req= tinyriscv_soc_top_0.u_tinyriscv.mac_mem_req_o;
-       
-    wire[`RegBus] x1 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[1];
-    wire[`RegBus] x2 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[2];
-   wire[`RegBus] x6 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6];
-    wire[`RegBus] mac_c = tinyriscv_soc_top_0.u_tinyriscv.mreg.mac_count;
+    wire mac_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_macl_o;
+    wire mac_ready = tinyriscv_soc_top_0.u_tinyriscv.mac_load_done;
+       wire mac_busy= tinyriscv_soc_top_0.u_tinyriscv.mac_load_busy;
+        wire mem_req= tinyriscv_soc_top_0.u_tinyriscv.mac_mem_req_o;
+        */
+       // wire[2:0] funct3 = tinyriscv_soc_top_0.u_tinyriscv.u_id.funct3;
+       // wire[6:0] opcode = tinyriscv_soc_top_0.u_tinyriscv.u_id.opcode;
+        //wire[6:0] funct7 = tinyriscv_soc_top_0.u_tinyriscv.u_id.funct7;
+        //wire avg_id= tinyriscv_soc_top_0.u_tinyriscv.u_id.is_mov_avg_o;
+      wire avg_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_avg_filter_o;
+      wire avg_ready = tinyriscv_soc_top_0.u_tinyriscv.exec_avg_done;
+       wire avg_busy= tinyriscv_soc_top_0.u_tinyriscv.exec_avg_busy;
+        wire mem_req= tinyriscv_soc_top_0.u_tinyriscv.avg_mem_req_o;
+        /*
+        wire p_start = tinyriscv_soc_top_0.u_tinyriscv.ie_is_power_est_o;
+      wire p_ready = tinyriscv_soc_top_0.u_tinyriscv.exec_power_done;
+       wire p_busy= tinyriscv_soc_top_0.u_tinyriscv.exec_power_busy;
+        wire mem_req= tinyriscv_soc_top_0.u_tinyriscv.power_mem_req_o;
+       */
+    //wire[`RegBus] x1 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[1];
+    //wire[`RegBus] x2 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[2];
+
+    //wire[`RegBus] mac_c = tinyriscv_soc_top_0.u_tinyriscv.mreg.mac_count;
     
     wire[`RegBus] x3 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[3];
     wire[`RegBus] x26 = tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[26];
@@ -526,9 +569,9 @@ module tinyriscv_soc_tb;
     // read mem data
     initial begin
           $display("test running...");
-        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/mac_c.data", tinyriscv_soc_top_0.u_rom._rom);
+        $readmemh ("/home/sidharth/RISC-V/tinyriscv/sim/avg.data", tinyriscv_soc_top_0.u_rom._rom);
     end
-    
+    //mac_c.data
     /*
       initial begin
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6] =32'd200; // Test Custom MAC
@@ -538,18 +581,29 @@ module tinyriscv_soc_tb;
     */
 initial begin
     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[4] =32'h10001000; // Test Custom MAC
-    tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'h10001020; // Test Custom MAC
+    //tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'h10001020; // Test Custom MAC
+     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[5] =32'd8; // Test Custom MAC
      tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[2] =32'd2;
-     //tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[0] =32'd1;
+     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[6] =32'd0;
+      tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[10] =32'd1;
+     tinyriscv_soc_top_0.u_tinyriscv.u_regs.regs[11] =32'd3;
    
     end
     integer i;
     initial begin
     //for (i = 0; i < 4096; i = i + 1) begin
-      tinyriscv_soc_top_0.u_ram._ram[1024] = 32'd7 ;
-      tinyriscv_soc_top_0.u_ram._ram[1025] = 32'd6 ;
-      tinyriscv_soc_top_0.u_ram._ram[1032] = 32'd8 ;
-      tinyriscv_soc_top_0.u_ram._ram[1033] = 32'd9 ;
+      tinyriscv_soc_top_0.u_ram._ram[1024] = 32'd1 ;
+      tinyriscv_soc_top_0.u_ram._ram[1025] = 32'd2 ;
+      tinyriscv_soc_top_0.u_ram._ram[1026] = 32'd3 ;
+      tinyriscv_soc_top_0.u_ram._ram[1027] = 32'd4 ;
+       tinyriscv_soc_top_0.u_ram._ram[1028] = 32'd5 ;
+      tinyriscv_soc_top_0.u_ram._ram[1029] = 32'd6 ;
+       tinyriscv_soc_top_0.u_ram._ram[1030] = 32'd7 ;
+        tinyriscv_soc_top_0.u_ram._ram[1031] = 32'd8 ;
+      tinyriscv_soc_top_0.u_ram._ram[1032] = 32'd5 ;
+      tinyriscv_soc_top_0.u_ram._ram[1033] = 32'd6 ;
+       tinyriscv_soc_top_0.u_ram._ram[1033] = 32'd7 ;
+        tinyriscv_soc_top_0.u_ram._ram[1033] = 32'd8 ;
     //end
     end
     

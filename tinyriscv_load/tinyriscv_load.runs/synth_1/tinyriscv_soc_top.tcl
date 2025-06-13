@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 6
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -87,7 +88,6 @@ read_verilog -library xil_defaultlib {
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v
-  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v
@@ -102,7 +102,8 @@ read_verilog -library xil_defaultlib {
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v
   /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_buf.v
-  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_config.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v
+  /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

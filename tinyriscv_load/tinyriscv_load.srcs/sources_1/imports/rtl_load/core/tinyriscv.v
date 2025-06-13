@@ -79,6 +79,7 @@ module tinyriscv(
     wire[`MemAddrBus] id_op2_jump_o;
     wire id_is_mac_o;  // Custom Instruction -MAC
     wire id_is_macl_o;  // Custom Instruction -LOAD MAC
+    wire id_is_avg_filter_o;  // Custom Instruction - AVG FILTER
     wire mac_done; 
 
     // id_ex模块输出信号
@@ -163,30 +164,69 @@ module tinyriscv(
    
    wire[`RegAddrBus] ex_mac_reg_waddr_o;
    
-   wire id_is_mac_config_o; // Custom Instruction - MAC_CONFIG
+     // Custom  AVG FILTER
+   wire exec_avg_done;
+   wire exec_avg_busy;
+   wire [`RegBus] avg_mem_addr;
+   wire avg_mem_req_o;
+   wire[`RegBus] exec_avg_out_o;
+   wire[`RegAddrBus] avg_reg_waddr_o;
+   
+   wire[`RegAddrBus] ex_avg_reg_waddr_o;
+   
+    // Custom  POWER ESTIMATION
+    wire exec_power_done;
+    wire exec_power_busy;
+    wire[`RegBus] exec_power_out_o;
+    wire[`RegAddrBus] power_reg_waddr_o;
+     wire power_mem_req_o;
+      wire [`RegBus] power_mem_addr;
+    
+     wire id_is_mac_config_o; // Custom Instruction - MAC_CONFIG
      wire ie_is_mac_config_o; // Custom Instruction - MAC_CONFIG
+     wire ie_is_avg_filter_o; // Custom Instruction - AVG FILTER
+     
+      wire id_is_power_est_o; // Custom Instruction - POWER EST
+     wire ie_is_power_est_o; // Custom Instruction - POWER EST
+      
      wire ex_mac_config_o; // Custom Instruction - MAC_CONFIG
      wire[`RegBus] ex_count_wdata_o; // Custom Instruction - MAC_CONFIG
      
      wire[`RegBus] macreg_count_o; // Custom Instruction - MAC_CONFIG
      
      wire [`MemAddrBus] rib_mem_addr_exec;  // Custom instruction LOAD MAC
-     assign rib_mem_addr_exec = (ex_mem_we_o == `WriteEnable)? ex_mem_waddr_o: ex_mem_raddr_o;  // Custom instruction LOAD MAC
      
-    assign rib_ex_addr_o = (mac_load_busy == `WriteEnable)? mac_mem_addr: rib_mem_addr_exec;
-    assign rib_ex_data_o = ex_mem_wdata_o;
-    assign rib_ex_req_o = (mac_load_busy == `WriteEnable)? mac_mem_req_o: ex_mem_req_o;
-    /*
+     wire [`MemAddrBus] rib_mem_addr_mac;  // Custom instruction AVG FILTER
+      wire [`MemAddrBus] rib_mem_addr_avg;  // Custom instruction AVG FILTER
+       wire  rib_mem_req_mac;  // Custom instruction AVG FILTER
+      wire  rib_mem_req_avg;  // Custom instruction AVG FILTER
+       //wire [`MemAddrBus] rib_mem_addr_avg;  // Custom instruction AVG FILTER
+     
+     assign rib_mem_addr_exec = (ex_mem_we_o == `WriteEnable)? ex_mem_waddr_o: ex_mem_raddr_o;  // Custom instruction LOAD MAC
+     assign rib_mem_addr_mac = (mac_load_busy == `WriteEnable)? mac_mem_addr: rib_mem_addr_exec;
+     assign rib_mem_addr_avg = (exec_avg_busy == `WriteEnable)? avg_mem_addr: rib_mem_addr_mac;   
+     assign rib_ex_addr_o = (exec_power_busy == `WriteEnable)? power_mem_addr: rib_mem_addr_avg; 
+       
+       
+       /*
     assign rib_ex_addr_o = (ex_mem_we_o == `WriteEnable)? ex_mem_waddr_o: ex_mem_raddr_o;
     assign rib_ex_data_o = ex_mem_wdata_o;
     assign rib_ex_req_o = ex_mem_req_o;
     */
+    
+     //assign rib_mem_req_avg = (exec_avg_busy == `WriteEnable)? avg_mem_addr: rib_mem_req_mac;
+    //assign rib_ex_addr_o = (mac_load_busy == `WriteEnable)? mac_mem_addr: rib_mem_addr_exec;  // Custom instruction EXEC MAC
+    assign rib_ex_data_o = ex_mem_wdata_o;
+    //assign rib_ex_req_o = (mac_load_busy == `WriteEnable)? mac_mem_req_o: ex_mem_req_o;  // Custom instruction EXEC_MAC
+    
+    assign rib_mem_req_mac = (mac_load_busy == `WriteEnable)? mac_mem_req_o: ex_mem_req_o;
+     assign rib_mem_req_avg = (exec_avg_busy == `WriteEnable)? avg_mem_req_o: rib_mem_req_mac;
+    assign rib_ex_req_o = (exec_power_busy == `WriteEnable)? power_mem_req_o: rib_mem_req_avg;// Custom instruction EXEC_MAC
     assign rib_ex_we_o = ex_mem_we_o;
-
     assign rib_pc_addr_o = pc_pc_o;
     
-   // Custom Instruction - MAC_CONFIG
-   mac_regs mreg(
+   // Custom Instruction - DSP CONFIG
+   dsp_config u_config(
    .clk(clk),
    .rst(rst),
    .we1_i(ex_mac_config_o),
@@ -194,9 +234,8 @@ module tinyriscv(
    .mac_count_o(macreg_count_o)
    );
    
-   
-   // Custom instruction LOAD MAC
-    mac_load_reg#(.ADDR_WIDTH(32),.DATA_WIDTH(32),.COUNT_WIDTH(32)) load_reg (
+   // Custom instruction EXEC_MAC
+    exec_mac u_mac(
   .clk(clk),
    .rst(rst),
    .start(ie_is_macl_o),
@@ -211,8 +250,45 @@ module tinyriscv(
    .acc_out(macl_acc_out),
    .mac_dst_reg_addr_i(ex_mac_reg_waddr_o),
    .mac_dst_reg_addr_o(macl_reg_waddr_o)
- 
  );
+ 
+    
+   // Custom instruction EXEC_POWER
+    exec_power u_power(
+   .clk(clk),
+   .rst(rst),
+   .start(ie_is_power_est_o),
+   .busy(exec_power_busy),
+   .done(exec_power_done),
+   .base_addr(ie_reg1_rdata_o),
+   .fixed_inv_N(ie_reg2_rdata_o),
+   .count(8),
+   .mem_addr(power_mem_addr),
+   .mem_req(power_mem_req_o),
+   .mem_data(rib_ex_data_i),
+   .avg_out(exec_power_out_o),
+   .mac_dst_reg_addr_i(ex_avg_reg_waddr_o),
+   .mac_dst_reg_addr_o(power_reg_waddr_o)
+ );
+ 
+   // Custom instruction AVG FILTER
+     exec_avg_filter u_avg(
+   .clk(clk),
+   .rst(rst),
+   .start(ie_is_avg_filter_o),
+   .busy(exec_avg_busy),
+   .done(exec_avg_done),
+   .base_addr(ie_reg1_rdata_o),
+   .fixed_inv_N(ie_reg2_rdata_o),
+   .count(8),
+   .mem_addr(avg_mem_addr),
+   .mem_req(avg_mem_req_o),
+   .mem_data(rib_ex_data_i),
+   .avg_out(exec_avg_out_o),
+   .mac_dst_reg_addr_i(ex_avg_reg_waddr_o),
+   .mac_dst_reg_addr_o(avg_reg_waddr_o)
+ );
+ 
  
   /*
      //Custom Instruction -MAC
@@ -333,7 +409,10 @@ module tinyriscv(
         .csr_waddr_o(id_csr_waddr_o),
         .is_mac_o(id_is_mac_o),  // Custom Instruction -MAC
          .is_macl_o(id_is_macl_o), // Custom Instruction -LOAD MAC
-         .is_mac_config_o(id_is_mac_config_o) // Custom Instruction - MAC_CONFIG
+         .is_mov_avg_o(id_is_avg_filter_o), // Custom Instruction -AVG FILTER
+         .is_mac_config_o(id_is_mac_config_o), // Custom Instruction - MAC_CONFIG
+         .is_power_est_o(id_is_power_est_o)
+         
     
     );
 
@@ -364,6 +443,8 @@ module tinyriscv(
         .is_macl_i(id_is_macl_o), // Custom Instruction -LOAD MAC
         .is_mac_config_i(id_is_mac_config_o), // Custom Instruction - MAC_CONFIG
         .is_mac_config_o(ie_is_mac_config_o), // Custom Instruction - MAC_CONFIG
+        .is_mov_avg_i(id_is_avg_filter_o), // Custom Instruction - AVG FILTER
+        .is_mov_avg_o(ie_is_avg_filter_o), // Custom Instruction - AVG FILTER
         .op1_i(id_op1_o),
         .op2_i(id_op2_o),
         .op1_jump_i(id_op1_jump_o),
@@ -377,6 +458,8 @@ module tinyriscv(
         .csr_rdata_i(id_csr_rdata_o),
         .csr_we_o(ie_csr_we_o),
         .csr_waddr_o(ie_csr_waddr_o),
+        .is_pow_est_i(id_is_power_est_o), // Custom Instruction - POWER ESTIMATION
+        .is_pow_est_o(ie_is_power_est_o), // Custom Instruction - POWER ESTIMATION
         .csr_rdata_o(ie_csr_rdata_o)
     );
 
@@ -406,7 +489,16 @@ module tinyriscv(
          .count_wdata_i(ie_reg1_rdata_o), // Custom Instruction - MAC_CONFIG
          .count_wdata_o(ex_count_wdata_o), // Custom Instruction - MAC_CONFIG
         .mem_rdata_i(rib_ex_data_i),
+        .exec_avg_out(exec_avg_out_o), // Custom Instruction -AVG FILTER
+        .exec_avg_done(exec_avg_done), // Custom Instruction -AVG FILTER
+        .exec_avg_busy(exec_avg_busy), // Custom Instruction -AVG FILTER
+        .custom_reg_waddr_i(avg_reg_waddr_o), // Custom Instruction -AVG FILTER
+        .custom_reg_waddr_o(ex_avg_reg_waddr_o), // Custom Instruction -AVG FILTER
         .mem_wdata_o(ex_mem_wdata_o),
+        .exec_power_done(exec_power_done),  // Custom Instruction -POWER ESTIMATION
+        .exec_power_busy(exec_power_busy),  // Custom Instruction -POWER ESTIMATION
+        .exec_power_out(exec_power_out_o),  // Custom Instruction -POWER ESTIMATION
+        .power_reg_waddr_i(power_reg_waddr_o), // Custom Instruction -POWER ESTIMATION
         .mem_raddr_o(ex_mem_raddr_o),
         .mem_waddr_o(ex_mem_waddr_o),
         .mem_we_o(ex_mem_we_o),

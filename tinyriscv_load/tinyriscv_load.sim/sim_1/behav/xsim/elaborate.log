@@ -5,9 +5,11 @@ Running: /tools/Xilinx/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'uart_rx_pin' is not connected on this instance [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v:568]
+WARNING: [VRFC 10-5021] port 'uart_rx_pin' is not connected on this instance [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v:622]
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v" Line 20. Module tinyriscv_soc_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v" Line 20. Module tinyriscv doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v" Line 21. Module ctrl doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v" Line 20. Module csr_reg doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v" Line 20. Module if_id doesn't have a timescale but at least one module in design has a timescale.
@@ -21,6 +23,8 @@ WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=5) doesn't have a timescale but at least one module in design has a timescale.
@@ -45,6 +49,8 @@ WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v" Line 27. Module jtag_dm_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_tx.v" Line 23. Module full_handshake_tx(DW=40) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v" Line 23. Module full_handshake_rx(DW=40) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v" Line 20. Module tinyriscv_soc_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v" Line 20. Module tinyriscv doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v" Line 21. Module ctrl doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/csr_reg.v" Line 20. Module csr_reg doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v" Line 20. Module if_id doesn't have a timescale but at least one module in design has a timescale.
@@ -58,6 +64,8 @@ WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v" Line 18. Module gen_pipe_dff(DW=5) doesn't have a timescale but at least one module in design has a timescale.
@@ -84,8 +92,10 @@ WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv
 WARNING: [XSIM 43-4099] "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v" Line 23. Module full_handshake_rx(DW=40) doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mac_regs
-Compiling module xil_defaultlib.mac_load_reg
+Compiling module xil_defaultlib.dsp_config
+Compiling module xil_defaultlib.exec_mac
+Compiling module xil_defaultlib.exec_power
+Compiling module xil_defaultlib.exec_avg_filter
 Compiling module xil_defaultlib.pc_reg
 Compiling module xil_defaultlib.ctrl
 Compiling module xil_defaultlib.regs

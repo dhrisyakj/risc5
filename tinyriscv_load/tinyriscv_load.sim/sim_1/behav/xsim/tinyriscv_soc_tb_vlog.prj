@@ -16,7 +16,6 @@ verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v" \
-"../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac.v" \
 "../../../../tinyriscv_load.srcs/sources_1/new/mac_load_reg.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v" \
@@ -31,7 +30,8 @@ verilog xil_defaultlib "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v" \
 "../../../../tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_buf.v" \
-"../../../../tinyriscv_load.srcs/sources_1/new/mac_load_config.v" \
+"../../../../tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v" \
+"../../../../tinyriscv_load.srcs/sources_1/new/exec_power.v" \
 "../../../../tinyriscv_load.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v" \
 
 # compile glbl module

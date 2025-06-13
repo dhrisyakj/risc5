@@ -70,13 +70,14 @@
 
 // CUSTOM INSTRUCTION
 `define INST_CUSTOM 7'b0101011  // Custom Instruction - MAC
-`define INST_MLOAD 3'b100  //Custom 
-`define INST_ADDTT 3'b111 //Custom 
-`define INST_MAC 3'b101        // Custom Instruction -MAC
+`define INST_MOV_AVG 3'b100  //Custom 
+`define INST_ADDTT 3'b111 //Custom ADD
+`define INST_MAC 3'b101   // Custom Instruction -MAC
 `define INST_MACR 3'b110
 `define INST_MACL 3'b010 // Custom Instruction -MACL
 `define INST_LOADM 3'b001 // Custom Instruction -LOAD_MAC
 `define INST_MAC_CONFIG 3'b000 // Custom Instruction -MAC_CONFIG
+`define INST_POW_EST 3'b011 // Custom Instruction -MAC_CONFIG
 
 
 // L type inst

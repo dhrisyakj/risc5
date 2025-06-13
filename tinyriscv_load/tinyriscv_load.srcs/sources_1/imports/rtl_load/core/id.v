@@ -70,7 +70,9 @@ module id(
     
     // to ex from load_mac // Custom Instruction -LOAD_MAC
      output reg is_macl_o,
-     output reg is_mac_config_o // Custom Instruction - MAC_CONFIG
+     output reg is_mac_config_o, // Custom Instruction - MAC_CONFIG
+     output reg is_mov_avg_o, // Custom Instruction - MOV_AVG_FILTER
+     output reg is_power_est_o // Custom Instruction - POWER_ESTIMATE
     );
 
     wire[6:0] opcode = inst_i[6:0];
@@ -98,6 +100,8 @@ module id(
         is_mac_o=`WriteDisable; // Custom Instruction -MAC
          is_macl_o=`WriteDisable;  // Custom Instruction -LOAD_MAC
           is_mac_config_o=`WriteDisable;  // Custom Instruction - MAC_CONFIG
+          is_mov_avg_o=`WriteDisable; // Custom Instruction - MOV AVG FILTER
+          is_power_est_o =`WriteDisable;
         op1_o = `ZeroWord;
         op2_o = `ZeroWord;
         op1_jump_o = `ZeroWord;
@@ -133,6 +137,33 @@ module id(
                             reg2_raddr_o = rs2;
                             op1_o = reg1_rdata_i;
                             op2_o = reg2_rdata_i;
+                        end
+                        `INST_MOV_AVG: begin     // Custom Instruction -- MOV_AVG_FILTER
+                            reg_we_o = `WriteDisable;
+                           reg_waddr_o = rd;
+                            reg1_raddr_o = rs1;
+                            reg2_raddr_o = rs2;
+                            //reg3_raddr_o = rs3;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            //op3_o = reg3_rdata_i;
+                            is_mov_avg_o =`WriteEnable;
+                            op1_jump_o = inst_addr_i;
+                            op2_jump_o = 32'h4;  
+                        end
+                        
+                        `INST_POW_EST: begin     // Custom Instruction -- POWER 
+                            reg_we_o = `WriteDisable;
+                           reg_waddr_o = rd;
+                            reg1_raddr_o = rs1;
+                            reg2_raddr_o = rs2;
+                            //reg3_raddr_o = rs3;
+                            op1_o = reg1_rdata_i;
+                            op2_o = reg2_rdata_i;
+                            //op3_o = reg3_rdata_i;
+                            is_power_est_o =`WriteEnable;
+                            op1_jump_o = inst_addr_i;
+                            op2_jump_o = 32'h4;  
                         end
                         `INST_MAC_CONFIG: begin   // Custom Instruction -- MAC_COUNT
                             reg_we_o = `WriteDisable;
@@ -191,7 +222,10 @@ module id(
                             reg1_raddr_o = `ZeroReg;
                             reg2_raddr_o = `ZeroReg;
                         end
-                    endcase  
+             
+             
+                 endcase  
+                 /*
              else 
              case (funct3)
                  `INST_MLOAD: begin     // Custom Instruction -MAC LOAD
@@ -208,8 +242,8 @@ module id(
                             reg1_raddr_o = `ZeroReg;
                             reg2_raddr_o = `ZeroReg;
                         end
-               endcase
-               end
+               endcase */
+               end 
                       
             `INST_TYPE_R_M: begin
                 if ((funct7 == 7'b0000000) || (funct7 == 7'b0100000)) begin

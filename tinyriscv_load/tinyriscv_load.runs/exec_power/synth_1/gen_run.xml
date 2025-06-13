@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1749639512" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tinyriscv_soc_top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="tinyriscv_soc_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="tinyriscv_soc_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="tinyriscv_soc_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="tinyriscv_soc_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="tinyriscv_soc_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="tinyriscv_soc_top.vds"/>
+  <File Type="REPORTS-TCL" Name="tinyriscv_soc_top_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="tinyriscv_soc_top_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="tinyriscv_soc_top.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/defines.v">
+      <FileInfo>
+        <Attr Name="IsGlobalInclude" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/defines.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/clint.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/clint.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/csr_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/csr_reg.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/ctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/ctrl.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/div.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/div.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/ex.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/ex.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/utils/full_handshake_rx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/utils/full_handshake_rx.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/utils/full_handshake_tx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/utils/full_handshake_tx.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/utils/gen_dff.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/utils/gen_dff.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/gpio.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/gpio.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/id.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/id.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/id_ex.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/id_ex.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/if_id.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/if_id.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/debug/jtag_dm.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/debug/jtag_dm.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/debug/jtag_driver.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/debug/jtag_driver.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/debug/jtag_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/debug/jtag_top.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/mac.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/mac.v"/>
+        <Attr Name="ImportTime" Val="1748348457"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mac_load_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/pc_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/pc_reg.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/ram.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/ram.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/regs.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/regs.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/rib.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/rib.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/rom.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/rom.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/spi.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/spi.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/timer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/timer.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/tinyriscv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/tinyriscv.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/perips/uart.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/perips/uart.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/debug/uart_debug.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/debug/uart_debug.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/soc/tinyriscv_soc_top.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/core/mac_regs.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/core/mac_regs.v"/>
+        <Attr Name="ImportTime" Val="1748348465"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl_load/utils/gen_buf.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/tinyriscv/rtl_load/utils/gen_buf.v"/>
+        <Attr Name="ImportTime" Val="1748348433"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mac_load_config.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/exec_mov_avg_filter.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/exec_avg_filter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="tinyriscv_soc_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/constrs/tinyriscv.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../tinyriscv/tinyriscv.srcs/constrs_1/imports/constrs/tinyriscv.xdc"/>
+        <Attr Name="ImportTime" Val="1742493110"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/tinyriscv_soc_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

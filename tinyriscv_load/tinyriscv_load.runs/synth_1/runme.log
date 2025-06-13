@@ -7,12 +7,11 @@
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Tue Jun  3 12:54:01 2025
+  **** Start of session at: Wed Jun 11 10:09:24 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source tinyriscv_soc_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1401.129 ; gain = 57.840 ; free physical = 10049 ; free virtual = 27653
 Command: read_checkpoint -auto_incremental -incremental /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/utils_1/imports/synth_1/tinyriscv_soc_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -26,9 +25,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 823981
+INFO: [Synth 8-7075] Helper process launched with PID 228036
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2157.758 ; gain = 415.715 ; free physical = 8899 ; free virtual = 26540
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2157.719 ; gain = 414.715 ; free physical = 3493 ; free virtual = 27936
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:60]
 WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/full_handshake_rx.v:68]
@@ -68,18 +67,26 @@ WARNING: [Synth 8-11065] parameter 'REG_DMI' becomes localparam in 'jtag_driver'
 WARNING: [Synth 8-11065] parameter 'REG_DTMCS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_driver.v:93]
 WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:48]
 WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:49]
+WARNING: [Synth 8-10940] macro 'INST_MOV_AVG' is redefined [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/defines.v:73]
+WARNING: [Synth 8-10940] macro 'INST_MOV_AVG' is redefined [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/../core/defines.v:73]
+WARNING: [Synth 8-10940] macro 'INST_MOV_AVG' is redefined [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/defines.v:73]
 INFO: [Synth 8-6157] synthesizing module 'tinyriscv_soc_top' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
 INFO: [Synth 8-6085] Hierarchical reference on 'regs' stops possible memory inference [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'tinyriscv' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:20]
-INFO: [Synth 8-6157] synthesizing module 'mac_regs' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'mac_regs' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:24]
-INFO: [Synth 8-6157] synthesizing module 'mac_load_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
-	Parameter ADDR_WIDTH bound to: 32 - type: integer 
-	Parameter DATA_WIDTH bound to: 32 - type: integer 
-	Parameter COUNT_WIDTH bound to: 32 - type: integer 
-WARNING: [Synth 8-6090] variable 'final' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:90]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:84]
-INFO: [Synth 8-6155] done synthesizing module 'mac_load_reg' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
+INFO: [Synth 8-6157] synthesizing module 'dsp_config' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dsp_config' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v:23]
+INFO: [Synth 8-6157] synthesizing module 'exec_mac' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
+WARNING: [Synth 8-6090] variable 'final_count' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:77]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'exec_mac' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v:24]
+INFO: [Synth 8-6157] synthesizing module 'exec_power' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:23]
+WARNING: [Synth 8-6090] variable 'final_count' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:81]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'exec_power' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:23]
+INFO: [Synth 8-6157] synthesizing module 'exec_avg_filter' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v:24]
+WARNING: [Synth 8-6090] variable 'final_count' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v:81]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'exec_avg_filter' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v:24]
 INFO: [Synth 8-6157] synthesizing module 'pc_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
 INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v:20]
 INFO: [Synth 8-6157] synthesizing module 'ctrl' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ctrl.v:21]
@@ -98,9 +105,10 @@ INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized0' [/home/s
 INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized0' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'if_id' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/if_id.v:20]
 INFO: [Synth 8-6157] synthesizing module 'id' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:108]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:216]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:233]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:112]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:132]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:250]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:267]
 INFO: [Synth 8-6155] done synthesizing module 'id' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:21]
 INFO: [Synth 8-6157] synthesizing module 'id_ex' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
 INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized1' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
@@ -111,8 +119,8 @@ INFO: [Synth 8-6157] synthesizing module 'gen_pipe_dff__parameterized2' [/home/s
 INFO: [Synth 8-6155] done synthesizing module 'gen_pipe_dff__parameterized2' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/utils/gen_dff.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'id_ex' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:20]
 INFO: [Synth 8-6157] synthesizing module 'ex' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:367]
-INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:577]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:426]
+INFO: [Synth 8-226] default block is never used [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:638]
 INFO: [Synth 8-6155] done synthesizing module 'ex' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:21]
 INFO: [Synth 8-6157] synthesizing module 'div' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:22]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/div.v:87]
@@ -183,6 +191,9 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/sidhart
 INFO: [Synth 8-6155] done synthesizing module 'jtag_dm' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:27]
 INFO: [Synth 8-6155] done synthesizing module 'jtag_top' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_top.v:20]
 INFO: [Synth 8-6155] done synthesizing module 'tinyriscv_soc_top' (0#1) [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v:20]
+WARNING: [Synth 8-6014] Unused sequential element mdata_reg was removed.  [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:98]
+WARNING: [Synth 8-3848] Net is_mov_avg in module/entity id_ex does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:118]
+WARNING: [Synth 8-3848] Net is_pow_est in module/entity id_ex does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id_ex.v:123]
 WARNING: [Synth 8-3848] Net raddr_o in module/entity clint does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/clint.v:56]
 WARNING: [Synth 8-3848] Net mac_acc_out_o in module/entity tinyriscv does not have driver. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v:50]
 WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/debug/jtag_dm.v:150]
@@ -289,18 +300,18 @@ WARNING: [Synth 8-7129] Port addr_i[16] in module timer is either unconnected or
 WARNING: [Synth 8-7129] Port addr_i[15] in module timer is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2317.727 ; gain = 575.684 ; free physical = 8635 ; free virtual = 26284
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2321.688 ; gain = 578.684 ; free physical = 3326 ; free virtual = 27772
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2326.633 ; gain = 584.590 ; free physical = 8602 ; free virtual = 26251
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2333.562 ; gain = 590.559 ; free physical = 3326 ; free virtual = 27772
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2326.633 ; gain = 584.590 ; free physical = 8602 ; free virtual = 26251
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2333.562 ; gain = 590.559 ; free physical = 3326 ; free virtual = 27772
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2326.633 ; gain = 0.000 ; free physical = 8568 ; free virtual = 26220
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2333.562 ; gain = 0.000 ; free physical = 3328 ; free virtual = 27774
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -311,42 +322,56 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/tinyriscv_soc_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2454.383 ; gain = 0.000 ; free physical = 8024 ; free virtual = 25684
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2458.312 ; gain = 0.000 ; free physical = 3322 ; free virtual = 27767
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2454.383 ; gain = 0.000 ; free physical = 8024 ; free virtual = 25684
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2458.312 ; gain = 0.000 ; free physical = 3322 ; free virtual = 27767
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2454.383 ; gain = 712.340 ; free physical = 6971 ; free virtual = 24629
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2458.312 ; gain = 715.309 ; free physical = 3305 ; free virtual = 27750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6971 ; free virtual = 24629
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2466.316 ; gain = 723.312 ; free physical = 3305 ; free virtual = 27750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6971 ; free virtual = 24629
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2466.316 ; gain = 723.312 ; free physical = 3305 ; free virtual = 27750
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'mac_load_reg'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'exec_mac'
+WARNING: [Synth 8-3936] Found unconnected internal register 'product_reg' and it is trimmed from '64' to '32' bits. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:121]
+WARNING: [Synth 8-3936] Found unconnected internal register 'power_reg' and it is trimmed from '64' to '32' bits. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_power.v:99]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'exec_power'
+WARNING: [Synth 8-3936] Found unconnected internal register 'product_reg' and it is trimmed from '64' to '32' bits. [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v:114]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'exec_avg_filter'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
 INFO: [Synth 8-802] inferred FSM for state register 'csr_state_reg' in module 'clint'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_debug'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'jtag_state_reg' in module 'jtag_driver'
-WARNING: [Synth 8-327] inferring latch for variable 'reg3_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:179]
-WARNING: [Synth 8-327] inferring latch for variable 'mac_config_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:159]
-WARNING: [Synth 8-327] inferring latch for variable 'mreg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:160]
-WARNING: [Synth 8-327] inferring latch for variable 'reg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:192]
-WARNING: [Synth 8-327] inferring latch for variable 'mac_hold_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
-WARNING: [Synth 8-327] inferring latch for variable 'hold_flag_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
+WARNING: [Synth 8-327] inferring latch for variable 'reg1_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:116]
+WARNING: [Synth 8-327] inferring latch for variable 'reg2_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:117]
+WARNING: [Synth 8-327] inferring latch for variable 'reg3_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:210]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_we_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:114]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_waddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/id.v:115]
+WARNING: [Synth 8-327] inferring latch for variable 'mac_config_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:178]
+WARNING: [Synth 8-327] inferring latch for variable 'mreg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:179]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_wdata_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:431]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_raddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:432]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_waddr_o_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:433]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_we_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:217]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_wdata_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:211]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_flag_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:222]
+WARNING: [Synth 8-327] inferring latch for variable 'jump_flag_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:223]
+WARNING: [Synth 8-327] inferring latch for variable 'jump_addr_reg' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:224]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -427,7 +452,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 7831 ; free virtual = 25490
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2466.316 ; gain = 723.312 ; free physical = 3302 ; free virtual = 27750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -435,7 +460,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   64 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 19    
+	   2 Input   32 Bit       Adders := 25    
 	   3 Input   32 Bit       Adders := 2     
 	   2 Input   16 Bit       Adders := 1     
 	   2 Input    9 Bit       Adders := 2     
@@ -449,29 +474,29 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               40 Bit    Registers := 7     
-	               32 Bit    Registers := 70    
+	               32 Bit    Registers := 85    
 	               16 Bit    Registers := 3     
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 142   
-	                5 Bit    Registers := 6     
+	                5 Bit    Registers := 8     
 	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 55    
+	                1 Bit    Registers := 63    
 +---Multipliers : 
-	              32x32  Multipliers := 1     
+	              32x32  Multipliers := 4     
 +---Muxes : 
 	   4 Input   40 Bit        Muxes := 3     
 	   3 Input   40 Bit        Muxes := 2     
 	   2 Input   40 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 300   
+	   2 Input   32 Bit        Muxes := 303   
 	   7 Input   32 Bit        Muxes := 34    
+	   6 Input   32 Bit        Muxes := 6     
+	   8 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 11    
 	   4 Input   32 Bit        Muxes := 25    
-	   6 Input   32 Bit        Muxes := 3     
-	   5 Input   32 Bit        Muxes := 10    
 	   3 Input   32 Bit        Muxes := 2     
 	  15 Input   32 Bit        Muxes := 2     
 	   2 Input   31 Bit        Muxes := 1     
-	   2 Input   29 Bit        Muxes := 1     
 	   2 Input   28 Bit        Muxes := 24    
 	   7 Input   28 Bit        Muxes := 24    
 	   4 Input   28 Bit        Muxes := 6     
@@ -487,26 +512,30 @@ Detailed RTL Component Info :
 	   2 Input    8 Bit        Muxes := 3     
 	   4 Input    8 Bit        Muxes := 6     
 	   3 Input    8 Bit        Muxes := 1     
-	   7 Input    5 Bit        Muxes := 3     
-	   2 Input    5 Bit        Muxes := 22    
+	   8 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 20    
 	   3 Input    5 Bit        Muxes := 2     
+	   5 Input    5 Bit        Muxes := 1     
 	   6 Input    5 Bit        Muxes := 1     
 	   5 Input    4 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 9     
 	   3 Input    4 Bit        Muxes := 2     
 	   4 Input    4 Bit        Muxes := 1     
 	   7 Input    3 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 9     
 	   3 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 11    
 	   4 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 128   
-	   7 Input    1 Bit        Muxes := 42    
+	   2 Input    1 Bit        Muxes := 139   
+	   7 Input    1 Bit        Muxes := 51    
+	   6 Input    1 Bit        Muxes := 19    
 	   3 Input    1 Bit        Muxes := 24    
+	   8 Input    1 Bit        Muxes := 6     
 	   4 Input    1 Bit        Muxes := 176   
-	   6 Input    1 Bit        Muxes := 7     
 	   5 Input    1 Bit        Muxes := 18    
 	  15 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
@@ -541,6 +570,60 @@ DSP Report: Generating DSP acc1, operation Mode is: (PCIN>>17)+A2*B.
 DSP Report: register acc1 is absorbed into DSP acc1.
 DSP Report: operator acc1 is absorbed into DSP acc1.
 DSP Report: operator acc1 is absorbed into DSP acc1.
+DSP Report: Generating DSP power0, operation Mode is: A*B.
+DSP Report: operator power0 is absorbed into DSP power0.
+DSP Report: operator power0 is absorbed into DSP power0.
+DSP Report: Generating DSP power_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register power_reg is absorbed into DSP power_reg.
+DSP Report: operator power0 is absorbed into DSP power_reg.
+DSP Report: operator power0 is absorbed into DSP power_reg.
+DSP Report: Generating DSP power0, operation Mode is: A*B.
+DSP Report: operator power0 is absorbed into DSP power0.
+DSP Report: operator power0 is absorbed into DSP power0.
+DSP Report: Generating DSP power_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register power_reg is absorbed into DSP power_reg.
+DSP Report: operator power0 is absorbed into DSP power_reg.
+DSP Report: operator power0 is absorbed into DSP power_reg.
+DSP Report: Generating DSP product0, operation Mode is: A2*B2.
+DSP Report: register acc_reg is absorbed into DSP product0.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register acc_reg is absorbed into DSP product_reg.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: Generating DSP product0, operation Mode is: A2*B2.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: Generating DSP product0, operation Mode is: A2*B2.
+DSP Report: register acc_reg is absorbed into DSP product0.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register acc_reg is absorbed into DSP product_reg.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: Generating DSP product0, operation Mode is: A2*B2.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: register product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: operator product0 is absorbed into DSP product0.
+DSP Report: Generating DSP product_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: register product_reg is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
+DSP Report: operator product0 is absorbed into DSP product_reg.
 DSP Report: Generating DSP mul_temp, operation Mode is: A*B.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
@@ -553,26 +636,130 @@ DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 DSP Report: Generating DSP mul_temp, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
-WARNING: [Synth 8-3332] Sequential element (hold_flag_reg) is unused and will be removed from module ex.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u_tinyriscvi_1/u_ex/hold_flag_reg/Q' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/ex.v:203]
-WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[4]) is unused and will be removed from module id.
-WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[3]) is unused and will be removed from module id.
-WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[2]) is unused and will be removed from module id.
-WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[1]) is unused and will be removed from module id.
-WARNING: [Synth 8-3332] Sequential element (reg3_raddr_o_reg[0]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (power_reg[47]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[46]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[45]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[44]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[43]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[42]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[41]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[40]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[39]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[38]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[37]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[36]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[35]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[34]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[33]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[32]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[31]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[30]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[29]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[28]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[27]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[26]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[25]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[24]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[23]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[22]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[21]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[20]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[19]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[18]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[17]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[16]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[15]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[47]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[46]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[45]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[44]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[43]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[42]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[41]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[40]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[39]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[38]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[37]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[36]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[35]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[34]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[33]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[32]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[31]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[30]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[29]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[28]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[27]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[26]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[25]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[24]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[23]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[22]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[21]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[20]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[19]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[18]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (power_reg[17]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[46]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[45]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[44]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[43]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[42]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[41]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[40]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[39]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[38]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[37]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[36]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[35]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[34]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[33]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[32]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[31]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[30]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[29]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[28]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[27]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[26]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[25]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[24]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[23]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[22]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[21]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[20]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[19]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[18]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[17]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[16]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[15]) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[47]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[46]__0) is unused and will be removed from module exec_power.
+WARNING: [Synth 8-3332] Sequential element (product_reg[45]__0) is unused and will be removed from module exec_power.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6837 ; free virtual = 24521
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2466.316 ; gain = 723.312 ; free physical = 3313 ; free virtual = 27775
 ---------------------------------------------------------------------------------
- Sort Area is tinyriscv__GB1 acc1_0 : 0 0 : 3137 5933 : Used 1 time 0
- Sort Area is tinyriscv__GB1 acc1_0 : 0 1 : 2796 5933 : Used 1 time 0
- Sort Area is tinyriscv__GB1 acc1_3 : 0 0 : 2777 5436 : Used 1 time 0
- Sort Area is tinyriscv__GB1 acc1_3 : 0 1 : 2659 5436 : Used 1 time 0
- Sort Area is tinyriscv__GB1 mul_temp_6 : 0 0 : 2701 5044 : Used 1 time 0
- Sort Area is tinyriscv__GB1 mul_temp_6 : 0 1 : 2343 5044 : Used 1 time 0
- Sort Area is tinyriscv__GB1 mul_temp_9 : 0 0 : 2339 4365 : Used 1 time 0
- Sort Area is tinyriscv__GB1 mul_temp_9 : 0 1 : 2026 4365 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_11 : 0 0 : 3137 5981 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_11 : 0 1 : 2844 5981 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_c : 0 0 : 3137 5981 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_c : 0 1 : 2844 5981 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 acc1_0 : 0 0 : 3137 5933 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 acc1_0 : 0 1 : 2796 5933 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 power0_6 : 0 0 : 3101 5927 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 power0_6 : 0 1 : 2826 5927 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_12 : 0 0 : 2793 5516 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_12 : 0 1 : 2723 5516 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_e : 0 0 : 2793 5516 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 product0_e : 0 1 : 2723 5516 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 power0_9 : 0 0 : 2759 5466 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 power0_9 : 0 1 : 2707 5466 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 mul_temp_13 : 0 0 : 3101 5444 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 mul_temp_13 : 0 1 : 2343 5444 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 acc1_3 : 0 0 : 2777 5436 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 acc1_3 : 0 1 : 2659 5436 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 mul_temp_15 : 0 0 : 2759 4785 : Used 1 time 0
+ Sort Area is tinyriscv__GB0 mul_temp_15 : 0 1 : 2026 4785 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -588,18 +775,30 @@ Distributed RAM: Preliminary Mapping Report (see note below)
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mac_load_reg | A2*B            | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|mac_load_reg | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|mac_load_reg | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|mac_load_reg | (PCIN>>17)+A2*B | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | A*B             | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | (PCIN>>17)+A*B  | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|exec_mac        | A2*B            | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | (PCIN>>17)+A2*B | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_power      | A*B             | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_power      | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17)+A*B  | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_power      | A2*B2           | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17)+A2*B | 16     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_power      | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17)+A2*B | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_avg_filter | A2*B2           | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_avg_filter | (PCIN>>17)+A2*B | 16     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_avg_filter | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_avg_filter | (PCIN>>17)+A2*B | 18     | 16     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|ex              | A*B             | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | (PCIN>>17)+A*B  | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | A*B             | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | (PCIN>>17)+A*B  | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -609,13 +808,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 2462.387 ; gain = 720.344 ; free physical = 6879 ; free virtual = 24567
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 2466.316 ; gain = 723.312 ; free physical = 3310 ; free virtual = 27772
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:27 ; elapsed = 00:02:29 . Memory (MB): peak = 2632.207 ; gain = 890.164 ; free physical = 8299 ; free virtual = 26008
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 2546.004 ; gain = 803.000 ; free physical = 3215 ; free virtual = 27676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -737,7 +936,7 @@ INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][29]__0 ) from modu
 INFO: [Synth 8-4765] Removing register instance (\regs_reg[3][28]__0 ) from module (regs) as it is equivalent to (\regs_reg[3][28] ) and driving same net [/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v:69]
 INFO: [Common 17-14] Message 'Synth 8-4765' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:35 ; elapsed = 00:02:37 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8359 ; free virtual = 26067
+Finished Technology Mapping : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3118 ; free virtual = 27579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -755,54 +954,63 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:39 ; elapsed = 00:02:41 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8390 ; free virtual = 26099
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3118 ; free virtual = 27579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:39 ; elapsed = 00:02:41 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8390 ; free virtual = 26099
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3118 ; free virtual = 27579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:41 ; elapsed = 00:02:42 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8388 ; free virtual = 26097
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3118 ; free virtual = 27579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8388 ; free virtual = 26097
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3118 ; free virtual = 27579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:01:07 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3120 ; free virtual = 27581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:01:07 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3120 ; free virtual = 27581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mac_load_reg | A'*B'          | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|mac_load_reg | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|mac_load_reg | PCIN>>17+A'*B' | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|ex           | A*B            | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | PCIN>>17+A*B   | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | A*B            | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex           | PCIN>>17+A*B   | 17     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++----------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|exec_avg_filter | (A'*B')'          | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|exec_avg_filter | A'*B'             | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_avg_filter | (PCIN>>17+A'*B')' | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|ex              | A*B               | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | PCIN>>17+A*B      | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | A*B               | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex              | PCIN>>17+A*B      | 17     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | A'*B'             | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | A'*B'             | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_mac        | PCIN>>17+A'*B'    | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (A*B)'            | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_power      | A*B               | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17+A*B)'   | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|exec_power      | (A'*B')'          | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|exec_power      | A'*B'             | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|exec_power      | (PCIN>>17+A'*B')' | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++----------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -815,55 +1023,54 @@ Report Cell Usage:
 +------+----------+------+
 |      |Cell      |Count |
 +------+----------+------+
-|1     |BUFG      |     4|
-|2     |CARRY4    |   251|
-|3     |DSP48E1   |     7|
-|5     |LUT1      |   305|
-|6     |LUT2      |   984|
-|7     |LUT3      |   539|
-|8     |LUT4      |  1065|
-|9     |LUT5      |  1685|
-|10    |LUT6      |  6100|
-|11    |MUXF7     |   904|
-|12    |MUXF8     |   299|
-|13    |RAM256X1S |  1024|
-|14    |FDCE      |   545|
-|15    |FDPE      |    11|
-|16    |FDRE      |  3948|
-|17    |FDSE      |    13|
-|18    |LD        |    66|
-|19    |IBUF      |     8|
-|20    |IOBUF     |     2|
-|21    |OBUF      |     8|
+|1     |BUFG      |     5|
+|2     |CARRY4    |   311|
+|3     |DSP48E1   |    16|
+|7     |LUT1      |   370|
+|8     |LUT2      |  1239|
+|9     |LUT3      |   678|
+|10    |LUT4      |  1005|
+|11    |LUT5      |  1896|
+|12    |LUT6      |  5885|
+|13    |MUXF7     |   859|
+|14    |MUXF8     |   332|
+|15    |RAM256X1S |  1024|
+|16    |FDCE      |   545|
+|17    |FDPE      |    11|
+|18    |FDRE      |  4316|
+|19    |FDSE      |    13|
+|20    |LD        |   183|
+|21    |IBUF      |     8|
+|22    |IOBUF     |     2|
+|23    |OBUF      |     8|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.207 ; gain = 918.164 ; free physical = 8391 ; free virtual = 26099
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:01:07 . Memory (MB): peak = 2613.004 ; gain = 870.000 ; free physical = 3120 ; free virtual = 27581
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:38 ; elapsed = 00:02:40 . Memory (MB): peak = 2660.207 ; gain = 790.414 ; free physical = 8389 ; free virtual = 26097
-Synthesis Optimization Complete : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 2660.215 ; gain = 918.164 ; free physical = 8389 ; free virtual = 26097
+Synthesis finished with 0 errors, 0 critical warnings and 245 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 2613.004 ; gain = 745.250 ; free physical = 3120 ; free virtual = 27581
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:01:07 . Memory (MB): peak = 2613.012 ; gain = 870.000 ; free physical = 3120 ; free virtual = 27581
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2660.215 ; gain = 0.000 ; free physical = 8677 ; free virtual = 26388
-INFO: [Netlist 29-17] Analyzing 2553 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2613.012 ; gain = 0.000 ; free physical = 3421 ; free virtual = 27882
+INFO: [Netlist 29-17] Analyzing 2727 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2716.234 ; gain = 0.000 ; free physical = 8683 ; free virtual = 26394
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2669.031 ; gain = 0.000 ; free physical = 3418 ; free virtual = 27879
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1092 instances were transformed.
+  A total of 1209 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  LD => LDCE: 66 instances
+  LD => LDCE: 183 instances
   RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 1024 instances
 
-Synth Design complete | Checksum: 4489b5e2
+Synth Design complete | Checksum: 54627958
 INFO: [Common 17-83] Releasing license: Synthesis
-234 Infos, 155 Warnings, 3 Critical Warnings and 0 Errors encountered.
+244 Infos, 269 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:51 ; elapsed = 00:02:51 . Memory (MB): peak = 2716.234 ; gain = 1310.137 ; free physical = 8682 ; free virtual = 26393
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2381.726; main = 2075.571; forked = 433.952
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3693.730; main = 2716.238; forked = 1033.520
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2740.246 ; gain = 0.000 ; free physical = 8680 ; free virtual = 26396
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:12 . Memory (MB): peak = 2669.031 ; gain = 1254.066 ; free physical = 3418 ; free virtual = 27879
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2127.020; main = 1855.393; forked = 394.328
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3583.492; main = 2669.035; forked = 1037.484
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2693.043 ; gain = 0.000 ; free physical = 3417 ; free virtual = 27880
 INFO: [Common 17-1381] The checkpoint '/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.runs/synth_1/tinyriscv_soc_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file tinyriscv_soc_top_utilization_synth.rpt -pb tinyriscv_soc_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun  3 12:57:04 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 11 10:10:42 2025...

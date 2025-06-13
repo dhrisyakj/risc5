@@ -60,7 +60,18 @@ module ex(
     // to LOAD_MAC module
      output reg[`RegAddrBus] mac_reg_waddr_o,  // Custom Instruction -LOAD_MAC
      
+     // to/from  exec_mov_avg module
+     output reg[`RegAddrBus] custom_reg_waddr_o,  // Custom Instruction - AVG FILTER
+     input wire[`RegAddrBus] custom_reg_waddr_i, // Custom Instruction - AVG FILTER
+     input wire exec_avg_done, // Custom Instruction - AVG FILTER
+     input wire exec_avg_busy, // Custom Instruction - AVG FILTER
+     input wire[`RegBus] exec_avg_out, // Custom Instruction - AVG FILTER
      
+     input wire exec_power_done, // Custom Instruction - POWER ESTIMATION
+     input wire exec_power_busy, // Custom Instruction - POWER ESTIMATION
+     input wire[`RegBus] exec_power_out, // Custom Instruction - POWER ESTIMATION
+     input wire[`RegAddrBus] power_reg_waddr_i, // Custom Instruction - POWER ESTIMATION
+    
     // from mem
     input wire[`MemBus] mem_rdata_i,        // 内存输入数据
 
@@ -156,6 +167,14 @@ module ex(
    reg[`RegBus] mreg_wdata; // Custom Instruction -MAC_CONFIG
    
    
+    // Custom Instruction -EXEC_MOV_AVG
+   reg custom_hold;
+   reg custom_jump_flag;
+   reg[`InstAddrBus] custom_jump_addr;
+   reg custom_we;
+   reg[`RegAddrBus] custom_waddr;
+   reg[`RegBus] custom_wdata;
+   
     assign is_mac_config_o = mac_config; // Custom Instruction -MAC_CONFIG
     assign count_wdata_o = mreg_wdata;   // Custom Instruction -MAC_CONFIG
     assign opcode = inst_i[6:0];
@@ -189,10 +208,10 @@ module ex(
 
     assign div_start_o = (int_assert_i == `INT_ASSERT)? `DivStop: div_start;
 
-    assign reg_wdata_o = reg_wdata | div_wdata |mac_wdata; // Custom Instruction -LOAD_MAC
+    assign reg_wdata_o = reg_wdata | div_wdata |mac_wdata | custom_wdata; // Custom Instruction -LOAD_MAC
     // 响应中断时不写通用寄存器
-    assign reg_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: (reg_we || div_we ||mac_we);  // Custom Instruction -LOAD_MAC
-    assign reg_waddr_o = reg_waddr | div_waddr | mac_waddr; // Custom Instruction -LOAD_MAC
+    assign reg_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: (reg_we || div_we ||mac_we || custom_we);  // Custom Instruction -LOAD_MAC
+    assign reg_waddr_o = reg_waddr | div_waddr | mac_waddr | custom_waddr; // Custom Instruction -LOAD_MAC
 
     // 响应中断时不写内存
     assign mem_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: mem_we;
@@ -200,16 +219,16 @@ module ex(
     // 响应中断时不向总线请求访问内存
     assign mem_req_o = (int_assert_i == `INT_ASSERT)? `RIB_NREQ: mem_req;
 
-    assign hold_flag_o = hold_flag || div_hold_flag || mac_hold; // Custom Instruction -LOAD_MAC 
-    assign jump_flag_o = jump_flag || div_jump_flag || mac_jump_flag|| ((int_assert_i == `INT_ASSERT)? `JumpEnable: `JumpDisable); // Custom Instruction -LOAD_MAC 
-    assign jump_addr_o = (int_assert_i == `INT_ASSERT)? int_addr_i: (jump_addr | div_jump_addr | mac_jump_addr); // Custom Instruction -LOAD_MAC
+    assign hold_flag_o = hold_flag || div_hold_flag || mac_hold || custom_hold; // Custom Instruction -LOAD_MAC 
+    assign jump_flag_o = jump_flag || div_jump_flag || custom_jump_flag|| mac_jump_flag|| ((int_assert_i == `INT_ASSERT)? `JumpEnable: `JumpDisable); // Custom Instruction -LOAD_MAC 
+    assign jump_addr_o = (int_assert_i == `INT_ASSERT)? int_addr_i: (jump_addr | div_jump_addr | mac_jump_addr | custom_jump_addr); // Custom Instruction -LOAD_MAC
 
     // 响应中断时不写CSR寄存器
     assign csr_we_o = (int_assert_i == `INT_ASSERT)? `WriteDisable: csr_we_i;
     assign csr_waddr_o = csr_waddr_i;
   
   
-  // LOAD_MACOperation
+  // LOAD_MAC Operation
      always @ (*) begin
      mac_reg_waddr_o = reg_waddr_i;
       if ((opcode == `INST_CUSTOM) && (funct7 == 7'b0000001)) begin
@@ -218,28 +237,15 @@ module ex(
        mac_waddr = `ZeroWord;
          case (funct3)
                   `INST_LOADM: begin
-                   //jump_flag = `JumpDisable;
-                   hold_flag = `HoldEnable;
+                   mac_hold= `HoldEnable;
                    mac_jump_flag = `JumpEnable;
                    mac_jump_addr = op1_jump_add_op2_jump_res;
-                   //jump_addr = `ZeroWord;
-                   //mem_wdata_o = `ZeroWord;
-                   //mem_raddr_o = `ZeroWord;
-                   //mem_waddr_o = `ZeroWord;
-                   //mem_we = `WriteDisable;
-                   //reg_we = `WriteDisable;
                   end
               default: begin
-                              //jump_flag = `JumpDisable;
-                              hold_flag = `HoldDisable;
+                         
+                              mac_hold= `HoldDisable;
                                mac_jump_addr = `ZeroWord;
                                mac_jump_flag = `JumpDisable;
-                              //jump_addr = `ZeroWord;
-                              //mem_wdata_o = `ZeroWord;
-                              //mem_raddr_o = `ZeroWord;
-                              //mem_waddr_o = `ZeroWord;
-                              //mem_we = `WriteDisable;
-                              //reg_wdata = `ZeroWord;
                               end
          endcase
        end
@@ -264,13 +270,66 @@ module ex(
        mac_wdata = mac_acc_out;
        mac_we = `WriteEnable;
        end
-       //else begin
-       //mac_hold = `HoldDisable;
-       //end
+      
        end
        end
       
      end
+  
+  
+    
+  // EXEC AVERAGE FILTER
+     always @ (*) begin
+     custom_reg_waddr_o = reg_waddr_i;
+      if ((opcode == `INST_CUSTOM) && (funct7 == 7'b0000001)) begin
+       custom_we = `WriteDisable;
+       custom_wdata = `ZeroWord;
+       custom_waddr = `ZeroWord;
+         case (funct3)
+                  `INST_MOV_AVG ,`INST_POW_EST: begin
+                   custom_hold= `HoldEnable;
+                   custom_jump_flag = `JumpEnable;
+                   custom_jump_addr = op1_jump_add_op2_jump_res;
+                  end
+              default: begin
+                         
+                              custom_hold = `HoldDisable;
+                               custom_jump_addr = `ZeroWord;
+                               custom_jump_flag = `JumpDisable;
+                              end
+         endcase
+       end
+       else begin
+        custom_jump_flag = `JumpDisable;
+        custom_jump_addr = `ZeroWord;
+        custom_hold = `HoldDisable;
+        custom_we = `WriteDisable;
+         custom_waddr = `ZeroWord;
+         custom_wdata = `ZeroWord;
+       if((exec_avg_busy==`True) || (exec_power_busy==`True)) begin
+       custom_hold = `HoldEnable;
+       custom_we = `WriteDisable;
+      custom_waddr = `ZeroWord;
+       custom_wdata = `ZeroWord;
+       end
+       else begin
+        custom_hold= `HoldDisable;
+       if(exec_avg_done==`True) begin      
+       custom_waddr = custom_reg_waddr_i;
+       custom_wdata = exec_avg_out;
+       custom_we = `WriteEnable;
+       end
+        if(exec_power_done==`True) begin      
+       custom_waddr = power_reg_waddr_i;
+       custom_wdata = exec_power_out;
+       custom_we = `WriteEnable;
+       end
+       end
+       end
+      
+     end
+  
+  
   
   
 
@@ -543,6 +602,8 @@ module ex(
                             end
                 endcase
                 end
+                end
+                /*
              else
              case(funct3)
              `INST_MLOAD:begin // Custom Instruction -MAC LOAD
@@ -569,7 +630,7 @@ module ex(
                             end
                 endcase
                 end
-            
+            */
             
             
             `INST_TYPE_R_M: begin

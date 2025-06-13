@@ -1,24 +1,6 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/defines.v" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/mac_load_reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac_load_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/pc_reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module pc_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/ram.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ram
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/regs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module regs
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/rib.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rib
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/rom.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rom
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/perips/timer.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module timer
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/tinyriscv.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tinyriscv
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/soc/tinyriscv_soc_top.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tinyriscv_soc_top
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/imports/rtl_load/core/mac_regs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mac_regs
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sources_1/new/exec_avg_filter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exec_avg_filter
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sidharth/Vivado_Projects/tinyriscv_load/tinyriscv_load.srcs/sim_1/imports/tb/tinyriscv_soc_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tinyriscv_soc_tb

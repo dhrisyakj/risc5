@@ -1,0 +1,334 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Wed Jun 11 07:01:11 2025
+| Host         : sidharth-Alienware-Aurora-Ryzen-Edition running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_control_sets -verbose -file tinyriscv_soc_top_control_sets_placed.rpt
+| Design       : tinyriscv_soc_top
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   256 |
+|    Minimum number of control sets                        |   256 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   173 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   256 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |    10 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |   140 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     2 |
+| >= 16              |   100 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             196 |          106 |
+| No           | No                    | Yes                    |              53 |           15 |
+| No           | Yes                   | No                     |             568 |          210 |
+| Yes          | No                    | No                     |            1203 |          873 |
+| Yes          | No                    | Yes                    |             503 |          132 |
+| Yes          | Yes                   | No                     |            2368 |          971 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|            Clock Signal           |                        Enable Signal                       |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------+------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+| ~jtag_TCK_IBUF_BUFG               |                                                            | u_jtag_top/u_jtag_driver/jtag_TDO_i_1_n_2    |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                    | uart_0/tx_reg_i_1_n_2                                      | uart_0/bit_cnt[3]_i_1_n_2                    |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                    | spi_0/spi_mosi_i_1_n_2                                     | u_tinyriscv/u_csr_reg/SR[0]                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                    | uart_0/state[3]_i_1_n_2                                    | u_tinyriscv/u_csr_reg/SR[0]                  |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                    | uart_0/rx_clk_cnt0                                         | uart_0/rx_data                               |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/crc_bit_index                                 | u_uart_debug/state[13]_i_1_n_2               |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                    | uart_0/bit_cnt[3]_i_2_n_2                                  | uart_0/bit_cnt[3]_i_1_n_2                    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/state[3]_i_1__0_n_2                      | u_tinyriscv/u_csr_reg/SR[0]                  |                2 |              4 |         2.00 |
+| ~jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg_n_2_[9] | u_jtag_top/u_jtag_driver/ir_reg              |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_if_id/int_ff/mstatus_reg[3][0]               | u_tinyriscv/u_csr_reg/SR[0]                  |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                    | spi_0/clk_cnt0                                             | spi_0/spi_clk_edge_cnt[4]_i_1_n_2            |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/mac_dst_reg_addr_o[4]_i_1_n_2            |                                              |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/mac_dst_reg_addr_o[4]_i_1__0_n_2         |                                              |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[103][7]_i_2_n_2                       | u_uart_debug/rx_data[103][7]_i_1_n_2         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[102][7]_i_2_n_2                       | u_uart_debug/rx_data[102][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[101][7]_i_2_n_2                       | u_uart_debug/rx_data[101][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[100][7]_i_2_n_2                       | u_uart_debug/rx_data[100][7]_i_1_n_2         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[104][7]_i_2_n_2                       | u_uart_debug/rx_data[104][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[105][7]_i_2_n_2                       | u_uart_debug/rx_data[105][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[106][7]_i_2_n_2                       | u_uart_debug/rx_data[106][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[0][7]_i_2_n_2                         | u_uart_debug/rx_data[0][7]_i_1_n_2           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[107][7]_i_2_n_2                       | u_uart_debug/rx_data[107][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[108][7]_i_2_n_2                       | u_uart_debug/rx_data[108][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[42][7]_i_2_n_2                        | u_uart_debug/rx_data[42][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[109][7]_i_2_n_2                       | u_uart_debug/rx_data[109][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[34][7]_i_2_n_2                        | u_uart_debug/rx_data[34][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[25][7]_i_2_n_2                        | u_uart_debug/rx_data[25][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[41][7]_i_2_n_2                        | u_uart_debug/rx_data[41][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[40][7]_i_2_n_2                        | u_uart_debug/rx_data[40][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[3][7]_i_2_n_2                         | u_uart_debug/rx_data[3][7]_i_1_n_2           |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[39][7]_i_2_n_2                        | u_uart_debug/rx_data[39][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[38][7]_i_2_n_2                        | u_uart_debug/rx_data[38][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[37][7]_i_2_n_2                        | u_uart_debug/rx_data[37][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[36][7]_i_2_n_2                        | u_uart_debug/rx_data[36][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[35][7]_i_2_n_2                        | u_uart_debug/rx_data[35][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[26][7]_i_2_n_2                        | u_uart_debug/rx_data[26][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[33][7]_i_2_n_2                        | u_uart_debug/rx_data[33][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[32][7]_i_2_n_2                        | u_uart_debug/rx_data[32][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[31][7]_i_2_n_2                        | u_uart_debug/rx_data[31][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[30][7]_i_2_n_2                        | u_uart_debug/rx_data[30][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[2][7]_i_2_n_2                         | u_uart_debug/rx_data[2][7]_i_1_n_2           |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[29][7]_i_2_n_2                        | u_uart_debug/rx_data[29][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[28][7]_i_2_n_2                        | u_uart_debug/rx_data[28][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[27][7]_i_2_n_2                        | u_uart_debug/rx_data[27][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rec_bytes_index__0                            | u_uart_debug/state[13]_i_1_n_2               |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[17][7]_i_2_n_2                        | u_uart_debug/rx_data[17][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[128][7]_i_2_n_2                       | u_uart_debug/rx_data[128][7]_i_1_n_2         |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[129][7]_i_2_n_2                       | u_uart_debug/rx_data[129][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[12][7]_i_2_n_2                        | u_uart_debug/rx_data[12][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[130][7]_i_2_n_2                       | u_uart_debug/rx_data[130][7]_i_1_n_2         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[131][7]_i_2_n_2                       | u_uart_debug/rx_data[131][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[13][7]_i_2_n_2                        | u_uart_debug/rx_data[13][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[14][7]_i_2_n_2                        | u_uart_debug/rx_data[14][7]_i_1_n_2          |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[15][7]_i_2_n_2                        | u_uart_debug/rx_data[15][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[16][7]_i_2_n_2                        | u_uart_debug/rx_data[16][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[127][7]_i_2_n_2                       | u_uart_debug/rx_data[127][7]_i_1_n_2         |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[18][7]_i_2_n_2                        | u_uart_debug/rx_data[18][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[19][7]_i_2_n_2                        | u_uart_debug/rx_data[19][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[1][7]_i_2_n_2                         | u_uart_debug/rx_data[1][7]_i_1_n_2           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[20][7]_i_2_n_2                        | u_uart_debug/rx_data[20][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[21][7]_i_2_n_2                        | u_uart_debug/rx_data[21][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[22][7]_i_2_n_2                        | u_uart_debug/rx_data[22][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[23][7]_i_2_n_2                        | u_uart_debug/rx_data[23][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[24][7]_i_2_n_2                        | u_uart_debug/rx_data[24][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[119][7]_i_2_n_2                       | u_uart_debug/rx_data[119][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[110][7]_i_2_n_2                       | u_uart_debug/rx_data[110][7]_i_1_n_2         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[111][7]_i_2_n_2                       | u_uart_debug/rx_data[111][7]_i_1_n_2         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[112][7]_i_2_n_2                       | u_uart_debug/rx_data[112][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[113][7]_i_2_n_2                       | u_uart_debug/rx_data[113][7]_i_1_n_2         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[114][7]_i_2_n_2                       | u_uart_debug/rx_data[114][7]_i_1_n_2         |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[115][7]_i_2_n_2                       | u_uart_debug/rx_data[115][7]_i_1_n_2         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[116][7]_i_2_n_2                       | u_uart_debug/rx_data[116][7]_i_1_n_2         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[117][7]_i_2_n_2                       | u_uart_debug/rx_data[117][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[118][7]_i_2_n_2                       | u_uart_debug/rx_data[118][7]_i_1_n_2         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[10][7]_i_2_n_2                        | u_uart_debug/rx_data[10][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[11][7]_i_2_n_2                        | u_uart_debug/rx_data[11][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[120][7]_i_2_n_2                       | u_uart_debug/rx_data[120][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[121][7]_i_2_n_2                       | u_uart_debug/rx_data[121][7]_i_1_n_2         |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[122][7]_i_2_n_2                       | u_uart_debug/rx_data[122][7]_i_1_n_2         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[123][7]_i_2_n_2                       | u_uart_debug/rx_data[123][7]_i_1_n_2         |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[124][7]_i_2_n_2                       | u_uart_debug/rx_data[124][7]_i_1_n_2         |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[125][7]_i_2_n_2                       | u_uart_debug/rx_data[125][7]_i_1_n_2         |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[126][7]_i_2_n_2                       | u_uart_debug/rx_data[126][7]_i_1_n_2         |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | spi_0/rdata[7]_i_1_n_2                                     | u_tinyriscv/u_csr_reg/SR[0]                  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[86][7]_i_2_n_2                        | u_uart_debug/rx_data[86][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[85][7]_i_2_n_2                        | u_uart_debug/rx_data[85][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[84][7]_i_2_n_2                        | u_uart_debug/rx_data[84][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[83][7]_i_2_n_2                        | u_uart_debug/rx_data[83][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[82][7]_i_2_n_2                        | u_uart_debug/rx_data[82][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[81][7]_i_2_n_2                        | u_uart_debug/rx_data[81][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[80][7]_i_2_n_2                        | u_uart_debug/rx_data[80][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[7][7]_i_2_n_2                         | u_uart_debug/rx_data[7][7]_i_1_n_2           |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[87][7]_i_2_n_2                        | u_uart_debug/rx_data[87][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[79][7]_i_2_n_2                        | u_uart_debug/rx_data[79][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[78][7]_i_2_n_2                        | u_uart_debug/rx_data[78][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[77][7]_i_2_n_2                        | u_uart_debug/rx_data[77][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[76][7]_i_2_n_2                        | u_uart_debug/rx_data[76][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[75][7]_i_2_n_2                        | u_uart_debug/rx_data[75][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[74][7]_i_2_n_2                        | u_uart_debug/rx_data[74][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[73][7]_i_2_n_2                        | u_uart_debug/rx_data[73][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[72][7]_i_2_n_2                        | u_uart_debug/rx_data[72][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/op_r                                     | u_tinyriscv/u_csr_reg/SR[0]                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_10[0]                      |                                              |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[9][7]_i_2_n_2                         | u_uart_debug/rx_data[9][7]_i_1_n_2           |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[99][7]_i_2_n_2                        | u_uart_debug/rx_data[99][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[98][7]_i_2_n_2                        | u_uart_debug/rx_data[98][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[97][7]_i_2_n_2                        | u_uart_debug/rx_data[97][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[96][7]_i_2_n_2                        | u_uart_debug/rx_data[96][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[95][7]_i_2_n_2                        | u_uart_debug/rx_data[95][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[94][7]_i_2_n_2                        | u_uart_debug/rx_data[94][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[44][7]_i_2_n_2                        | u_uart_debug/rx_data[44][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[93][7]_i_2_n_2                        | u_uart_debug/rx_data[93][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[92][7]_i_2_n_2                        | u_uart_debug/rx_data[92][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[91][7]_i_2_n_2                        | u_uart_debug/rx_data[91][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[90][7]_i_2_n_2                        | u_uart_debug/rx_data[90][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[8][7]_i_2_n_2                         | u_uart_debug/rx_data[8][7]_i_1_n_2           |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[89][7]_i_2_n_2                        | u_uart_debug/rx_data[89][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[88][7]_i_2_n_2                        | u_uart_debug/rx_data[88][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[50][7]_i_2_n_2                        | u_uart_debug/rx_data[50][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[58][7]_i_2_n_2                        | u_uart_debug/rx_data[58][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[57][7]_i_2_n_2                        | u_uart_debug/rx_data[57][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[56][7]_i_2_n_2                        | u_uart_debug/rx_data[56][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[55][7]_i_2_n_2                        | u_uart_debug/rx_data[55][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[54][7]_i_2_n_2                        | u_uart_debug/rx_data[54][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[53][7]_i_2_n_2                        | u_uart_debug/rx_data[53][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[52][7]_i_2_n_2                        | u_uart_debug/rx_data[52][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[51][7]_i_2_n_2                        | u_uart_debug/rx_data[51][7]_i_1_n_2          |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/E[0]                                     | u_tinyriscv/u_csr_reg/SR[0]                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[4][7]_i_2_n_2                         | u_uart_debug/rx_data[4][7]_i_1_n_2           |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[49][7]_i_2_n_2                        | u_uart_debug/rx_data[49][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[48][7]_i_2_n_2                        | u_uart_debug/rx_data[48][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[47][7]_i_2_n_2                        | u_uart_debug/rx_data[47][7]_i_1_n_2          |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[46][7]_i_2_n_2                        | u_uart_debug/rx_data[46][7]_i_1_n_2          |                8 |              8 |         1.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[45][7]_i_2_n_2                        | u_uart_debug/rx_data[45][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[43][7]_i_2_n_2                        | u_uart_debug/rx_data[43][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[5][7]_i_2_n_2                         | u_uart_debug/rx_data[5][7]_i_1_n_2           |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[71][7]_i_2_n_2                        | u_uart_debug/rx_data[71][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[70][7]_i_2_n_2                        | u_uart_debug/rx_data[70][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[6][7]_i_2_n_2                         | u_uart_debug/rx_data[6][7]_i_1_n_2           |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[69][7]_i_2_n_2                        | u_uart_debug/rx_data[69][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[68][7]_i_2_n_2                        | u_uart_debug/rx_data[68][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[67][7]_i_2_n_2                        | u_uart_debug/rx_data[67][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[66][7]_i_2_n_2                        | u_uart_debug/rx_data[66][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[65][7]_i_2_n_2                        | u_uart_debug/rx_data[65][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[64][7]_i_2_n_2                        | u_uart_debug/rx_data[64][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[63][7]_i_2_n_2                        | u_uart_debug/rx_data[63][7]_i_1_n_2          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[62][7]_i_2_n_2                        | u_uart_debug/rx_data[62][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[61][7]_i_2_n_2                        | u_uart_debug/rx_data[61][7]_i_1_n_2          |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[60][7]_i_2_n_2                        | u_uart_debug/rx_data[60][7]_i_1_n_2          |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                    | uart_0/rx_data[7]_i_1_n_2                                  | uart_0/rx_data                               |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                    | uart_0/E[0]                                                | u_tinyriscv/u_csr_reg/SR[0]                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/rx_data[59][7]_i_2_n_2                        | u_uart_debug/rx_data[59][7]_i_1_n_2          |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                    |                                                            | spi_0/clk_cnt[8]_i_1_n_2                     |                2 |              9 |         4.50 |
+|  clk_IBUF_BUFG                    |                                                            |                                              |                8 |             13 |         1.62 |
+|  clk_IBUF_BUFG                    | u_uart_debug/state[13]_i_2_n_2                             | u_uart_debug/state[13]_i_1_n_2               |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG                    | u_uart_debug/crc_byte_index                                | u_uart_debug/state[13]_i_1_n_2               |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG                    | u_uart_debug/remain_packet_count[15]_i_1_n_2               | u_uart_debug/state[13]_i_1_n_2               |                6 |             16 |         2.67 |
+|  clk_IBUF_BUFG                    | u_uart_debug/fw_file_size[22]_i_1_n_2                      | u_uart_debug/state[13]_i_1_n_2               |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/crc_result                                    | u_uart_debug/state[13]_i_1_n_2               |                8 |             16 |         2.00 |
+|  clk_IBUF_BUFG                    | uart_0/cycle_cnt[0]_i_2_n_2                                | uart_0/cycle_cnt[0]_i_1_n_2                  |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG                    |                                                            | uart_0/rx_clk_cnt[0]_i_1_n_2                 |                4 |             16 |         4.00 |
+|  u_tinyriscv/u_if_id/inst_ff/E[0] |                                                            |                                              |                6 |             16 |         2.67 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/product0_i_1_n_2                         |                                              |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_4[0]                  | u_tinyriscv/u_csr_reg/SR[0]                  |               10 |             18 |         1.80 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/mem_addr[31]_i_1__0_n_2                  | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             18 |         3.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/final_count[13]_i_1_n_2                  | u_tinyriscv/u_mac/final_count[31]_i_1__0_n_2 |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/mem_addr[31]_i_1_n_2                     | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             18 |         3.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/E[0]                                     | u_uart_debug/SR[0]                           |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_2                     | u_tinyriscv/u_csr_reg/SR[0]                  |                7 |             25 |         3.57 |
+|  clk_IBUF_BUFG                    | u_uart_debug/write_mem_addr                                | u_uart_debug/state[13]_i_1_n_2               |                8 |             30 |         3.75 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/final_count[13]_i_1__0_n_2               | u_tinyriscv/u_avg/final_count[31]_i_1_n_2    |                8 |             30 |         3.75 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/dm_mem_addr_reg[2]_5[0]                  | u_tinyriscv/u_csr_reg/SR[0]                  |               14 |             30 |         2.14 |
+|  clk_IBUF_BUFG                    | u_uart_debug/p_1_in[0]                                     | u_tinyriscv/u_csr_reg/SR[0]                  |               14 |             30 |         2.14 |
+|  jtag_TCK_IBUF_BUFG               |                                                            | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             31 |         5.17 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_8                          | u_tinyriscv/u_csr_reg/SR[0]                  |               15 |             31 |         2.07 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_clint/waddr_o_reg[8]_0[0]                    | u_tinyriscv/u_csr_reg/SR[0]                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/done_i_1__0_n_2                          | u_tinyriscv/u_csr_reg/SR[0]                  |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/E[0]                               | u_tinyriscv/u_csr_reg/SR[0]                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/dm_mem_addr_reg[2]_4[0]                  | u_tinyriscv/u_csr_reg/SR[0]                  |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_data_reg[2]_0[0]              | u_tinyriscv/u_csr_reg/SR[0]                  |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/acc                                      | u_tinyriscv/u_csr_reg/SR[0]                  |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/done_i_1_n_2                             | u_tinyriscv/u_csr_reg/SR[0]                  |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_5[0]                  | u_tinyriscv/u_csr_reg/SR[0]                  |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_3[0]                  | u_tinyriscv/u_csr_reg/SR[0]                  |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_clint/E[0]                                   | u_tinyriscv/u_csr_reg/SR[0]                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_id_ex/csr_waddr_ff/qout_r_reg[6]_0[0]        | u_tinyriscv/u_csr_reg/SR[0]                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_id_ex/csr_waddr_ff/qout_r_reg[7]_0[0]        | u_tinyriscv/u_csr_reg/SR[0]                  |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_id_ex/inst_ff/E[0]                           | u_tinyriscv/pc_o[31]_i_1_n_2                 |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/minuend[31]_i_1_n_2                      | u_tinyriscv/u_csr_reg/SR[0]                  |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/dividend_r[31]_i_1_n_2                   | u_tinyriscv/u_csr_reg/SR[0]                  |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_clint/waddr_o_reg[8]_1[0]                    | u_tinyriscv/u_csr_reg/SR[0]                  |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_ex/E[0]                                      |                                              |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/div_remain[31]_i_1_n_2                   | u_tinyriscv/u_csr_reg/SR[0]                  |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_clint/waddr_o_reg[8]_2[0]                    | u_tinyriscv/u_csr_reg/SR[0]                  |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/divisor_r[31]_i_1_n_2                    | u_tinyriscv/u_csr_reg/SR[0]                  |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_data_reg[39]_0[0]             | u_tinyriscv/u_csr_reg/SR[0]                  |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_data_reg[38]_0[0]             | u_tinyriscv/u_csr_reg/SR[0]                  |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_data_reg[34]_0[0]             | u_tinyriscv/u_csr_reg/SR[0]                  |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                    |                                                            | timer_0/timer_count[0]_i_1_n_2               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/E[0]                                          | u_tinyriscv/u_csr_reg/SR[0]                  |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[2]_1[0]                        | u_tinyriscv/u_csr_reg/SR[0]                  |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[3]_1[0]                        | u_tinyriscv/u_csr_reg/SR[0]                  |               11 |             32 |         2.91 |
+|  n_1_12028_BUFG                   |                                                            |                                              |               23 |             32 |         1.39 |
+|  u_ex/mac_config                  |                                                            |                                              |               15 |             33 |         2.20 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/result_o[31]_i_1_n_2                     | u_tinyriscv/u_csr_reg/SR[0]                  |               15 |             33 |         2.20 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/final_count[13]_i_1__0_n_2               |                                              |                6 |             34 |         5.67 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_clint/p_1_in[2]                              | u_tinyriscv/u_csr_reg/SR[0]                  |               15 |             35 |         2.33 |
+|  jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/rx/E[0]                           | u_tinyriscv/u_csr_reg/SR[0]                  |                7 |             38 |         5.43 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/tx/req_data                           | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             38 |         6.33 |
+|  jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/rx/recv_rdy                       | u_tinyriscv/u_csr_reg/SR[0]                  |                5 |             39 |         7.80 |
+|  jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/tx/E[0]                           | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             40 |         6.67 |
+|  jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/shift_reg                         | u_jtag_top/u_jtag_driver/shift_reg0          |               11 |             40 |         3.64 |
+|  jtag_TCK_IBUF_BUFG               | u_jtag_top/u_jtag_driver/tx/req_data__0                    | u_tinyriscv/u_csr_reg/SR[0]                  |                6 |             40 |         6.67 |
+|  clk_IBUF_BUFG                    | u_jtag_top/u_jtag_dm/rx/recv_data                          | u_tinyriscv/u_csr_reg/SR[0]                  |                7 |             41 |         5.86 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_avg/acc                                      | u_tinyriscv/u_csr_reg/SR[0]                  |               15 |             47 |         3.13 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o[31]_i_1_n_2                        | u_uart_debug/state[13]_i_1_n_2               |               13 |             49 |         3.77 |
+|  clk_IBUF_BUFG                    | u_uart_debug/write_mem_data                                | u_uart_debug/state[13]_i_1_n_2               |               24 |             62 |         2.58 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_div/count[30]_i_1_n_2                        | u_tinyriscv/u_csr_reg/SR[0]                  |               22 |             63 |         2.86 |
+|  clk_IBUF_BUFG                    |                                                            | u_jtag_top/u_jtag_dm/rx/dm_halt_req_reg      |               27 |             64 |         2.37 |
+|  clk_IBUF_BUFG                    | u_tinyriscv/u_mac/final_count[13]_i_1_n_2                  |                                              |               16 |             78 |         4.88 |
+|  n_0_5331_BUFG                    |                                                            |                                              |               54 |            102 |         1.89 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[10]_1                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_3                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_4                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[10]_2                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[12]_1                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[10]_3                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[11]_0                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_5                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_6                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_7                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[11]_1                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[12]_0                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_11                         |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_5                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_4                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_12                         |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_3                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_13                         |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_2                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_1                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_0                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[12]_3                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[12]_2                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg                                 |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg_0                               |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg_1                               |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg_2                               |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg_3                               |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/dm_mem_we_reg_4                               |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[13]_6                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[10]_0                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    | u_uart_debug/mem_addr_o_reg[28]_2                          |                                              |               32 |            128 |         4.00 |
+|  clk_IBUF_BUFG                    |                                                            | u_tinyriscv/u_csr_reg/SR[0]                  |               80 |            200 |         2.50 |
+|  clk_IBUF_BUFG                    |                                                            | u_tinyriscv/qout_r[31]_i_1_n_2               |               97 |            268 |         2.76 |
+|  clk_IBUF_BUFG                    | rst_IBUF                                                   |                                              |              829 |           1024 |         1.24 |
++-----------------------------------+------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+
+

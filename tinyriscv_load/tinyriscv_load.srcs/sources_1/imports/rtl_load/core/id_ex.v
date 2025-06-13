@@ -52,6 +52,17 @@ module id_ex(
      
      input wire is_mac_config_i, // Custom Instruction -MAC_CONFIG
      output wire is_mac_config_o, // Custom Instruction -MAC_CONFIG
+     
+     // Custom Instruction -MOV_AVG
+     
+     input wire is_mov_avg_i, // Custom Instruction -MAC_CONFIG
+     output wire is_mov_avg_o, // Custom Instruction -MAC_CONFIG
+     
+      // Custom Instruction -POW_EST
+      
+     input wire is_pow_est_i, // Custom Instruction -MAC_CONFIG
+     output wire is_pow_est_o, // Custom Instruction -MAC_CONFIG
+     
     output wire[`MemAddrBus] op1_o,
     output wire[`MemAddrBus] op2_o,
     output wire[`MemAddrBus] op1_jump_o,
@@ -102,6 +113,16 @@ module id_ex(
      wire is_mac_config;
     gen_pipe_dff #(1) is_mac_conf_ff(clk, rst, hold_en, `WriteDisable, is_mac_config_i, is_mac_config);
     assign is_mac_config_o = is_mac_config;
+    
+     // Custom Instruction -MOV AVG FILTER
+     wire is_mov_avg;
+    gen_pipe_dff #(1) is_mov_avg_ff(clk, rst, hold_en, `WriteDisable, is_mov_avg_i, is_mov_avg_o);
+    assign is_mov_avg_o = is_mov_avg;
+    
+     // Custom Instruction -POW ESTIMATE
+    wire is_pow_est;
+    gen_pipe_dff #(1) is_pow_est_ff(clk, rst, hold_en, `WriteDisable, is_pow_est_i, is_pow_est_o);
+    assign is_pow_est_o = is_pow_est;
 
     wire[`RegAddrBus] reg_waddr;
     gen_pipe_dff #(5) reg_waddr_ff(clk, rst, hold_en, `ZeroReg, reg_waddr_i, reg_waddr);
